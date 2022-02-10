@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div>returned from app.js</div>
+      <div><h1>returned from app.js</h1></div>
   );
 }
 

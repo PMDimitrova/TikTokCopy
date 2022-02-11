@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'ProximaNova';
+  src: local('ProximaNova-bold'), url(../../fonts/Proxima-Nova-Bold.ttf) format('ttf');
+  src: local('ProximaNova-semibold'), url(../../fonts/Proxima-Nova-Sbold.ttf) format('ttf');
+}
+.loginOptionItem{
+  height: 46px;
+  width: 320px;
+  border: 1px solid #e3e3e4;
+  border-radius: 2px;
+  margin-bottom: 12px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  font-family: ProximaNova-sbold,sans-serif;
+  word-break: break-word;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  color: #161823;
+
+  .loginIconOption{
+    border-right: 1px solid #e3e3e4;
+    border-radius: 1px;
+    width: 44px;
+    height: 44px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    svg{
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .loginTextWrapper{
+    width: 276px;
+  }
+}
+
+.loginOptionItem:hover{
+  cursor: pointer;
+}
+

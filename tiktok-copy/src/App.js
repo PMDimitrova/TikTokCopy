@@ -7,9 +7,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navbar/>}>
-        </Route>
-        <Route path="/videoUpload" element={<UploadVideoComponent />} />
+        <Route path="/" element={<Navbar />}></Route>
+        <Route
+          path="/videoUpload" element={
+            <>
+              <Navbar />
+              <UploadVideoComponent />
+            </>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

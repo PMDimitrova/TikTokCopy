@@ -1,5 +1,5 @@
-import logo from '../images/TikToklogo.jpg';
-import search from '../images/tiktok-search-icon.PNG';
+import logo from '../../images/TikToklogo.jpg';
+import search from '../../images/tiktok-search-icon.PNG';
 import NotLogBntsNav from './NotLogBntsNav';
 import LogBtnsNav from './LogBtnsNav.js';
 import './Navbar.css';
@@ -10,14 +10,14 @@ export default function Navbar() {
         <div className="navbar">
             <div className='navWrapper'>
                 <div>
-                    <img className='logoButtonNav' src={logo} alt='TikTokLogo'></img>
+                    <img className='logoButtonNav' src={logo} alt='TikTokLogo'/>
                 </div>
                 <div className='searchContainer'>
                     <form className='formSearch'>
-                        <input className='searchInput' tupe='text' placeholder={isLogged? 'Search accounts and videos' : 'Search accounts'}></input>
-                        <span className='spanSpliter'></span>
+                        <input className='searchInput' type='text' placeholder={isLogged? 'Search accounts and videos' : 'Search accounts'}/>
+                        <span className='spanSpliter'/>
                         <button className='searchButton' type='submit'>
-                            <img src={search} alt='Search Icon Logo'></img>
+                            <img src={search} alt='Search Icon Logo'/>
                         </button>
                     </form>
                 </div>

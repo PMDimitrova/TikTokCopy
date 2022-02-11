@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
-import UploadVideoComponent from "./components/UploadVideoPage";
+import UploadVideoComponent from "./components/Main/Upload/UploadVideoComponent";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navbar/>}>
         </Route>
-        <Route path="/videoUpload" element={<UploadVideoComponent />}></Route>
+        <Route path="/videoUpload" element={<UploadVideoComponent />} />
       </Routes>
     </BrowserRouter>
   );

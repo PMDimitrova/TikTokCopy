@@ -1,8 +1,17 @@
-import './App.css';
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import { Route, Routes } from "react-router-dom";
+import UploadVideoComponent from "./components/UploadVideoPage";
 
 function App() {
   return (
-      <div><h1>returned from app.js</h1></div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navbar/>}>
+        </Route>
+        <Route path="/videoUpload" element={<UploadVideoComponent />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

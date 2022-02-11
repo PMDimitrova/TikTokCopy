@@ -1,0 +1,9 @@
+.bntsLog{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logBtnsEach{
+    margin: 0 0 0 24px;
+    cursor: pointer;
+}

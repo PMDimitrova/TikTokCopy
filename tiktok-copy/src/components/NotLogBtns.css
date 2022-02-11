@@ -1,0 +1,42 @@
+.bunsNoLog{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.uploadBtn{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    display: block;
+    cursor: pointer;
+
+}
+.logInBtn{
+    border-radius: 4px;
+    border: none;
+    color: rgba(255, 255, 255, 1.0);
+    background-color: rgba(254, 44, 85, 1.0);
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 8px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 16px;
+    min-width: 100px;
+}
+.dotsNav{
+    margin-left: 16px;
+    cursor: pointer;
+    padding: 0 4px;
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(22, 24, 35);
+}
+

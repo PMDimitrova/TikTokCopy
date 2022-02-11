@@ -1,5 +1,7 @@
+import './UploadVideoComponent.css';
+
 export default function UploadVideoComponent(){
     return(
-        <div> This is video</div>
+        <div className='uploadVideoComponentContainer'> This is video</div>
     )
 }

@@ -1,0 +1,186 @@
+.AsideContainer{
+    width: 356px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.asideInsideContain{
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    perspective-origin: right top;
+    top: 60px;
+    bottom: 0;
+    width: 356px;
+    background: rgba(255, 255, 255, 1.0);
+    position: fixed;
+    z-index: 99;
+    padding-right: 8px;
+}
+.asideInside{
+    padding: 20px 0 26px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100%;
+    padding-left: 8px;
+}
+
+
+    .MainNavAside{
+        margin-bottom: 8px;
+        padding: 0;
+        width: 340px;
+        height: 144px;
+    }
+        .MainAsideBtn{
+            width: 340px;
+            height: 48px;
+        }
+        .MainAsideBtn:hover{
+            background-color: rgb(244, 244, 248)
+        }
+        .MainBtn{
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 8px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+            .MainBtnLogo{
+                width: 32px;
+                height: 32px;
+            }
+            .MainBtnText{
+                color: rgba(22, 24, 35, 1.0);
+                font-family: Arial,Tahoma,PingFangSC,sans-serif;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 25px;
+                margin-left: 8px;
+            }
+    
+
+    .SuggestedAccountsNavAside{
+        padding: 16px 0;
+        color: rgba(22, 24, 35, 0.75);
+        font-family: Arial,Tahoma,PingFangSC,sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        position: relative;
+    }
+    .SuggestedAccountsNavAside::before{
+        content: "";
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: 0;
+        height: 1px;
+        background: rgba(22, 24, 35, 0.12);
+    }
+    .SuggestedAccountsNavText{
+        padding: 0 8px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 20px;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        color: rgba(22, 24, 35, 0.50);
+        font-family: Arial,Tahoma,PingFangSC,sans-serif;
+        font-weight: 600;
+    }
+    .seeAllContainer{
+        width: 324px;
+        height: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 8px;
+        margin-top: 8px;
+        cursor: pointer;
+    }
+    .seeAllText{
+        color: rgb(254, 44, 85);
+        font-family: Arial, Tahoma, PingFangSC, sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
+.discoverContainer{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px 8px 8px;
+    width: 340px;
+    height: 180px;
+}
+.discoverText{
+    color: rgba(22, 24, 35, 0.50);
+    font-family: Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 16px;
+}
+.discoverListHashs{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.discoverListHashs::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    width: calc(100% - 16px);
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
+    transform: scaleY(0.5);
+}
+
+
+
+.footerAsideContainer{
+    width: 340px;
+    height: 178px;
+    padding: 36px 0 0 8px;
+}
+.footerAsideContainer::before{
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    height: 1px;
+    margin-top: -15px;
+    background: rgba(22, 24, 35, 0.12);
+}
+.footerRowLinks{
+    width: 332px;
+    margin-bottom: 8px;
+
+}
+.footerLink{
+    font-family: Arial,Tahoma,PingFangSC,sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 5px;
+    color: rgba(22, 24, 35, 0.5);
+    text-decoration: none;
+    cursor: pointer;
+}
+.footerLink:hover{
+    text-decoration: underline;
+}

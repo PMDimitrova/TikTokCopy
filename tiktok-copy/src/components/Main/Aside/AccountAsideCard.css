@@ -1,0 +1,77 @@
+
+.accountAsideCard{
+    padding: 8px;
+    display: inline-block;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    border-radius: 4px;
+    display: flex;
+}
+.accountAsideCard:hover{
+    background-color: rgb(244, 244, 248)
+}
+    .accountAsidePicLink{
+        width: 44px;
+        height: 32px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .containerPicAside{
+        width: 32px;
+        height: 32px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        flex: 0 0 48px;
+    }
+    .profilePictureAsideCard{
+        width: 32px;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        flex: 10px 10px;
+        white-space: nowrap;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 32px;
+        border-radius: 50%;
+    }
+    .accountAsideNameLink{
+        width: 280px;
+        height: 32px;
+        color: rgb(22, 24, 35);
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .containerNameAside{
+        width: 280px;
+        height: 20px;
+        display: flex;
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+    }
+    .accountNameAside{
+        color: rgb(22, 24, 35);
+        font-family: Arial, Tahoma, PingFangSC, sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 260px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .accountNicknameAside{
+        color: rgba(22, 24, 35, 0.50);
+        font-family: Arial, Tahoma, PingFangSC, sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        max-width: 260px;
+        margin-top: 0px;
+    }

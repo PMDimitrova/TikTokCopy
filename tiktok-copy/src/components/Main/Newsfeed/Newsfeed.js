@@ -1,8 +1,12 @@
-import './Newsfeed.css'
+import './Newsfeed.css';
+import VideoCard from './VideoCard';
+
 export default function NewsfeedVideos(){
     return(
         <div className="newsfeedVideoContainer">
-            The videos
+            <div className='newsfeedVideosContain'>
+                <VideoCard/>
+            </div>
         </div>
     )
 }

@@ -3,15 +3,16 @@ import LogBtnsNav from "./LogBtnsNav.js";
 import "./Navbar.css";
 import SearchNav from "./SearchFieldNav";
 import logo from '../../images/TikToklogo.jpg';
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   let isLogged = true;
   return (
     <div className="navbar">
       <div className="navWrapper">
-        <div>
+        <Link to='/'>
           <img className="logoButtonNav" src={logo} alt="TikTokLogo" />
-        </div>
+        </Link>
         <SearchNav
         isLogged={isLogged} />
         {isLogged ? <LogBtnsNav /> : <NotLogBntsNav />}

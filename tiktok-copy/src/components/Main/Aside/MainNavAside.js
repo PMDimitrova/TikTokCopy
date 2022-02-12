@@ -1,27 +1,28 @@
 import homeLogo from '../../../images/tiktok-aside-mainNav-iconHome.PNG';
 import followingLogo from '../../../images/tiktok-aside-mainNav-iconFollowing.PNG';
 import liveLogo from '../../../images/tiktok-aside- mainNav-iconLive.PNG';
+import { Link } from "react-router-dom";
 
 export default function MainNavAside(){
     return(
         <div className='MainNavAside'>
             <div className='MainAsideBtn'>
-                <a className='MainBtn'>
-                    <img className='MainBtnLogo' src={homeLogo} alt='MainBtnLogo'></img>
-                    <h2 className='MainBtnText'>For You</h2>
-                </a>
+                <Link to='/' className='MainBtn'>
+                        <img className='MainBtnLogo' src={homeLogo} alt='MainBtnLogo'></img>
+                        <h2 className='MainBtnText'>For You</h2>
+                </Link>
             </div>
             <div className='MainAsideBtn'>
-                <a className='MainBtn'>
+                <Link to='/' className='MainBtn'>
                     <img className='MainBtnLogo' src={followingLogo} alt='MainBtnLogo'></img>
                     <h2 className='MainBtnText'>Following</h2>
-                </a>
+                </Link>
             </div>
             <div className='MainAsideBtn'>
-                <a className='MainBtn'>
+                <Link to='/LIVE' className='MainBtn'>
                     <img className='MainBtnLogo' src={liveLogo} alt='MainBtnLogo'></img>
                     <h2 className='MainBtnText'>LIVE</h2>
-                </a>
+                </Link>
             </div>
         </div>
     )

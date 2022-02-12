@@ -10,7 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<>
               <Navbar />
-              <MainContainer />
+              <MainContainer 
+              newsfeed= {true}/>
             </>
           }/>
 
@@ -19,6 +20,15 @@ function App() {
             <>
               <Navbar />
               <UploadVideoComponent />
+            </>
+          }
+        />
+        <Route
+          path="/LIVE" element={
+            <>
+              <Navbar />
+              <MainContainer 
+              newsfeed ={false}/>
             </>
           }
         />

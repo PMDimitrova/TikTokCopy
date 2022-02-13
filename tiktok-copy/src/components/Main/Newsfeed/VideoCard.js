@@ -54,15 +54,15 @@ export default function VideoCard(){
                 </div>
                 <div className="VideoAndBntsWrapper">
                     <div className="VideoWrapper">
-                        <canvas>
+                        {/* <canvas> */}
                             <div className="videoPlayer">
-                                <div className="theVideo">
-                                    {/* <video controls>
-                                        <source src={profilePeople[0].myUploadedVideos[0].video} type='video/mp4'/>
-                                    </video> */}
-                                </div>
+                                {/* <div className="theVideo"> */}
+                                    <video playsInline autoPlay src='https://v16-webapp.tiktok.com/2d3a908bac7cda39f520a450457fc159/620866d0/video/tos/useast2a/tos-useast2a-pve-0068/c6b5883fd29b4cd68e754189eff17bcd/?a=1988&br=3506&bt=1753&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThIjA6DXq&l=2022021220023801022308015002B58BDA&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=MzVmcDc6Zm52OjMzNzczM0ApaGU8aWhmPDs1N2U3aGdnOWdpaWtucjRvaXFgLS1kMTZzczEtXmM0NmJjY2IwL2IyMl86Yw%3D%3D&vl=&vr='/>
+                                        {/* <source src={profilePeople[0].myUploadedVideos[0].video} type='video/mp4'/> */}
+                                    {/* 
+                                </div> */}
                             </div>
-                        </canvas>
+                        {/* </canvas> */}
                     </div>
                     <div className="BtnsWrapper"></div>
                 </div>

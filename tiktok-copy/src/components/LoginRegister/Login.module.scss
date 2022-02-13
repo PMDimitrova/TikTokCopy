@@ -59,7 +59,183 @@
     }
     .loginOptionsContainer{
       margin-top: 32px;
+      border: 1px solid pink;
+
+      .loginWrapper{
+        width: 376px;
+
+        .loginFirstOptions{
+          margin-top: 4px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-family: ProximaNova-regular,sans-serif;
+          font-size: 14px;
+          text-align: start;
+          color: #161823;
+        }
+
+        .loginInputField{
+          width: 362px;
+          height: 44px;
+          padding-left: 12px;
+          margin-top: 8px;
+          border: 1.5px solid #e5e5e7;
+          border-radius: 4px;
+          background-color: #f1f1f2;
+        }
+        .loginInputField::placeholder{
+          color: #ababaf;
+          font-family: ProximaNova-regular,sans-serif;
+          font-size: 14px;
+        }
+        .loginInputField:hover{
+          background-color: #eae9e9;
+        }
+
+        .loginForgotPass{
+          font-family: ProximaNova-regular,sans-serif;
+          font-size: 12px;
+          color: #595a63;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+
+        .loginBtn{
+          width: 380px;
+          height: 44px;
+          border: 0px solid #e5e5e7;
+          border-radius: 4px;
+          background-color: #f1f1f2;
+          color: #ababaf;
+          font-family: ProximaNova-regular,sans-serif;
+          font-size: 14px;
+        }
+
+      }
+
+      .signUpWrapper{
+        font-family: ProximaNova-bold,sans-serif;
+        font-size: 16px;
+        width: 376px;
+
+        .signUpDateWrapper{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 12px;
+          margin-bottom: 4px;
+
+          .signUpDropDown{
+            width: 95px;
+            height: 44px;
+            padding-left: 12px;
+            padding-right: 13px;
+            border-radius: 4px;
+            background-color: #f1f1f2;
+            color: #ababaf;
+            font-family: ProximaNova-regular,sans-serif;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        .signUpSmallText{
+          font-family: ProximaNova-bold,sans-serif;
+          font-size: 12px;
+          text-align: start;
+          color:#8f9095;
+          margin-bottom: 18px;
+        }
+
+        .signUpOpt{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-size: 14px;
+        }
+
+        .singUpInput{
+          width: 362px;
+          height: 44px;
+          padding-left: 12px;
+          margin-top: 8px;
+          border: 1.5px solid #e5e5e7;
+          border-radius: 4px;
+          background-color: #f1f1f2;
+        }
+        .singUpInput::placeholder{
+          color: #ababaf;
+          font-family: ProximaNova-regular,sans-serif;
+          font-size: 15px;
+        }
+        .singUpInput:hover{
+          background-color: #eae9e9;
+        }
+        .singUpCodeWrapper{
+          display: flex;
+          flex-direction: row;
+        }
+        .singUpCode{
+          width: 217px;
+          height: 44px;
+          padding-left: 12px;
+          margin-top: 8px;
+          border-top: 1.5px solid #e5e5e7;
+          border-left: 1.5px solid #e5e5e7;
+          border-bottom: 1.5px solid #e5e5e7;
+          border-right: 0px;
+          border-radius: 4px;
+          background-color: #f1f1f2;
+          color: #ababaf;
+          font-family: ProximaNova-regular,sans-serif;
+          font-size: 15px;
+        }
+        .singUpCode::placeholder{
+          color: #ababaf;
+          font-family: ProximaNova-regular,sans-serif;
+          font-size: 14px;
+        }
+        .singUpCode:hover{
+          background-color: #eae9e9;
+        }
+        .signUpSendCode{
+          border: 1.5px solid #e5e5e7;
+          border-radius: 4px;
+          width: 159px;
+          height: 44px;
+          margin-top: 8px;
+          color: #b3b3b7;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-top: 1px;
+          padding-bottom: 1px;
+        }
+
+        .signUpBtn{
+          width: 380px;
+          height: 44px;
+          margin-top: 14px;
+          border: 0px solid #e5e5e7;
+          border-radius: 4px;
+          background-color: #f1f1f2;
+          color: #ababaf;
+          font-family: ProximaNova-regular,sans-serif;
+          font-size: 14px;
+        }
+      }
     }
+      .signUpFooter{
+        color: #8f9095;
+        font-family: ProximaNova-bold,sans-serif;
+        font-size: 12px;
+        text-align: center;
+        align-self: flex-end;
+        //margin-top: 200px;
+      }
   }
 
   .loginFooterContainer{

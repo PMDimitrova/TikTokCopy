@@ -9,6 +9,11 @@ import {GrClose} from '../../../node_modules/react-icons/gr'
 
 
 export default function Login(){
+    function displayEmailLogin(ev){
+        ev.preventDefault();
+        console.log('email login')
+    }
+
     return(
         <div className={styles.loginContainer}>
             <div className={styles.closeBtn}><GrClose/></div>
@@ -16,7 +21,7 @@ export default function Login(){
                 <div className={styles.loginTitle}>Log in to TikTok</div>
                 <div className={styles.loginOptionsContainer}>
                     <LoginOption icon={<MdQrCode/>} text={'Use QR code'} />
-                    <LoginOption icon={<RiUserLine/>} text={'Use phone / email / username'} />
+                    <LoginOption icon={<RiUserLine/>} onClick={displayEmailLogin} text={'Use phone / email / username'} />
                     <LoginOption icon={<FaFacebook/>} text={'Continue with Facebook'} />
                     <LoginOption icon={<AiOutlineGoogle/>} text={'Continue with Google'} />
                     <LoginOption icon={<BsTwitter/>} text={'Continue with Twitter'} />

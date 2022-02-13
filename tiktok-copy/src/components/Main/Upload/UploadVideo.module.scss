@@ -1,0 +1,187 @@
+
+.uploadVideoWrapper{
+  background-color: rgb(248, 248, 248);
+  height: 921px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.uploadVideoComponentContainer{
+  width: 988px;
+  height: 766px;
+  padding: 24px 56px 24px 56px;
+  border-radius: 8px;
+  margin-top: 75px;
+  background-color: rgb(254, 254, 254);
+  box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.uploadHeading{
+  height: 56px;
+  font-family: ProximaNova-regular,sans-serif;
+  font-size: 24px;
+  text-align: start;
+  color: #21232e;
+
+  .uploadPostHeading{
+    margin-top: 2px;
+    font-size: 16px;
+    color: #8f9095;
+    font-weight: lighter;
+  }
+}
+.uploadBody{
+  height: 554px;
+  margin-top: 24px;
+  margin-bottom: 130px;
+  display: flex;
+  flex-direction: row;
+
+  .uploadSideContainer{
+    height: 454px;
+    width: 256px;
+    border: 2px dashed #d2d3d5;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    font-family: ProximaNova-sbold,sans-serif;
+    justify-content: center;
+    align-items: center;
+
+    .uploadDragText{
+      margin-top: 12px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: #5c5d66;
+    }
+
+    .uploadSmallText{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+      color: #bdbdc0;
+    }
+
+    .uploadSelectBtn{
+      width: 154px;
+      height: 36px;
+      border: none;
+      border-radius: 3px;
+      margin-top: 32px;
+      color: white;
+      background-color: #ff3a5e;
+      font-size: 14px;
+    }
+  }
+  .uploadSideContainer:hover{
+    transition: background 0.15s ease-in-out 0s;
+    border: 2px dashed #ff3a5e;
+    background-color: #f8f8f8;
+  }
+
+  .uploadMainContainer{
+    height: 544px;
+    width: 704px;
+    margin-left: 24px;
+
+
+
+    .uploadCaption{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-family: ProximaNova-regular,sans-serif;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .uploadInputCaption{
+      border: 1px solid #e4e4e5;
+      border-radius: 3px;
+      height: 44px;
+      width: 704px;
+      margin-bottom: 16px;
+    }
+
+    .uploadCoverBox{
+      border: 1px solid #e4e4e5;
+      border-radius: 3px;
+      height: 154px;
+      width: 690px;
+      padding: 6px;
+      margin-bottom: 16px;
+    }
+
+    .uploadCheckBoxWrapper{
+      margin-bottom: 24px;
+      margin-top: 24px;
+
+
+      label{
+        width: 22px;
+        margin-right: 32px;
+        font-family: ProximaNova-regular,sans-serif;
+        font-size: 16px;
+        font-weight: lighter;
+        padding-bottom: 2px;
+      }
+
+      input{
+        width: 22px;
+        height: 22px;
+        border: 1px solid #e4e4e5;
+      }
+      input:checked{
+        background-color: #ff2c55;
+      }
+    }
+
+    .uploadRunCheck{
+      margin-top: 12px;
+      font-family: ProximaNova-regular,sans-serif;
+      font-size: 16px;
+    }
+
+    .uploadCheckerInfo{
+      margin-top: 16px;
+      font-family: ProximaNova-regular,sans-serif;
+      font-size: 12px;
+      font-weight: lighter;
+      color: #88888d;
+    }
+
+    .uploadButtons{
+      margin-top: 24px;
+      height: 44px;
+
+
+      .uploadDiscardBtn{
+        width: 158px;
+        height: 44px;
+        border: 1.5px solid #e4e4e5;
+        border-radius: 3px;
+        background-color: #fefefe;
+        font-family: ProximaNova-regular,sans-serif;
+        font-size: 14px;
+        margin-right: 16px;
+        transition: all 0.2s cubic-bezier(0.65, 0, 0.35, 1) 0s;
+      }
+      .uploadDiscardBtn:hover{
+        background-color: #eeeeee;
+        cursor: pointer;
+      }
+
+      .uploadPostBtn{
+        width: 158px;
+        height: 44px;
+        border: 0px;
+        border-radius: 3px;
+      }
+    }
+
+  }
+}

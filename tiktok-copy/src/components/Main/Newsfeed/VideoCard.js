@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import video from "../../../videos/IMG_6662.MP4";
 import FullPageVideo from "../../FullPageVideo/FullPageVideo";
 import heartIcon from '../../../images/tiktok-heart-icon.PNG';
@@ -10,13 +10,34 @@ export default function VideoCard() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const videoRef = useRef(null);
+  const scrollArea = useRef(null);
   const videoInit = () => {
-    videoRef.current.play();
+    // videoRef.current.play(); 
   };
-//   const videoStop =() => {
-//     videoRef.current.pause();
-//   }
+
+
+useEffect(() => {
+    let options = {
+      rootMargin: "0px",
+      threshold: 0.75
+    };
+
+    let handlePlay = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          videoRef.current.play();
+        } else {
+          videoRef.current.pause();
+        }
+      });
+    };
+
+    let observer = new IntersectionObserver(handlePlay, options);
+
+    observer.observe(videoRef.current);
+  });
   const openDialog = (choosenVideo) => {
+    // videoRef.current.pause(); // not working, doesnt pause the video on opening the dialog
     setSelectedVideo(choosenVideo);
     setIsOpen(true);
   };
@@ -74,7 +95,7 @@ export default function VideoCard() {
         onClose={() => setIsOpen(false)}
       ></FullPageVideo>
 
-      <div className="VideoCard">
+      <div className="VideoCard" ref={scrollArea}>
           {isShown && (
           <div className='shareCompFromVideoCard'>
             <ShareCompFromVideoCard />
@@ -116,11 +137,11 @@ export default function VideoCard() {
                   onClick={() =>
                     {
                     openDialog(profilePeople[0].myUploadedVideos[0])
-                    // videoStop()
                     }
                   }
                   className="videoPlayer"
                   playsInline
+                //   loop
                   autoPlay
                   controls
                   src={profilePeople[0].myUploadedVideos[0].video}
@@ -141,11 +162,9 @@ export default function VideoCard() {
                 </button>
                 <button className="buttonActionVideoCard">
                     <span className="buttonIconVideoCard"
-                    ref={videoRef}
                     onClick={() =>
                       {
                       openDialog(profilePeople[0].myUploadedVideos[0])
-                      // videoStop()
                       }}>
                         <img  
                         src={commentIcon} 

@@ -6,7 +6,7 @@ export default function NewsfeedVideos(){
         <div className="newsfeedVideoContainer">
             <div className='newsfeedVideosContain'>
                 <VideoCard/>
-                <VideoCard/>
+                {/* <VideoCard/> */}
             </div>
         </div>
     )

@@ -4,6 +4,7 @@ import FullPageVideo from "../../FullPageVideo/FullPageVideo";
 import heartIcon from '../../../images/tiktok-heart-icon.PNG';
 import commentIcon from '../../../images/tiktok-comment-icon.PNG';
 import shareIcon from '../../../images/tiktok-share-icon.PNG';
+import ShareCompFromVideoCard from "./ShareCompFromVideoCard";
 
 export default function VideoCard() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,7 @@ export default function VideoCard() {
     setSelectedVideo(choosenVideo);
     setIsOpen(true);
   };
+  const [isShown, setIsShown] = useState(false);
   const profilePeople = [
     {
       profilePicture:
@@ -73,6 +75,11 @@ export default function VideoCard() {
       ></FullPageVideo>
 
       <div className="VideoCard">
+          {isShown && (
+          <div className='shareCompFromVideoCard'>
+            <ShareCompFromVideoCard />
+          </div>)}
+      
         <span className="profilePhotoVideoCard">
           <img
             className="profilePicVideoCard"
@@ -133,7 +140,13 @@ export default function VideoCard() {
                     </strong>
                 </button>
                 <button className="buttonActionVideoCard">
-                    <span className="buttonIconVideoCard">
+                    <span className="buttonIconVideoCard"
+                    ref={videoRef}
+                    onClick={() =>
+                      {
+                      openDialog(profilePeople[0].myUploadedVideos[0])
+                      // videoStop()
+                      }}>
                         <img  
                         src={commentIcon} 
                         alt="buttonIconVideoCard">
@@ -143,7 +156,9 @@ export default function VideoCard() {
                         {profilePeople[0].myUploadedVideos[0].comments}
                     </strong>
                 </button>
-                <button className="buttonActionVideoCard">
+                <button className="buttonActionVideoCard"
+                onMouseEnter={() => setIsShown(true)}
+                onMouseLeave={() => setIsShown(false)}>
                     <span className="buttonIconVideoCard">
                         <img  
                         src={shareIcon} 

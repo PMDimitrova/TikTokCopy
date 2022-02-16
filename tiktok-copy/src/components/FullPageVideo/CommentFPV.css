@@ -1,0 +1,89 @@
+.commentWrapperFPV{
+    margin-bottom: 16px;
+    width: 472px;
+}
+.commentContainFPV{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    position: relative;
+}
+.commentProfilePicContainFPV{
+    flex: 0 0 40px;
+    margin-right: 12px;
+}
+.profilePicCommentContainerFPV{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 32px;
+    border-radius: 50%;
+    background-color: rgba(136, 136, 136, 0.5);
+}
+.profilePicCommentFPVComments{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.commentContentContainFPV{
+    flex: 1 1 auto;
+}
+.usernameCommentsFullPageComp{
+    font-family: Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+}
+.commentCommentsFullPageComp{
+    font-size: 16px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-family: Arial, Tahoma, PingFangSC, sans-serif;
+}
+.dateCommentsFullPageComp{
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 14px;
+    margin-top: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.commentLikeBtnFPV{
+    margin-left: 18px;
+    padding-right: 2px;
+    width: 24px;
+    flex: 0 0 24px;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.heartNumberCommentsFPV{
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 12px;
+    line-height: 17px;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.heartCommentIconFPV{
+    width: 20px;
+    height: 20px;
+    padding-bottom: 6px;
+}
+.counterRandomLikesCommentFPV{
+    font-size: 12px;
+    line-height: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}

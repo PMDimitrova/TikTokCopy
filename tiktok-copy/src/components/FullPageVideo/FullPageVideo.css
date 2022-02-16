@@ -8,6 +8,7 @@
     width: 100%;
     height: 100%;
 }
+/* FIRST HALF CONTAINER FOR THE VIDEO */
     .videoContainFullPageVideo{
         flex: 1 1 896px;
         background: rgb(0, 0, 0);
@@ -67,12 +68,9 @@
         display: flex;
         width: 40px;
         height: 40px;
-
-        /* border-radius: 100px; */
     }
 
-
-
+/* SECOND HALF CONTAINER FOR THE COMMENTS AND DESCRIPTION */
 
     .commentsContainFullPageVideo{
         flex: 0 0 544px;
@@ -81,3 +79,256 @@
         flex-direction: column;
         padding: 32px 0px 0px;
     }
+
+/* PROFILE PIC, NAMES AND FOLLOW BTN CONTAINER */
+    .infoContainerFPV{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 22px 32px 15px;
+        position: relative;
+        flex: 0 0 82px;
+    }
+    .profilePictureContainFPV{
+        flex: 0 0 40px;
+        margin-right: 12px;
+    }
+    .profilePicContainFPV{
+        width: 40px;
+        height: 40px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .avatarPicFPV{
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        white-space: nowrap;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 32px;
+        border-radius: 50%;
+        background-color: rgba(136, 136, 136, 0.5);
+        border-color: rgba(22, 24, 35, 0.12);
+        border-width: 0.5px;
+        cursor: pointer;
+        object-fit: cover;
+    }
+    .usernameNickameContainerFPV{
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1 1 auto;
+        margin-right: 12px;
+    }
+    .usernameContainerFPV{
+        font-family: Arial, Tahoma, PingFangSC, sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .nicknameContainerFPV{
+        font-family: Arial, Tahoma, PingFangSC, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .followBtnFPV{
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 4px;
+        color: rgb(254, 44, 85);
+        border-color: rgb(254, 44, 85);
+        background-color: rgb(255, 255, 255);
+        
+        /* color: rgb(22, 24, 35);
+        border-color: rgba(22, 24, 35, 0.12);
+        background-color: rgb(255, 255, 255); */
+        
+        min-width: 106px;
+        min-height: 28px;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 8px;
+        user-select: none;
+        cursor: pointer;
+        box-sizing: border-box;
+        justify-self: flex-end;
+    }
+
+/* DESCRIPTION CONTAINER FPV */
+    .descriptionContainerFPV{
+        padding: 0px 32px;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+    }
+    .videodescriptionFPV{
+        font-size: 16px;
+        line-height: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        color: rgba(22, 24, 35, 1.0);
+    }
+    .songContainerFPV{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 16px;
+        flex: 0 0 auto;
+    }
+    .songFPV{
+        color: rgb(22, 24, 35);
+        cursor: pointer;
+        font-family: Arial, Tahoma, PingFangSC, sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+    }
+/* LIKES, SHARES AND LINK */
+    .likesSharesLinkWrapperFPV{
+        position: relative;
+        padding: 16px 0px;
+    }
+    .likesSharesContainerFPV{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .likesWrapperFPV{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .heartBtnFPV{
+        border: none;
+        background: none;
+        outline: none;
+        padding: 0px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        flex-direction: row;
+    }
+    .iconWrapperFPV{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        font-size: 0px;
+        border-radius: 50%;
+        transition: all 200ms ease-in-out 0s;
+        background-color: rgba(22, 24, 35, 0.06);
+        padding: 6px;
+        margin-right: 6px;
+    }
+    .iconHeartBtnFPV{
+        width: 20;
+        height: 20;
+        fill: rgb(22, 24, 35);
+    }
+    .likesCounterFPV{
+        color: rgba(22, 24, 35, 0.75);
+        font-size: 12px;
+        line-height: 17px;
+        text-align: center;
+        font-weight: 800;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .sharesWrapperFPV{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .textSharetoFPV{
+        width: 52px;
+        height: 15px;
+        font-size: 13px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: auto;
+    }
+    .shareIconContainFPV{
+        display: block;
+        font-size: 0px;
+        margin-left: 8px;
+    }
+    .iconLogoShareFPV{
+        width: 30px;
+        height: 30px;
+        fill: none;
+    }
+    .linkContainerFPV{
+        color: rgba(22, 24, 35, 0.75);
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 16px;
+        box-sizing: border-box;
+        border: 1px solid rgba(22, 24, 35, 0.12);
+        border-radius: 2px;
+    }
+    .pLinkFPV{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1 1 auto;
+        padding: 7px 0px 5px 12px;
+        background-color: rgba(22, 24, 35, 0.06);
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0px;
+    }
+    .buttonCopyLinkFPV{
+        border: none;
+        background: none;
+        outline: none;
+        color: rgb(22, 24, 35);
+        font-weight: 700;
+        flex: 0 0 auto;
+        cursor: pointer;
+        padding: 7px 18px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+/* COMMENTS CONTAINER FPV */
+    .commentsContainerFPV{
+        width: 100%;
+        padding: 24px 32px;
+        box-sizing: border-box;
+        background-color: rgb(248, 248, 248);
+        border-top: 1px solid rgba(18, 18, 18, 0.12);
+        border-bottom: 1px solid rgba(18, 18, 18, 0.12);
+        overflow: hidden auto;
+        flex-grow: 1;
+    }
+
+
+/* ADD COMMENT SECTION */
+.addCommentContainerFPV{
+    flex: 0 0 auto;
+    background-color: rgb(255, 255, 255);
+    margin: 0px 30px;
+    padding: 21px 0px;
+}

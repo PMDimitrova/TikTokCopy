@@ -6,7 +6,7 @@ import logo from '../../images/TikToklogo.jpg';
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  let isLogged = true;
+  let isLogged = false;
   return (
     <div className="navbar">
       <div className="navWrapper">

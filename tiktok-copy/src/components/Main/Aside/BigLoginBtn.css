@@ -1,0 +1,51 @@
+.BigLoginBtnAsideContiner{
+    position: relative;
+    padding: 20px 8px 24px 8px;
+    margin: 0;
+    width: 340px;
+    height: 136px;
+}
+.BigLoginBtnAsideContiner::before{
+    content: "";
+    position: absolute;
+    height: 1px;
+    left: 8px;
+    right: 8px;
+    background: rgba(22, 24, 35, .12);
+    top: 7px;
+    width: 324px;
+    height: 1px;
+}
+.BigLoginTextAside{
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 16px;
+    line-height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.BigLoginBtnAsidePink{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    color: rgba(254, 44, 85, 1.0);
+    border-color: rgba(254, 44, 85, 1.0);
+    background-color: rgba(255, 255, 255, 1.0);
+    min-width: 168px;
+    min-height: 48px;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 8px;
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-top: 20px;
+    width: 324px;
+}
+.BigLoginBtnAsidePink:hover{
+    background-color: rgba(254, 44, 86, 0.08);
+}

@@ -6,6 +6,8 @@ import profileBtn from "../../images/tiktok-profile-icon.PNG";
 import { Link } from "react-router-dom";
 
 export default function LogBtnsNav() {
+    //todo change src of profile picture
+
   return (
     <div className="bntsLog">
       <div className="uploadVideo">

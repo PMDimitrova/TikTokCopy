@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import UploadVideoComponent from "./components/Main/Upload/UploadVideoComponent";
 import MainContainer from "./components/Main/MainContainer";
+import TestPage from "./TestPage";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             </>
           }
         />
+          <Route path ="/test" element={<TestPage/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -8,11 +8,12 @@ export const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type){
         case 'LOGIN':
             return{
-                ...state, logged: true,
+                ...state, logged: true
             }
         case 'LOGOUT':
             return {
-                ...state, logged: false,
+                ...state, logged: false
             }
+        default: return state;
     }
 };

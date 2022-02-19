@@ -1,9 +1,8 @@
 import './NotLogBtns.css';
 import {useState} from "react";
 import {Dialog, DialogContent} from "@mui/material";
-import Login from "../LoginRegister/Login";
 import * as React from "react";
-import SignUp from "../LoginRegister/SignUp";
+import LoginSignUpMain from "../LoginRegister/LoginSignUpMain";
 
 export default function NotLogBntsNav() {
     const [openLogin, setOpenLogin] = useState(false);
@@ -32,18 +31,7 @@ export default function NotLogBntsNav() {
                     aria-describedby="alert-dialog-description"
                 >
                     <DialogContent>
-                        <Login closeBtnFunc={handleClickLoginClose} singUp={handleClickSignUpOpen}/>
-                    </DialogContent>
-                </Dialog>
-
-                <Dialog
-                    open={openSignUp}
-                    onClose={handleClickSignUpClose}
-                    aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description"
-                >
-                    <DialogContent>
-                        <SignUp closeBtnFunc={handleClickSignUpClose} />
+                        <LoginSignUpMain/>
                     </DialogContent>
                 </Dialog>
             </div>

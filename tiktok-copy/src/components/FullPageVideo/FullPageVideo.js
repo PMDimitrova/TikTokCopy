@@ -52,7 +52,7 @@ export default function FullPageVideo(props) {
                 <video
                   className="videoFPV"
                   playsInline
-                  //   loop
+                  loop
                   autoPlay
                   controls
                   src={video}

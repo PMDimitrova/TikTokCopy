@@ -1,26 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
 import video from "../../../videos/IMG_6662.MP4";
 import FullPageVideo from "../../FullPageVideo/FullPageVideo";
-import heartIcon from '../../../images/tiktok-heart-icon.PNG';
-import commentIcon from '../../../images/tiktok-comment-icon.PNG';
-import shareIcon from '../../../images/tiktok-share-icon.PNG';
+import heartIcon from "../../../images/tiktok-heart-icon.PNG";
+import likeHeartIcon from "../../../images/tiktok-heart-icon-liked.PNG";
+import commentIcon from "../../../images/tiktok-comment-icon.PNG";
+import shareIcon from "../../../images/tiktok-share-icon.PNG";
 import ShareCompFromVideoCard from "./ShareCompFromVideoCard";
 
-export default function VideoCard() {
+export default function VideoCard({ mp4 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const videoRef = useRef(null);
   const scrollArea = useRef(null);
   const videoInit = () => {
-    // videoRef.current.play(); 
+    // videoRef.current.play();
   };
 
-
-
-useEffect(() => {
+  useEffect(() => {
     let options = {
       rootMargin: "0px",
-      threshold: 0.75
+      threshold: 0.75,
     };
 
     let handlePlay = (entries, observer) => {
@@ -43,21 +42,28 @@ useEffect(() => {
     setIsOpen(true);
   };
   const [isShown, setIsShown] = useState(false);
-  let likeButtonTemplate = (
-  <button 
-    className="buttonActionVideoCard">
-        <span className="buttonIconVideoCard">
-            <img  
-            src={heartIcon} 
-            alt="buttonIconVideoCard">
-            </img>
-        </span>
-        <strong className="textLikesVideoCard">
-            {profilePeople[0].myUploadedVideos[0].likes}
-        </strong>
-  </button>
+
+  let unlikeButtonTemplate = (
+    <button className="buttonActionVideoCard">
+      <span className="buttonIconVideoCard">
+        <img src={heartIcon} alt="buttonIconVideoCard"></img>
+      </span>
+      <strong className="textLikesVideoCard">
+        {mp4.likesCounter}
+      </strong>
+    </button>
   );
-  
+
+  let likeButtonTemplate = (
+    <button className="buttonActionVideoCard">
+      <span className="buttonIconVideoCard">
+        <img src={likeHeartIcon} alt="buttonIconVideoCard"></img>
+      </span>
+      <strong className="textLikesVideoCard">
+        {mp4.likesCounter}
+      </strong>
+    </button>
+  );
 
   const profilePeople = [
     {
@@ -113,11 +119,12 @@ useEffect(() => {
       ></FullPageVideo>
 
       <div className="VideoCard" ref={scrollArea}>
-          {isShown && (
-          <div className='shareCompFromVideoCard'>
+        {isShown && (
+          <div className="shareCompFromVideoCard">
             <ShareCompFromVideoCard />
-          </div>)}
-      
+          </div>
+        )}
+
         <span className="profilePhotoVideoCard">
           <img
             className="profilePicVideoCard"
@@ -130,7 +137,8 @@ useEffect(() => {
             <div className="nameContainerVideoCard">
               <div className="twoNamesContainer">
                 <h3 className="UsernameVideoCard">
-                  {profilePeople[0].username}
+                  {/* {profilePeople[0].username} */}
+                  {mp4.owner}
                 </h3>
                 <h4 className="nicknameVideoCard">
                   {profilePeople[0].nickname}
@@ -139,10 +147,12 @@ useEffect(() => {
             </div>
             <button className="followBtnVideoCard">Follow</button>
             <div className="descriptionContainVideoCard">
-              {profilePeople[0].myUploadedVideos[0].description}
+              {/* {profilePeople[0].myUploadedVideos[0].description} */}
+              {mp4.description}
             </div>
             <h4 className="songContainVideoCard">
-              {profilePeople[0].myUploadedVideos[0].song}
+              {/* {profilePeople[0].myUploadedVideos[0].song} */}
+              {mp4.song}
             </h4>
           </div>
           <div className="VideoAndBntsWrapper">
@@ -151,50 +161,48 @@ useEffect(() => {
                 <video
                   onLoadedData={videoInit}
                   ref={videoRef}
-                  onClick={() =>
-                    {
-                    openDialog(profilePeople[0].myUploadedVideos[0])
-                    }
-                  }
+                  onClick={() => {
+                    openDialog(profilePeople[0].myUploadedVideos[0]);
+                  }}
                   className="videoPlayer"
                   playsInline
-                //   loop
+                  loop
                   autoPlay
                   controls
-                  src={profilePeople[0].myUploadedVideos[0].video}
+                  // src={profilePeople[0].myUploadedVideos[0].video}
+                  src={mp4.video}
                 />
               </div>
             </div>
             <div className="BtnsWrapper">
-                {likeButtonTemplate}
-                <button className="buttonActionVideoCard">
-                    <span className="buttonIconVideoCard"
-                    onClick={() =>
-                      {
-                      openDialog(profilePeople[0].myUploadedVideos[0])
-                      }}>
-                        <img  
-                        src={commentIcon} 
-                        alt="buttonIconVideoCard">
-                        </img>
-                    </span>
-                    <strong className="textLikesVideoCard">
-                        {profilePeople[0].myUploadedVideos[0].comments}
-                    </strong>
-                </button>
-                <button className="buttonActionVideoCard"
+              {unlikeButtonTemplate}
+              <button className="buttonActionVideoCard">
+                <span
+                  className="buttonIconVideoCard"
+                  onClick={() => {
+                    openDialog(profilePeople[0].myUploadedVideos[0]);
+                  }}
+                >
+                  <img src={commentIcon} alt="buttonIconVideoCard"></img>
+                </span>
+                <strong className="textLikesVideoCard">
+                  {/* {profilePeople[0].myUploadedVideos[0].comments} */}
+                  {mp4.commentsCounter}
+                </strong>
+              </button>
+              <button
+                className="buttonActionVideoCard"
                 onMouseEnter={() => setIsShown(true)}
-                onMouseLeave={() => setIsShown(false)}>
-                    <span className="buttonIconVideoCard">
-                        <img  
-                        src={shareIcon} 
-                        alt="buttonIconVideoCard">
-                        </img>
-                    </span>
-                    <strong className="textLikesVideoCard">
-                        {profilePeople[0].myUploadedVideos[0].shares}
-                    </strong>
-                </button>
+                onMouseLeave={() => setIsShown(false)}
+              >
+                <span className="buttonIconVideoCard">
+                  <img src={shareIcon} alt="buttonIconVideoCard"></img>
+                </span>
+                <strong className="textLikesVideoCard">
+                  {/* {profilePeople[0].myUploadedVideos[0].shares} */}
+                  {mp4.sharesCounter}
+                </strong>
+              </button>
             </div>
           </div>
         </div>

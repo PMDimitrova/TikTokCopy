@@ -7,7 +7,7 @@ import {default as ReduxThunk } from 'redux-thunk';
 //for now only user data slice in the reducer
 const rootReducer = combineReducers({
     userData: userReducer,
-    allVideoReducer: allVideoReducer
+    allVideoData: allVideoReducer
 })
 
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));

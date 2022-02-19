@@ -6,6 +6,7 @@
       "myVideos" : "2, 1",
       "nickname" : "Vladito",
       "password" : "vldiPass",
+      "bio": "",
       "picture" : "https://st2.depositphotos.com/1009634/7235/v/600/depositphotos_72350117-stock-illustration-no-user-profile-picture-hand.jpg"
     },
     "plami1234" : {
@@ -14,7 +15,8 @@
       "myVideos" : "4, 3",
       "nickname" : "Plamito",
       "password" : "plamiPass",
-      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-copy-d2a82.appspot.com/o/Screenshot%202022-02-19%20at%200.33.26.png?alt=media&token=211ea82d-386c-44f8-a094-2830f794f5be"
+      "bio": "",
+      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/Screenshot%202022-02-19%20at%200.33.26.png?alt=media&token=55620fad-8a66-433c-9ce3-baefa56fcef4"
     },
     "pipi90" : {
       "username" : "pipi90",
@@ -22,7 +24,8 @@
       "myVideos" : "5, 6, 7",
       "nickname" : "Pipito",
       "password" : "pipiPass",
-      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-copy-d2a82.appspot.com/o/Screenshot%202022-02-19%20at%200.32.53.png?alt=media&token=00a0d9c3-42b2-4ba1-b0c6-237d1c4cc548"
+      "bio": "",
+      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/Screenshot%202022-02-19%20at%200.32.53.png?alt=media&token=5b76a8b1-de54-4c52-bb21-3b218e915076"
     },
     "krasi_The_Master" : {
       "username" : "krasi_The_Master",
@@ -30,7 +33,8 @@
       "myVideos" : "8",
       "nickname" : "Krasi",
       "password" : "krasiPass",
-      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-copy-d2a82.appspot.com/o/Screenshot%202022-02-19%20at%200.33.31.png?alt=media&token=44017333-525b-4486-96d5-84742fce8825"
+      "bio": "",
+      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/Screenshot%202022-02-19%20at%200.33.31.png?alt=media&token=42c740a3-9841-43c9-ba31-cb4438e7f11a"
     },
     "galka01" : {
       "username" : "galka01",
@@ -38,7 +42,8 @@
       "myVideos" : "9, 10",
       "nickname" : "Galya",
       "password" : "galyaPass",
-      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-copy-d2a82.appspot.com/o/Screenshot%202022-02-19%20at%200.33.34.png?alt=media&token=326dc5b7-b8b6-41ef-b4e0-ae8b4513a841"
+      "bio": "",
+      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/Screenshot%202022-02-19%20at%200.33.34.png?alt=media&token=362ff412-08fc-4cee-a69b-9ecd60c20435"
     },
     "Kris-09" : {
       "username" : "Kris-09",
@@ -46,7 +51,8 @@
       "myVideos" : "11, 12",
       "nickname" : "Kris k.",
       "password" : "krisPass",
-      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-copy-d2a82.appspot.com/o/Screenshot%202022-02-19%20at%200.33.40.png?alt=media&token=3b9471d0-5993-4da7-8320-9aa73ceecad2"
+      "bio": "",
+      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/Screenshot%202022-02-19%20at%200.33.40.png?alt=media&token=9604bf7c-ea62-4e9e-aae8-0f3d7f405461"
     },
     "Vasko_L" : {
       "username" : "Vasko_L",
@@ -54,7 +60,8 @@
       "myVideos" : "13",
       "nickname" : "Vasil L.",
       "password" : "vaskoPass",
-      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-copy-d2a82.appspot.com/o/Screenshot%202022-02-19%20at%200.33.43.png?alt=media&token=fecbacd3-41b6-4fc6-99dd-62a9eee639dc"
+      "bio": "",
+      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/Screenshot%202022-02-19%20at%200.33.43.png?alt=media&token=f472bb52-3903-411f-b99f-acd82883aa59"
     },
     "Vasko_P" : {
       "username" : "Vasko_P",
@@ -62,7 +69,8 @@
       "myVideos" : "16, 15, 14",
       "nickname" : "Vasil P.",
       "password" : "vaskoPass",
-      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-copy-d2a82.appspot.com/o/Screenshot%202022-02-19%20at%200.33.50.png?alt=media&token=5590caca-1555-4358-9206-90665323ec5b"
+      "bio": "",
+      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/Screenshot%202022-02-19%20at%200.33.50.png?alt=media&token=69250014-fbe6-4d5b-8192-f4412ce49688"
     },
     "viki-S-01" : {
       "username" : "viki-S-01",
@@ -70,7 +78,8 @@
       "myVideos" : "17",
       "nickname" : "Vik Toriya",
       "password" : "vikiPass",
-      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-copy-d2a82.appspot.com/o/Screenshot%202022-02-19%20at%200.33.54.png?alt=media&token=d9671ed2-dc59-44d1-8143-81800b086156"
+      "bio": "",
+      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/Screenshot%202022-02-19%20at%200.33.54.png?alt=media&token=4d912b5b-a2a7-41c6-8465-76e17fcb767e"
     },
     "mitko_pzh" : {
       "username" : "mitko_pzh",
@@ -78,7 +87,8 @@
       "myVideos" : "18",
       "nickname" : "Mitko Pochti Maina",
       "password" : "mitkoPass",
-      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-copy-d2a82.appspot.com/o/Screenshot%202022-02-19%20at%200.33.59.png?alt=media&token=9c38d18e-327e-4d08-a063-2347462042ac"
+      "bio": "",
+      "picture" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/Screenshot%202022-02-19%20at%200.33.59.png?alt=media&token=3b2f2cba-45b9-4de1-81d2-135719765bf9"
     },
     "test_user" : {
       "username" : "test_user",
@@ -86,152 +96,153 @@
       "myVideos" : "19, 20",
       "nickname" : "Test User",
       "password" : "testPass",
+      "bio": "",
       "picture" : "https://media-exp1.licdn.com/dms/image/C5603AQElqY18xp0Ivg/profile-displayphoto-shrink_200_200/0/1520964910793?e=1646870400&v=beta&t=W8Z7GXGLxRms2mVSeax8FzUUnTJcvULIOagiMVu7odc"
     }
   },
   "videos" : {
-    "20" : {
+    "0" : {
       "owner" : "test_user",
-      "comments" : "plami1234: 'wsqka jena nawsqkyde po sweta', viki-S-01: 'buhahhahahhaha!!!' ]",
+      "comments" : "[{plami1234: 'wsqka jena nawsqkyde po sweta'}, {viki-S-01: 'buhahhahahhaha!!!'}]",
       "commentsCounter" : "2",
-      "description" : "You aint f*** me you f*** the old body ",
-      "likedBy" : "[]",
+      "description" : "You aint f*** me you f*** the old body",
+      "likedBy" : "[galka01, plami1234]",
       "likesCounter" : "2323",
       "sharesCounter" : "12",
       "song" : "original sound",
-      "video" : "https://v16-webapp.tiktok.com/0c2de78daf530f3f4c1cd357c7ffd83e/62108865/video/tos/useast2a/tos-useast2a-ve-0068c004/c3ab6bc8a6e042fea8ff50cdc1596500/?a=1988&br=1262&bt=631&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7Th7rJ9DXq&l=20220219000340010223084133098F96ED&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=amw5cGk6ZjpyOjMzNzczM0ApaWUzNDdnOWRoNzdlZmg2aWdiai5qcjRfZTZgLS1kMTZzc2FfMTZgYDA1MTQtXzUvL2E6Yw%3D%3D&vl=&vr="
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/woman_problems.mp4?alt=media&token=74b58299-79ff-4663-9fbb-e29592c195d1"
     },
     "19" : {
       "owner" : "test_user",
-      "comments" : "Vasko_P: '... ', pipi90: 'kako, kakoooo' ]",
+      "comments" : "{Vasko_P: '... '}, {pipi90: 'brawo, babe'}]",
       "commentsCounter" : "2",
-      "description" : "You aint f*** me you f*** the old body ",
-      "likedBy" : "",
+      "description" : "Mydrost ot starite hora",
+      "likedBy" : "[plami1234]",
       "likesCounter" : "2323",
       "sharesCounter" : "12",
       "song" : "original sound",
-      "video" : "https://v16-webapp.tiktok.com/954b71d0fbb87d03d3581e20a7b1c898/62108626/video/tos/maliva/tos-maliva-ve-0068c799-us/0d89fc6254514e9c9f471075c6351753/?a=1988&br=1664&bt=832&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7Th9DJ9DXq&l=20220218235439010192061169208EF08B&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=ajtpMzc6ZmxuOTMzZzczNEApZmhoNTw8N2Q7NzU4aTkzNGdhXzFscjRnL15gLS1kMS9zcy4xLTEtMzJgYjQtMzQxNl46Yw%3D%3D&vl=&vr="
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/babata.mp4?alt=media&token=ff484740-7fd5-437e-a05e-f3e3c8944a4d"
     },
     "18" : {
       "owner" : "mitko_pzh",
-      "comments" : "galka01: 'dafak ', mitko_pzh: 'toq ot kyde se poqwi' ]",
+      "comments" : "[{galka01: 'dafak'}, {mitko_pzh: 'toq ot kyde se poqwi, a'}]",
       "commentsCounter" : "2",
       "description" : "Magic...",
-      "likedBy" : "",
+      "likedBy" : "[plami1234, Vasko_L, viki-S-01]",
       "likesCounter" : "64",
       "sharesCounter" : "6",
       "song" : "Tainted Love - Soft Cell",
-      "video" : "https://v16-webapp.tiktok.com/14f8cc75904fef2b0a63f7915c4cda36/6210839f/video/tos/alisg/tos-alisg-pve-0037c001/8995171ff133477687650d4aa14dbaa0/?a=1988&br=2452&bt=1226&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThKXH9DXq&l=20220218234348010223079012008A0CE9&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M3g4eTc6ZjttOTMzODczNEApZzk0NGhkNTtmNzM5aDxoaGdyMmUzcjRvNm9gLS1kMS1zczRjMzY1YS1jMF4wLS4wNTA6Yw%3D%3D&vl=&vr"
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/bro.mp4?alt=media&token=64cd6913-51dd-42a7-939b-a394f7ead404"
     },
     "17" : {
       "owner" : "viki-S-01",
-      "comments" : "pipi90: 'toq ne moj go izhrani ', viki-S-01: 'basi bicarite' ]",
+      "comments" : "{pipi90: 'toq ne moj go izhrani '}, {viki-S-01: 'basimusi'}]",
       "commentsCounter" : "2",
       "description" : "Последвайте ме в Инстаграм и се Абонирайте в YouTube.",
-      "likedBy" : "",
+      "likedBy" : "[galka01, Kris-09]",
       "likesCounter" : "123",
       "sharesCounter" : "7890",
-      "song" : "original sound - Венцислав Зисов",
-      "video" : "https://v16-webapp.tiktok.com/b3f076ec2f7bb79507b2a5610749d383/621084c0/video/tos/useast2a/tos-useast2a-ve-0068c002/2ecaafa72609417bada8eb35e5290f2e/?a=1988&br=1218&bt=609&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThKXH9DXq&l=20220218234348010223079012008A0CE9&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M3h0djU6Zng2OzMzNzczM0ApN2Q6Omk8aDw1NzQ6aGg5OmcyNW5vcjQwbjJgLS1kMTZzczVfYTUzYWIyMDAuYmFiL2A6Yw%3D%3D&vl=&vr="
+      "song" : "original sound - balkandad",
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/balkandad1.mp4?alt=media&token=478b8cd3-b447-47a4-a92b-03a143bd7dd7"
     },
     "16" : {
       "owner" : "Vasko_P",
-      "comments" : "pipi90: 'toq ne moj go izhrani ', viki-S-01: 'basi bicarite' ]",
+      "comments" : "{pipi90: 'wtf '}, {viki-S-01: 'yyyyyyym'}]",
       "commentsCounter" : "2",
-      "description" : "Последвайте ме в Инстаграм и се Абонирайте в YouTube.",
-      "likedBy" : "",
+      "description" : "Igra much",
+      "likedBy" : "[viki-S-01, vldi24t6, mitko_pzh]",
       "likesCounter" : "123",
       "sharesCounter" : "7890",
-      "song" : "original sound - Венцислав Зисов",
-      "video" : "https://v16-webapp.tiktok.com/b3f076ec2f7bb79507b2a5610749d383/621084c0/video/tos/useast2a/tos-useast2a-ve-0068c002/2ecaafa72609417bada8eb35e5290f2e/?a=1988&br=1218&bt=609&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThKXH9DXq&l=20220218234348010223079012008A0CE9&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M3h0djU6Zng2OzMzNzczM0ApN2Q6Omk8aDw1NzQ6aGg5OmcyNW5vcjQwbjJgLS1kMTZzczVfYTUzYWIyMDAuYmFiL2A6Yw%3D%3D&vl=&vr="
+      "song" : "original sound - Cheryl Porter | Vocal Coach",
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/igra.mp4?alt=media&token=d90d19cd-bcb1-4747-8802-5c3802cf9dea"
     },
     "15" : {
       "owner" : "Vasko_P",
-      "comments" : "krasi_The_Master: 'toz pa kyw e', plami1234: 'hahahaha' ]",
+      "comments" : "{krasi_The_Master: 'toz pa kyw e'}, {plami1234: 'hahahaha'}, {Vasko_L: 'toq nqma izhranwane'}]",
       "commentsCounter" : "2",
       "description" : "I te taka...",
-      "likedBy" : "",
+      "likedBy" : "[vldi24t6]",
       "likesCounter" : "349",
       "sharesCounter" : "9",
       "song" : "original sound - balkandad",
-      "video" : "https://v16-webapp.tiktok.com/025b21ddd7ec37f1ced9d024a5c2a035/62108377/video/tos/useast2a/tos-useast2a-ve-0068c004/236207039b66486ab2da1b5880a5873b/?a=1988&br=2916&bt=1458&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThflH9DXq&l=20220218234142010223066035258A478D&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M3l1eTs6ZmxqOzMzNzczM0ApOjdmNGg8ZWQ3N2c6O2dpZWcybmlfcjQwajFgLS1kMTZzczYxLTBjM180MjYuLl8tYV86Yw%3D%3D&vl=&vr="
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/balkandad2.mp4?alt=media&token=a8da66b1-9325-4875-9f6c-05a64d66e4ff"
     },
     "14" : {
       "owner" : "Vasko_P",
-      "comments" : "[{viki-S-01: 'aide ne'}, krasi_The_Master: 'uwi, taka e', plami1234: 'hahahaha' ]",
+      "comments" : "[{viki-S-01: 'aide ne'}, {krasi_The_Master: 'uwi, taka e'}, {plami1234: 'hahahaha'}]",
       "commentsCounter" : "3",
-      "description" : "Balkandad sings you Happy Birthday! ",
-      "likedBy" : "",
+      "description" : "Balkandad ... ",
+      "likedBy" : "[vldi24t6, pipi90]",
       "likesCounter" : "57432",
       "sharesCounter" : "908",
       "song" : "original sound - balkandad",
-      "video" : "https://v16-webapp.tiktok.com/0268b2e9590a897b8d75b81ea5327f85/621080bf/video/tos/alisg/tos-alisg-pve-0037c001/d3058bb209d34ff58e2d914f1d5c5f20/?a=1988&br=2466&bt=1233&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThbgH9DXq&l=202202182331000102230801501F8CABAE&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M25pazw6ZmZ4OjMzODczNEApOmgzZWk5Z2Q7Nzw8PGQ2ZWc1M3FscjRnNS1gLS1kMS1zc2MvXmNiMjU0X2IuMDIuNjA6Yw%3D%3D&vl=&vr="
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/balkandad3.mp4?alt=media&token=d26e3feb-de5d-4320-8c0c-fdc820c8d4d3"
     },
     "13" : {
       "owner" : "Vasko_L",
-      "comments" : "[{pipi90: 'uf, ujasTno'}, Vasko_L: 'az pa go obicham', vldi24t6: 'magdanozchito rlz' ]",
+      "comments" : "[{pipi90: 'uf, ujasTno'}, {Vasko_L: 'az pa go obicham'}, {vldi24t6: 'magdanozchito rlz'}]",
       "commentsCounter" : "3",
-      "description" : "Ma Kakav Parsley Bre u Restoran! ",
-      "likedBy" : "",
+      "description" : "Serbian Burger!",
+      "likedBy" : "[vldi24t6, viki-S-01, mitko_pzh]",
       "likesCounter" : "572",
       "sharesCounter" : "98",
       "song" : "original sound - balkandad",
-      "video" : "https://v16-webapp.tiktok.com/743cef1ae659ab0b03a14d2c8e0eeebd/6210809c/video/tos/alisg/tos-alisg-pve-0037c001/3e979fcb727d4d959a57408806b9a7fc/?a=1988&br=2336&bt=1168&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThbgH9DXq&l=202202182331000102230801501F8CABAE&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=MzVxeDk6ZjxlOzMzODczNEApZTVpPGY1ZDw1N2ZpNzdmaWcxM2FmcjRnMjRgLS1kMS1zczUxMV8tYS8wYDMwM2EwMWI6Yw%3D%3D&vl=&vr="
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/serbianburger.mp4?alt=media&token=128a25d3-3a46-4bd1-9b56-0f338fc2cfd4"
     },
     "12" : {
       "owner" : "Kris-09",
-      "comments" : "[{Kris-09: 'Iskam i az takyw!!!!!'}, mitko_pzh: 'dai nasam, brat..' ]",
+      "comments" : "[{Kris-09: 'Eha!!!!!'}, {mitko_pzh: 'dai nasam, brat..'}]",
       "commentsCounter" : "2",
-      "description" : "The Balkan Big Mak ",
-      "likedBy" : "",
+      "description" : "Albanian - Serbian dance battle ",
+      "likedBy" : "[plami1234, krasi_The_Master]",
       "likesCounter" : "8342",
       "sharesCounter" : "34",
-      "song" : "original sound - balkandad",
-      "video" : "https://v16-webapp.tiktok.com/0b9caed9ef20424f932170bffdff112c/6210809c/video/tos/alisg/tos-alisg-pve-0037c001/bff367e15e7a46e79dd70f205d6e6849/?a=1988&br=2012&bt=1006&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThkzH9DXq&l=202202182329010102230160971788EAAC&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M3Q3Zjw6ZnY2OjMzODczNEApZ2k2Nzc3NGVkNzdlNmg5PGdka20wcjRnaW5gLS1kMS1zczFjX2AyNGIyY2FjXjNfYDU6Yw%3D%3D&vl=&vr="
+      "song" : "original sound - serbian",
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/dance.mp4?alt=media&token=246559ee-9203-405e-9e0a-bdd8694c5354"
     },
     "11" : {
       "owner" : "Kris-09",
-      "comments" : "[{galka01: 'e shto ste izlagash sega'} ]",
+      "comments" : "[{galka01: 'e shto ste izlagash sega taka'} ]",
       "commentsCounter" : "1",
       "description" : "Самочувствие 1000%",
-      "likedBy" : "",
+      "likedBy" : "[pipi90]",
       "likesCounter" : "67",
       "sharesCounter" : "0",
       "song" : "original sound - Preyah",
-      "video" : "https://v16-webapp.tiktok.com/045353569f7abfea9dff38ee668ac7c5/62107d6c/video/tos/useast2a/tos-useast2a-pve-0068/9d916b8912aa4df88a1196cb7f7599e4/?a=1988&br=3902&bt=1951&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThV5H9DXq&l=202202182314380101890902032587796A&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=am01Mzs6ZjxyOzMzNzczM0ApNmQ4ZTo8OmQ7NzdoZjtoZ2diNGhscjRfcTBgLS1kMTZzczNfMTBiNmExNC8uYV8yYDQ6Yw%3D%3D&vl=&vr="
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/preyah2.mp4?alt=media&token=c30e38dd-395d-434c-b6e4-9b53f4a3245d"
     },
     "10" : {
       "owner" : "galka01",
-      "comments" : "[{plami1234: 'e ne wsichki kucheta sa takiwa'}, {vldi24t6: 'dushata toi'} ]",
+      "comments" : "[{plami1234: 'e ne wsichki kucheta sa takiwa'}, {vldi24t6: 'dushata toi'}]",
       "commentsCounter" : "3",
-      "description" : " Anyone want to get a dog ...?",
-      "likedBy" : "",
+      "description" : "Anyone want to get a dog ...?",
+      "likedBy" : "[vldi24t6, krasi_The_Master, plami1234]",
       "likesCounter" : "729",
       "sharesCounter" : "19",
       "song" : "Who Let The Dogs Out - Original - The Doggies",
-      "video" : "https://v16-webapp.tiktok.com/04220ce0d70901e0f4a5355b04980b11/62107cd3/video/tos/maliva/tos-maliva-ve-0068c799-us/ba3ee615e8fa408e9911353fd183e39f/?a=1988&br=2068&bt=1034&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThV5H9DXq&l=202202182314380101890902032587796A&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=anJyOmk6ZmxqOjMzZzczNEApaGVnO2k5aGU2NzgzOmQ1OmdrYGoycjQwbzBgLS1kMS9zc2BjXy4xXjA1YDY2XmIwYzE6Yw%3D%3D&vl=&vr="
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/doggy.mp4?alt=media&token=f042bc49-c606-4d66-807d-488638dae51d"
     },
     "9" : {
       "owner" : "galka01",
-      "comments" : "[{krasi_The_Master: 'i az tuka taka w toq proekt'}, {viki-S-01: 'e kwo da se prawi'}, {mitko_pzh: 'i taka shte se zabawlqwame'} ]",
+      "comments" : "[{krasi_The_Master: 'snoop dog is that you'}, {viki-S-01: 'e kwo da se prawi'}, {mitko_pzh: 'i taka shte se zabawlqwame'}]",
       "commentsCounter" : "3",
-      "description" : " #fypbg #bulgaria",
-      "likedBy" : "",
+      "description" : "Ameno Amapiano Remix (You Wanna Bamba) - Goya Menor & Nektune",
+      "likedBy" : "[krasi_The_Master, viki-S-01]",
       "likesCounter" : "10000",
       "sharesCounter" : "145",
       "song" : "original sound - В. Иванов",
-      "video" : "https://v16-webapp.tiktok.com/adfa4884077c552091b13ab36650a259/62107cc6/video/tos/useast2a/tos-useast2a-ve-0068c004/caf5142dda004158825248da2e906266/?a=1988&br=3278&bt=1639&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThV5H9DXq&l=202202182314380101890902032587796A&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=amR2eGg6ZnYzOTMzNzczM0ApZ2doZztnZGQ2N2c4MzYzN2cwam9ocjRvNmVgLS1kMTZzc2NgYS5gYi0vXjBfXzJeLl46Yw%3D%3D&vl=&vr="
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/nigr.mp4?alt=media&token=da42cb99-3309-4ee5-a31c-d86bca4cea9c"
     },
     "8" : {
       "owner" : "krasi_The_Master",
       "comments" : "[{pipi90: 'koteeeee <33!'}, {galka01: 'oi kakwo si golqmo :o'}]",
       "commentsCounter" : "2",
       "description" : "@stafanimoon",
-      "likedBy" : "",
+      "likedBy" : "[galka01, pipi90]",
       "likesCounter" : "932",
       "sharesCounter" : "12",
       "song" : "оригинальный звук - Vincent",
-      "video" : "https://v16-webapp.tiktok.com/8139af91460aa033933b6b199f2a3f02/62107a29/video/tos/alisg/tos-alisg-pve-0037c001/01a3acd71bbb48f7a895b4c6415df59e/?a=1988&br=2124&bt=1062&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThfSH9DXq&l=202202182303180102230211461B86EEC8&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M2h0NTU6ZmV4OjMzODczNEApZDc7ODRkNWRoNzQ0OWVmZ2dic2kvcjRnbG1gLS1kMS1zczEyYTVhNDMyYDExYTRfXl46Yw%3D%3D&vl=&vr="
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/bigcat.mp4?alt=media&token=afc387bd-2d5e-4d64-871c-3e28a0437c05"
     },
     "7" : {
       "owner" : "pipi90",
@@ -248,56 +259,56 @@
       "owner" : "pipi90",
       "comments" : "[{pipi90: 'dai! dai!'}, {Vasko_P: 'vyrti suchi, kakou!'}, {krasi_The_Master: 'brawo, samo taka'}]",
       "commentsCounter" : "3",
-      "description" : "dai! dai!",
-      "likedBy" : "",
+      "description" : "I believe I can fly!",
+      "likedBy" : "[Vasko_P, vldi24t6, krasi_The_Master]",
       "likesCounter" : "24625879",
       "sharesCounter" : "349374",
-      "song" : "original sound - Megsun",
-      "video" : "https://v16-webapp.tiktok.com/45ec1ee46377fa36a5b15090ae36660b/62107a26/video/tos/useast2a/tos-useast2a-ve-0068c004/040733db4d7b406093a7174e006cef46/?a=1988&br=2340&bt=1170&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThfSH9DXq&l=202202182303180102230211461B86EEC8&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=ajk6djU6ZnVlOjMzNzczM0ApNzg3PDRmO2Q0NzM8O2g2Nmczb2NtcjQwZF9gLS1kMTZzcy9fYy4uMzYwMjFgNjAyMi86Yw%3D%3D&vl=&vr="
+      "song" : "I Believe I Can Fly - Charlie Grönvall",
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/laza.mp4?alt=media&token=fc4f4cfc-7b3b-48fd-8d80-8e8fabc1fd85"
     },
     "5" : {
       "owner" : "pipi90",
-      "comments" : "[{Vasko_L: 'pozior!'}, {Vasko_P: 'malko ti e'}, {krasi_The_Master: 'dei riva!'}, {Kris-09: 'pozior!'}]",
+      "comments" : "[{Vasko_L: 'nice!'}, {Vasko_P: 'suuper'}, {krasi_The_Master: 'i za men edno!'}, {Kris-09: 'iskam i az, Plami!'}]",
       "commentsCounter" : "4",
       "description" : "Ronaldo <3",
-      "likedBy" : "",
+      "likedBy" : "[Vasko_P, pipi90, krasi_The_Master]",
       "likesCounter" : "246",
       "sharesCounter" : "34",
-      "song" : "enemy - favsoundds",
-      "video" : "https://v16-webapp.tiktok.com/331dfa1c9a7303a51facf3f3d0456cf9/6210792f/video/tos/useast2a/tos-useast2a-pve-0068/98177ccfb5f44e26b646279f926d66ba/?a=1988&br=2576&bt=1288&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThJMH9DXq&l=202202182259020102231231632686568D&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=amdmczc6ZmtoOzMzNzczM0ApOGg7Z2ZnaDs0NzQzaTg8OGdebDFscjQwcTBgLS1kMTZzczNgXi0tLzVgLTRfXzZeMzY6Yw%3D%3D&vl=&vr="
+      "song" : "original sound - graci ;)",
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/plam3.mp4?alt=media&token=29f206ea-eb84-4443-b274-d5c0b825eab8"
     },
     "4" : {
       "owner" : "plami1234",
-      "comments" : "[{galka01: 'nice one!'}, {pipi90: 'iskam i az taka'}, {plami1234: 'strahotna!'}]",
+      "comments" : "[{galka01: 'nice one!'}, {pipi90: 'iskam i az'}, {Vasko_L: 'strahotna!'}]",
       "commentsCounter" : "3",
-      "description" : "Did someone say lipstick printer….?",
-      "likedBy" : "",
+      "description" : "Two matching hand painted jackets for him and for her",
+      "likedBy" : "[galka01, pipi90]",
       "likesCounter" : "675432",
       "sharesCounter" : "458",
-      "song" : "original sound - Meredith Duxbury",
-      "video" : "https://v16-webapp.tiktok.com/238f811489fb2e99020886d32719e532/62107991/video/tos/useast5/tos-useast5-ve-0068c003-tx/7de313bb767542fca9b6a3de251429dc/?a=1988&br=2712&bt=1356&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThJMH9DXq&l=202202182259020102231231632686568D&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=anduN2c6ZmQzOjMzZzczNEApOWc1ZGY8NmQ2N2ZnZ2Y2OWdoNWtucjRnNF9gLS1kMS9zcy4yNmIzNS0yYmAyL2A1NF46Yw%3D%3D&vl=&vr="
+      "song" : "original sound - marck.gallery",
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/plam2.mp4?alt=media&token=ec8a40b5-71d7-4f35-997b-27b86a655cb1"
     },
     "1" : {
       "owner" : "vldi24t6",
-      "comments" : "[{mitko_pzh: 'egati qkoto'}, {viki-S-01: 'hahaha'}]",
+      "comments" : "[{mitko_pzh: 'gorkiqt'}, {viki-S-01: 'hahaha'}]",
       "commentsCounter" : "2",
       "description" : "total olympic fail!",
-      "likedBy" : "",
+      "likedBy" : "[mitko_pzh, Vasko_P, viki-S-01]",
       "likesCounter" : "5747",
       "sharesCounter" : "4",
-      "song" : "Original sound - Eurosport",
-      "video" : "https://v16-webapp.tiktok.com/4ef3a055669897b7cb76eac063c95cfc/621076ba/video/tos/useast2a/tos-useast2a-pve-0068/2634359424f74e24859998ea11d0c1c3/?a=1988&br=2012&bt=1006&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThBjH9DXq&l=2022021822484901022308705123837AF8&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M3A7Nzw6Zms3OzMzNzczM0ApPGQ2aWc6aDs1Nzs2ZDw0NWdxaF8ucjQwby5gLS1kMTZzczNhXi1hLjI1Y2AuYTUxMy86Yw%3D%3D&vl=&vr="
+      "song" : "sonido original - Sr. Lucifer",
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/fail.mp4?alt=media&token=889ecf31-b4d8-4bc2-acf2-49a0effda69d"
     },
     "2" : {
       "owner" : "vldi24t6",
       "comments" : "[{mitko_pzh: 'kakata se izloji'}, {Vasko_P: 'brao!'}, {viki-S-01: 'hahaha'}]",
       "commentsCounter" : "3",
       "description" : "That’s one way to get snacks",
-      "likedBy" : "",
+      "likedBy" : "[Vasko_P, viki-S-01]",
       "likesCounter" : "1450",
       "sharesCounter" : "101",
       "song" : "Original sound - Eurosport",
-      "video" : "https://v16-webapp.tiktok.com/268030f3d23403182c32fb6a1f7ad691/621076c0/video/tos/useast2a/tos-useast2a-ve-0068c002/f6a1e5d4109248729fa9bc46e429a6be/?a=1988&br=1110&bt=555&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThBjH9DXq&l=2022021822484901022308705123837AF8&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M2Vzc2k6Zjc4OzMzNzczM0ApNDk3OTMzNmQ3N2Q3aDdlOmcwXzVzcjQwXzBgLS1kMTZzczFeMC0zLWNiNDI2YS4wNjA6Yw%3D%3D&vl=&vr="
+      "video" : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/snacks.mp4?alt=media&token=debc9e17-e130-47e3-a77b-29bb38cc4799"
     },
     "3" : {
       "owner" : "plami1234",
@@ -308,7 +319,7 @@
       "likesCounter" : "342421",
       "sharesCounter" : "121",
       "song" : "Samara - Papi Hans",
-      "video" : "https://v16-webapp.tiktok.com/342736c97456250df3e8d416875d9d4d/62107865/video/tos/useast2a/tos-useast2a-ve-0068c003/cb2c08ebb81f44758650ea4a9a34cd64/?a=1988&br=5170&bt=2585&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7ThCrH9DXq&l=202202182255550102231210930387620A&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M3VpeDU6Zmx2OzMzNzczM0ApNWY1OThoZmUzN2c3NDg1OWdwbWBxcjQwbDRgLS1kMTZzczAzLmE0MS1hYi42YmFjLTQ6Yw%3D%3D&vl=&vr="
+      "video" : "https://v16-webapp.tiktok.com/698d4cc9c2d686a14a06dd5eb70d9d77/62115b2c/video/tos/useast2a/tos-useast2a-ve-0068c003/a9d33fcb6f8344458c8e1fa9b14d2474/?a=1988&br=3682&bt=1841&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3.qnz7Thl1a9DXq&l=202202191503280101910600240AEEC388&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=anZneDo6ZnR2OzMzNzczM0ApOjlkZTlmZWU1NzY0aDM8M2dgY3MxcjRfaDRgLS1kMTZzc2NhXi0uLzUzY19fMTBiM2A6Yw%3D%3D&vl=&vr="
     }
   }
 }

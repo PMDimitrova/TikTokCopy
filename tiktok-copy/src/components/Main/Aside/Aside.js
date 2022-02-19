@@ -3,9 +3,10 @@ import MainNavAside from './MainNavAside.js'
 import AccountsNavAsideComp from './AccountsNavAsideComp';
 import DiscoverHashtags from './DiscoverHashtags';
 import FooterAside from './FooterAside.js';
+import BigLoginBtn from './BigLoginBtn';
 
 export default function Aside(){
-    let isLogged = true;
+    let isLogged = false;
     let suggesteTitle = "Suggested accounts";
     let followingTitle = "Following accounts"
     return(
@@ -13,6 +14,7 @@ export default function Aside(){
             <div className='asideInsideContain'>
                 <div className='asideInside'>
                     <MainNavAside />
+                    {!isLogged && <BigLoginBtn />}
                     <AccountsNavAsideComp 
                     title={suggesteTitle}/>
                     {isLogged && <AccountsNavAsideComp

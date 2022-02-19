@@ -16,6 +16,7 @@ export default function VideoCard() {
   };
 
 
+
 useEffect(() => {
     let options = {
       rootMargin: "0px",
@@ -42,6 +43,22 @@ useEffect(() => {
     setIsOpen(true);
   };
   const [isShown, setIsShown] = useState(false);
+  let likeButtonTemplate = (
+  <button 
+    className="buttonActionVideoCard">
+        <span className="buttonIconVideoCard">
+            <img  
+            src={heartIcon} 
+            alt="buttonIconVideoCard">
+            </img>
+        </span>
+        <strong className="textLikesVideoCard">
+            {profilePeople[0].myUploadedVideos[0].likes}
+        </strong>
+  </button>
+  );
+  
+
   const profilePeople = [
     {
       profilePicture:
@@ -149,17 +166,7 @@ useEffect(() => {
               </div>
             </div>
             <div className="BtnsWrapper">
-                <button className="buttonActionVideoCard">
-                    <span className="buttonIconVideoCard">
-                        <img  
-                        src={heartIcon} 
-                        alt="buttonIconVideoCard">
-                        </img>
-                    </span>
-                    <strong className="textLikesVideoCard">
-                        {profilePeople[0].myUploadedVideos[0].likes}
-                    </strong>
-                </button>
+                {likeButtonTemplate}
                 <button className="buttonActionVideoCard">
                     <span className="buttonIconVideoCard"
                     onClick={() =>

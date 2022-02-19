@@ -101,7 +101,7 @@
           margin-bottom: 10px;
         }
 
-        .loginBtn{
+        .loginBtnDisabled{
           width: 380px;
           height: 44px;
           border: 0px solid #e5e5e7;
@@ -109,6 +109,20 @@
           background-color: #f1f1f2;
           color: #ababaf;
           font-family: ProximaNova-regular,sans-serif;
+          font-weight: bold;
+          font-size: 14px;
+          disabled:checked;
+        }
+
+        .logInBtnEnabled{
+          width: 380px;
+          height: 44px;
+          border: 0px solid #ff2c55;
+          border-radius: 4px;
+          background-color: #ff2c55;
+          color: white;
+          font-family: ProximaNova-regular,sans-serif;
+          font-weight: bold;
           font-size: 14px;
         }
 

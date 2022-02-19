@@ -1,6 +1,6 @@
 import './CommentFPV.css';
 import commentHeartIcon from '../../images/tiktok-heart-icon-commentsFPV.PNG'
-export default function CommentFPV(){
+export default function CommentFPV(props){
     return(
         <div className="commentWrapperFPV">
             <div className="commentContainFPV">

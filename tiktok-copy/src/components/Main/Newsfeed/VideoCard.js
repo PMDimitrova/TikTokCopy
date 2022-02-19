@@ -8,13 +8,16 @@ import shareIcon from "../../../images/tiktok-share-icon.PNG";
 import ShareCompFromVideoCard from "./ShareCompFromVideoCard";
 
 export default function VideoCard({ mp4 }) {
+
+// FOR THE VIDEO PLAY
+  const [isShown, setIsShown] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const videoRef = useRef(null);
   const scrollArea = useRef(null);
-  const videoInit = () => {
-    // videoRef.current.play();
-  };
+  // const videoInit = () => {
+  //   // videoRef.current.play();
+  // };
 
   useEffect(() => {
     let options = {
@@ -36,14 +39,19 @@ export default function VideoCard({ mp4 }) {
 
     observer.observe(videoRef.current);
   });
+
+// FOR THE DIALOG POP UP
+
   const openDialog = (choosenVideo) => {
-    // videoRef.current.pause(); // not working, doesnt pause the video on opening the dialog
+    videoRef.current.pause();
     setSelectedVideo(choosenVideo);
     setIsOpen(true);
   };
-  const [isShown, setIsShown] = useState(false);
 
-  let unlikeButtonTemplate = (
+
+// TEMPLATE FOR THE LIKE BUTN
+const isLiked = false;
+  let likeButtonTemplate = (
     <button className="buttonActionVideoCard">
       <span className="buttonIconVideoCard">
         <img src={heartIcon} alt="buttonIconVideoCard"></img>
@@ -54,7 +62,7 @@ export default function VideoCard({ mp4 }) {
     </button>
   );
 
-  let likeButtonTemplate = (
+  let unlikeButtonTemplate = (
     <button className="buttonActionVideoCard">
       <span className="buttonIconVideoCard">
         <img src={likeHeartIcon} alt="buttonIconVideoCard"></img>
@@ -64,7 +72,7 @@ export default function VideoCard({ mp4 }) {
       </strong>
     </button>
   );
-
+///
   const profilePeople = [
     {
       profilePicture:
@@ -159,10 +167,11 @@ export default function VideoCard({ mp4 }) {
             <div className="VideoWrapper">
               <div className="videoPlayer">
                 <video
-                  onLoadedData={videoInit}
+                  // onLoadedData={videoInit}
                   ref={videoRef}
                   onClick={() => {
-                    openDialog(profilePeople[0].myUploadedVideos[0]);
+                    // openDialog(profilePeople[0].myUploadedVideos[0]);
+                    openDialog(mp4);
                   }}
                   className="videoPlayer"
                   playsInline
@@ -175,12 +184,14 @@ export default function VideoCard({ mp4 }) {
               </div>
             </div>
             <div className="BtnsWrapper">
-              {unlikeButtonTemplate}
+              {isLiked && unlikeButtonTemplate}
+              {!isLiked && likeButtonTemplate}
               <button className="buttonActionVideoCard">
                 <span
                   className="buttonIconVideoCard"
                   onClick={() => {
-                    openDialog(profilePeople[0].myUploadedVideos[0]);
+                    // openDialog(profilePeople[0].myUploadedVideos[0]);
+                    openDialog(mp4);
                   }}
                 >
                   <img src={commentIcon} alt="buttonIconVideoCard"></img>

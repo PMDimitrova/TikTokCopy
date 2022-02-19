@@ -33,7 +33,7 @@ export default function FullPageVideo(props) {
 
 
   const { onClose, selectedVideo, open } = props;
-  console.log(selectedVideo);
+  console.log(props.selectedVideo);
 
   const handleClose = (event, reason) => {
     if (reason && reason !== "backdropClick") {
@@ -49,15 +49,15 @@ export default function FullPageVideo(props) {
           <div className="videoContainerFPV">
             <div className="videoContainFPV">
               <div className="theVideoContainFPV">
-                <video
+                {selectedVideo && <video
                   className="videoFPV"
                   playsInline
                   loop
                   autoPlay
                   controls
-                  src={video}
+                  src={selectedVideo.video}
                   alt="video full page"
-                ></video>
+                ></video>}
               </div>
             </div>
           </div>
@@ -79,7 +79,8 @@ export default function FullPageVideo(props) {
                     </div>
                 </div>
                 <div className="usernameNickameContainerFPV">
-                    <div className="usernameContainerFPV">{profilePeople.username}</div>
+                    {selectedVideo &&
+                    <div className="usernameContainerFPV">{selectedVideo.owner}</div>}
                     <div className="nicknameContainerFPV"> {profilePeople.nickname}</div>
                 </div>
                 <button className="followBtnFPV">
@@ -88,9 +89,11 @@ export default function FullPageVideo(props) {
             </div>
             {/* DESCRIPTION CONTAINER FPV */}
             <div className="descriptionContainerFPV">
-                <div className="videodescriptionFPV">{profilePeople.myUploadedVideos.description}</div>
+                {selectedVideo && 
+                <div className="videodescriptionFPV">{selectedVideo.description}</div>}
                 <div className="songContainerFPV">
-                    <div className="songFPV">{profilePeople.myUploadedVideos.song}</div>
+                    {selectedVideo && 
+                    <div className="songFPV">{selectedVideo.song}</div>}
                 </div>
                 {/* LIKES, SHARES AND LINK */}
                 <div className="likesSharesLinkWrapperFPV">
@@ -100,14 +103,15 @@ export default function FullPageVideo(props) {
                                 <span className="iconWrapperFPV">
                                     <img className="iconHeartBtnFPV" src={heartIcon} alt="heart icon"></img>
                                 </span>
-                                <strong className='likesCounterFPV'>{profilePeople.myUploadedVideos.likes}</strong>
+                                {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likesCounter}</strong>}
                             </button>
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <button className="heartBtnFPV">
                                 <span className="iconWrapperFPV">
                                     <img className="iconHeartBtnFPV" src={commentIcon} alt="comment icon"></img>
                                 </span>
-                                <strong className='likesCounterFPV'>{profilePeople.myUploadedVideos.comments}</strong>
+                                {selectedVideo &&
+                                <strong className='likesCounterFPV'>{selectedVideo.commentsCounter}</strong>}
                             </button>
                         </div>
                         <div className="sharesWrapperFPV">
@@ -142,13 +146,23 @@ export default function FullPageVideo(props) {
             </div>
             {/* COMMENTS CONTAINER FPV */}
             <div className="commentsContainerFPV">
+              {props.selectedVideo && JSON.parse(props.selectedVideo.comments)
+              .map((key, comment) =>{
+                return(
+                  <p>{key}{comment}</p>
+                 
+                  // <CommentFPV 
+                  // username={key}
+                  // comment={comment}/>
+                )
+              })}
+                
+                {/* <CommentFPV />
                 <CommentFPV />
                 <CommentFPV />
                 <CommentFPV />
                 <CommentFPV />
-                <CommentFPV />
-                <CommentFPV />
-                <CommentFPV />
+                <CommentFPV /> */}
             </div>
             {/* ADD COMMENT SECTION */}
             <div className="addCommentContainerFPV">HERE YOU CAN ADD COMMENT</div>

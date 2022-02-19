@@ -17,9 +17,6 @@ export default function NewsfeedVideos() {
         {videos.map((mp4, index) => {
           return <VideoCard key={index} mp4={mp4} />;
         })}
-
-        {/* <VideoCard/> */}
-        {/* <VideoCard/> */}
       </div>
     </div>
   );

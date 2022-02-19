@@ -3,11 +3,20 @@ import {useState} from "react";
 import {Dialog, DialogContent} from "@mui/material";
 import * as React from "react";
 import LoginSignUpMain from "../LoginRegister/LoginSignUpMain";
+import {useDispatch} from "react-redux";
 
 export default function NotLogBntsNav() {
+    const dispatch = useDispatch();
+    const handleShowLoginWithEmail = () => {
+        dispatch({type : 'SHOW_LOGIN_OPTIONS'});
+    }
+
     const [openLogin, setOpenLogin] = useState(false);
     const handleClickLoginOpen = () => {setOpenLogin(true);};
-    const handleClickLoginClose = () => {setOpenLogin(false);};
+    const handleClickLoginClose = () => {
+        setOpenLogin(false);
+        dispatch({type : 'SHOW_LOGIN_OPTIONS'});
+    };
 
     const [openSignUp, setOpenSignUp] = useState(false);
     const handleClickSignUpOpen = () => {
@@ -31,7 +40,7 @@ export default function NotLogBntsNav() {
                     aria-describedby="alert-dialog-description"
                 >
                     <DialogContent>
-                        <LoginSignUpMain/>
+                        <LoginSignUpMain closingFunction={handleClickLoginClose}/>
                     </DialogContent>
                 </Dialog>
             </div>

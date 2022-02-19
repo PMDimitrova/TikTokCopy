@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
-    showLogin: false,
+    showLogin: true,
     showLoginOption: false,
-    showSingUp: true,
+    showSingUp: false,
     showRegister: false
 };
 
@@ -28,7 +28,7 @@ export const singLoginReducer = (state = INITIAL_STATE, action) => {
                 showSingUp: true,
                 showRegister: false
             }
-        case 'SHOW_SIGNUP_OPTIONS':
+        case 'SHOW_REGISTER':
             return {
                 showLogin: false,
                 showLoginOption: false,

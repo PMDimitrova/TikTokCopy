@@ -4,9 +4,8 @@ import Login from "./Login";
 import Register from "./Register";
 import LoginWithEmail from "./LoginWithEmail";
 
-export default function LoginSignUpMain(){
-    // let showLogin = false;
-    //todo change it once the login function is implemented
+export default function LoginSignUpMain(props){
+
     const showLogin = useSelector(state => state.singLoginData.showLogin);
     const showLoginOption = useSelector(state => state.singLoginData.showLoginOption);
     const showSingUp = useSelector(state => state.singLoginData.showSingUp);
@@ -14,10 +13,10 @@ export default function LoginSignUpMain(){
 
     return (
         <>
-            {showLogin ? <Login/> : <></>}
-            {showLoginOption ? <LoginWithEmail/> : <></>}
-            {showSingUp ? <SignUp/> : <></>}
-            {showRegister ? <Register/> : <></>}
+            {showLogin ? <Login closingFunc={props.closingFunction}/> : <></>}
+            {showLoginOption ? <LoginWithEmail closingFunc={props.closingFunction}/> : <></>}
+            {showSingUp ? <SignUp closingFunc={props.closingFunction}/> : <></>}
+            {showRegister ? <Register closingFunc={props.closingFunction}/> : <></>}
         </>
     )
 }

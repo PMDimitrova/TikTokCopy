@@ -1,9 +1,9 @@
 import style from "./LoginOption.module.scss";
 
 export default function LoginOption(props){
-    // console.log(props)
+
     return(
-        <div className={style.loginOptionItem}>
+        <div onClick={props.redirecting} className={style.loginOptionItem}>
             <div className={style.loginIconOption}>{props.icon}</div>
             <div className={style.loginTextWrapper}>{props.text}</div>
         </div>

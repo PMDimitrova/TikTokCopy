@@ -1,10 +1,22 @@
 import styles from "./Login.module.scss";
 import {GrClose} from "react-icons/gr";
+import {useDispatch} from "react-redux";
 
-export default function LoginWithEmail(){
+export default function LoginWithEmail(props){
+    const dispatch = useDispatch();
+
+    const handleShowLoginWithEmail = () => {
+        props.closingFunc();
+        dispatch({type : 'SHOW_LOGIN'});
+    }
+
+    const showRegisterDialog = () => {
+        dispatch({type : 'SHOW_REGISTER'});
+    }
+
     return (
         <div className={styles.loginContainer}>
-            <div className={styles.closeBtn}><GrClose/></div>
+            <div className={styles.closeBtn} onClick={handleShowLoginWithEmail}><GrClose/></div>
             <div className={styles.loginContainerContent}>
                 <div className={styles.loginTitle}>Log in</div>
                 <div className={styles.loginOptionsContainer}>
@@ -23,7 +35,7 @@ export default function LoginWithEmail(){
                 </div>
             </div>
             <div className={styles.loginFooterContainer}>
-                Don't have an account? <a className={styles.signUpLink} href={'#'}>Sing up</a>
+                Don't have an account? <a className={styles.signUpLink} href={'#'} onClick={showRegisterDialog}>Sing up</a>
             </div>
         </div>
     )

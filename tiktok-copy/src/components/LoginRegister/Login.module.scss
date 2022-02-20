@@ -140,6 +140,10 @@
           margin-top: 12px;
           margin-bottom: 4px;
 
+          .singUpMonthSelector{
+            overflow: auto;
+          }
+
           .signUpDropDown{
             width: 95px;
             height: 44px;
@@ -176,7 +180,7 @@
           height: 44px;
           padding-left: 12px;
           margin-top: 8px;
-          border: 1.5px solid #e5e5e7;
+          border: 1px solid #bcbcbd;
           border-radius: 4px;
           background-color: #f1f1f2;
         }
@@ -188,6 +192,16 @@
         .singUpInput:hover{
           background-color: #eae9e9;
         }
+
+        .signUpPasswordTip{
+          display: none;
+          flex-direction: column;
+          align-items: start;
+          font-family: ProximaNova-regular,sans-serif;
+          font-size: 12px;
+
+        }
+
         .singUpCodeWrapper{
           display: flex;
           flex-direction: row;
@@ -197,9 +211,9 @@
           height: 44px;
           padding-left: 12px;
           margin-top: 8px;
-          border-top: 1.5px solid #e5e5e7;
-          border-left: 1.5px solid #e5e5e7;
-          border-bottom: 1.5px solid #e5e5e7;
+          border-top: 1px solid #ababaf;
+          border-left: 1px solid #ababaf;
+          border-bottom: 1px solid #ababaf;
           border-right: 0px;
           border-radius: 4px;
           background-color: #f1f1f2;
@@ -216,7 +230,7 @@
           background-color: #eae9e9;
         }
         .signUpSendCode{
-          border: 1.5px solid #e5e5e7;
+          border: 1px solid #ababaf;
           border-radius: 4px;
           width: 159px;
           height: 44px;
@@ -227,6 +241,7 @@
           justify-content: center;
           padding-top: 1px;
           padding-bottom: 1px;
+          cursor: pointer;
         }
 
         .signUpBtn{
@@ -248,7 +263,7 @@
         font-size: 12px;
         text-align: center;
         align-self: flex-end;
-        //margin-top: 200px;
+        margin-top: 16px;
       }
   }
 

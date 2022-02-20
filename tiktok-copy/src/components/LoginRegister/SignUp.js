@@ -1,11 +1,21 @@
 import styles from "./Login.module.scss";
 import {GrClose} from "react-icons/gr";
+import {useDispatch} from "react-redux";
 
-export default function SignUp(){
+export default function SignUp(props){
+    const dispatch = useDispatch();
+
+    const handleShowLoginWithEmail = () => {
+        props.closingFunc();
+        dispatch({type : 'SHOW_LOGIN'});
+    }
+    const showLoginDialog = () => {
+        dispatch({type : 'SHOW_LOGIN'});
+    }
 
     return (
         <div className={styles.loginContainer}>
-            <div className={styles.closeBtn}><GrClose/></div>
+            <div className={styles.closeBtn} onClick={handleShowLoginWithEmail}><GrClose/></div>
             <div className={styles.loginContainerContent}>
                 <div className={styles.loginTitle}>Sign up</div>
                 <div className={styles.loginOptionsContainer}>
@@ -33,7 +43,7 @@ export default function SignUp(){
                 <div className={styles.signUpFooter} style={{marginTop: 80}}>By continuing, you agree to TikTok's Terms of Service and confirm that you have read TikTok's Privacy Policy.</div>
             </div>
             <div className={styles.loginFooterContainer}>
-                Already have and account? <a className={styles.signUpLink} href={'#'}>Log in</a>
+                Already have and account? <a className={styles.signUpLink} href={'#'} onClick={showLoginDialog}>Log in</a>
             </div>
         </div>
     )

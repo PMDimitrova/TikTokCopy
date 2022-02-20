@@ -8,7 +8,7 @@ export const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type){
         case 'LOGIN':
             return{
-                ...state, logged: true
+                ...state, logged: true, username: action.payload
             }
         case 'LOGOUT':
             return {

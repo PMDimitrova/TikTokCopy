@@ -41,6 +41,14 @@ function App() {
             </>
           }
         />
+        <Route
+          path='/myProfile' element={
+            <>
+              <Navbar />
+              {/* <MyProfile/> */}
+            </>
+          }
+        />
           <Route path ="/test" element={<TestPage/>}/>
       </Routes>
     </BrowserRouter>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import {useSelector} from "react-redux";
 
 export default function Navbar() {
-  let isLogged = false;
+  let isLogged = true;
   //todo change it once the login function is implemented
   // const isLogged = useSelector(state => state.userData.logged);
   // да отиде в app.js - не само в навбара ни трябва тази проверка

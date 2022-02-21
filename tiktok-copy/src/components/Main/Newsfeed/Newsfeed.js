@@ -10,7 +10,7 @@ export default function NewsfeedVideos() {
     dispatch(getAllVideos());
   }, []);
   const videos = useSelector((state) => state.allVideoData.videos);
-  console.log(videos);
+  console.log(videos)
   return (
     <div className="newsfeedVideoContainer">
       <div className="newsfeedVideosContain">

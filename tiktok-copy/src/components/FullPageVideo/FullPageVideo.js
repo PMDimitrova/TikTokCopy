@@ -33,7 +33,8 @@ export default function FullPageVideo(props) {
 
 
   const { onClose, selectedVideo, open } = props;
-  console.log(props.selectedVideo);
+  console.log(selectedVideo);
+  // const selectMp4 = JSON.parse(selectedVideo.comments);
 
   const handleClose = (event, reason) => {
     if (reason && reason !== "backdropClick") {
@@ -146,23 +147,16 @@ export default function FullPageVideo(props) {
             </div>
             {/* COMMENTS CONTAINER FPV */}
             <div className="commentsContainerFPV">
-              {props.selectedVideo && JSON.parse(props.selectedVideo.comments)
-              .map((key, comment) =>{
-                return(
-                  <p>{key}{comment}</p>
-                 
-                  // <CommentFPV 
-                  // username={key}
-                  // comment={comment}/>
-                )
-              })}
+            {/* {selectMp4 && selectMp4.map((user, comment) => {
+              return <CommentFPV user={user} comment={comment}/>})}; */}
+            
                 
-                {/* <CommentFPV />
                 <CommentFPV />
                 <CommentFPV />
                 <CommentFPV />
                 <CommentFPV />
-                <CommentFPV /> */}
+                <CommentFPV />
+                <CommentFPV />
             </div>
             {/* ADD COMMENT SECTION */}
             <div className="addCommentContainerFPV">HERE YOU CAN ADD COMMENT</div>

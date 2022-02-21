@@ -7,3 +7,7 @@
     margin: 0 0 0 24px;
     cursor: pointer;
 }
+.linkToMyProfileMenu{
+    text-decoration: none;
+    color: rgba(22, 24, 35);
+}

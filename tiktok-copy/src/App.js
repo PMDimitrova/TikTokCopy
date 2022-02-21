@@ -5,6 +5,7 @@ import UploadVideoComponent from "./components/Main/Upload/UploadVideoComponent"
 import MainContainer from "./components/Main/MainContainer";
 import TestPage from "./TestPage";
 import { useDispatch, useSelector } from "react-redux";
+import ErrorPage from './components/Main/ErrorPage'
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
           }
         />
           <Route path ="/test" element={<TestPage/>}/>
+          <Route path="*" element={<ErrorPage/>}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -12,8 +12,8 @@ export default function CommentFPV(props){
                     </span>
                 </div>
                 <div className="commentContentContainFPV">
-                    <div className='usernameCommentsFullPageComp'>username</div>
-                    <p className='commentCommentsFullPageComp'>comment comment comment</p>
+                    <div className='usernameCommentsFullPageComp'>{props.user}</div>
+                    <p className='commentCommentsFullPageComp'>{props.comment}</p>
                     <p className='dateCommentsFullPageComp'>2022-02-24 &nbsp;&nbsp;&nbsp; Reply</p>
                 </div>
                 <div className="commentLikeBtnFPV">

@@ -202,6 +202,25 @@
 
         }
 
+        .singUpPasswordsWarning{
+          display: none;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          width: 362px;
+          height: 32px;
+          padding-left: 12px;
+          margin-top: 8px;
+          border: 1px solid #ff4c3a;
+          //border: 0px;
+          border-radius: 4px;
+          background-color: white;
+          font-family: ProximaNova-regular,sans-serif;
+          //font-weight: bold;
+          font-size: 14px;
+          color: #ff2c55;
+        }
+
         .singUpCodeWrapper{
           display: flex;
           flex-direction: row;
@@ -253,6 +272,18 @@
           background-color: #f1f1f2;
           color: #ababaf;
           font-family: ProximaNova-regular,sans-serif;
+          font-size: 14px;
+        }
+
+        .signUpBtnEnabled{
+          width: 380px;
+          height: 44px;
+          border: 0px solid #ff2c55;
+          border-radius: 4px;
+          background-color: #ff2c55;
+          color: white;
+          font-family: ProximaNova-regular,sans-serif;
+          font-weight: bold;
           font-size: 14px;
         }
       }

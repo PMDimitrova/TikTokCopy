@@ -7,7 +7,7 @@ import commentIcon from "../../../images/tiktok-comment-icon.PNG";
 import shareIcon from "../../../images/tiktok-share-icon.PNG";
 import ShareCompFromVideoCard from "./ShareCompFromVideoCard";
 
-export default function VideoCard({ mp4 }) {
+export default function VideoCard({ mp4, nickname, picture }) {
 
 // FOR THE VIDEO PLAY
   const [isShown, setIsShown] = useState(false);
@@ -15,6 +15,7 @@ export default function VideoCard({ mp4 }) {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const videoRef = useRef(null);
   const scrollArea = useRef(null);
+  
   // const videoInit = () => {
   //   // videoRef.current.play();
   // };
@@ -137,6 +138,7 @@ const isLiked = false;
           <img
             className="profilePicVideoCard"
             src={profilePeople[0].profilePicture}
+            // src = {picture}
             alt="Profile picture"
           ></img>
         </span>
@@ -150,6 +152,7 @@ const isLiked = false;
                 </h3>
                 <h4 className="nicknameVideoCard">
                   {profilePeople[0].nickname}
+                  {/* {nickname} */}
                 </h4>
               </div>
             </div>

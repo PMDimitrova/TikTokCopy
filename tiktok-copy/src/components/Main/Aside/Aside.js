@@ -4,9 +4,10 @@ import AccountsNavAsideComp from './AccountsNavAsideComp';
 import DiscoverHashtags from './DiscoverHashtags';
 import FooterAside from './FooterAside.js';
 import BigLoginBtn from './BigLoginBtn';
+import {useSelector} from "react-redux";
 
 export default function Aside(){
-    let isLogged = false;
+    const isLogged = useSelector(state => state.userData.logged);
     let suggesteTitle = "Suggested accounts";
     let followingTitle = "Following accounts"
     return(

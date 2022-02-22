@@ -3,13 +3,15 @@ import {userReducer} from "./reducers/userReducer";
 import {allVideoReducer} from "./reducers/allVideosReducer";
 import {default as ReduxThunk } from 'redux-thunk';
 import {singLoginReducer} from "./reducers/singLoginReducer";
+import { allUsersReducer } from "./reducers/allUsersReducer";
 // import logger from 'redux-logger'
 
 //for now only user data slice in the reducer
 const rootReducer = combineReducers({
     userData: userReducer,
     allVideoData: allVideoReducer,
-    singLoginData: singLoginReducer
+    singLoginData: singLoginReducer,
+    allUsersData: allUsersReducer
 })
 
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));

@@ -42,7 +42,8 @@ export default function LoginWithEmail(props){
                 for (const [us, details] of Object.entries(users)) {
                     if (us === username){
                         if(details.password === password){
-                            dispatch({type : 'LOGIN', payload: username});
+                            dispatch({type : 'LOGIN_AND_SET_USERNAME', payload: username});
+                            //todo add all the data from the firebase from the users
                         }else {
                             incorrectPassword = true;
                         }

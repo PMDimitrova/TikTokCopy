@@ -7,7 +7,7 @@ import commentIcon from "../../../images/tiktok-comment-icon.PNG";
 import shareIcon from "../../../images/tiktok-share-icon.PNG";
 import ShareCompFromVideoCard from "./ShareCompFromVideoCard";
 
-export default function VideoCard({ mp4, nickname, picture }) {
+export default function VideoCard({ mp4 }) {
 
 // FOR THE VIDEO PLAY
   const [isShown, setIsShown] = useState(false);
@@ -16,6 +16,9 @@ export default function VideoCard({ mp4, nickname, picture }) {
   const videoRef = useRef(null);
   const scrollArea = useRef(null);
   
+  // const userLogged = useSelector((state) => state.userData.userLogged);
+  // chek with Palmina
+
   // const videoInit = () => {
   //   // videoRef.current.play();
   // };
@@ -43,9 +46,9 @@ export default function VideoCard({ mp4, nickname, picture }) {
 
 // FOR THE DIALOG POP UP
 
-  const openDialog = (choosenVideo) => {
+  const openDialog = (mp4) => {
     videoRef.current.pause();
-    setSelectedVideo(choosenVideo);
+    setSelectedVideo(mp4);
     setIsOpen(true);
   };
 
@@ -74,50 +77,7 @@ const isLiked = false;
     </button>
   );
 ///
-  const profilePeople = [
-    {
-      profilePicture:
-        "http://images6.fanpop.com/image/photos/41700000/It-s-a-girl-prettygirls-41785076-564-1002.jpg",
-      username: "vladi24t6",
-      nickname: "Vladito",
-      myUploadedVideos: [
-        {
-          description: "sport game play",
-          song: "Original sound - Metalika",
-          video: video,
-          likes: 456,
-          comments: 346,
-          shares: 5,
-        },
-        {
-          description: "makeup time, wine time, girls night",
-          song: "Original sound - Beyonce - Girls",
-          video: "url",
-          likes: 9843,
-          comments: 100,
-          shares: 45,
-        },
-      ],
-      iFollow: [{}, {}],
-    },
-    {
-      profilePicture:
-        "http://images6.fanpop.com/image/photos/41700000/It-s-a-girl-prettygirls-41785076-564-1002.jpg",
-      username: "katenceto",
-      nickname: "Katq Dimitrova",
-      myUploadedVideos: [
-        {
-          description: "javaScript project",
-          song: "Original sound - Justin Timberlake - Cry me a river",
-          video: "url",
-          likes: 7,
-          comments: 2,
-          shares: 0,
-        },
-      ],
-      iFollow: [{}, {}],
-    },
-  ];
+  
   return (
     <>
       <FullPageVideo
@@ -137,8 +97,8 @@ const isLiked = false;
         <span className="profilePhotoVideoCard">
           <img
             className="profilePicVideoCard"
-            src={profilePeople[0].profilePicture}
-            // src = {picture}
+            // src={profilePeople[0].profilePicture}
+            src = {mp4.profilePicture}
             alt="Profile picture"
           ></img>
         </span>
@@ -151,8 +111,8 @@ const isLiked = false;
                   {mp4.owner}
                 </h3>
                 <h4 className="nicknameVideoCard">
-                  {profilePeople[0].nickname}
-                  {/* {nickname} */}
+                  {/* {profilePeople[0].nickname} */}
+                  {mp4.nickname}
                 </h4>
               </div>
             </div>

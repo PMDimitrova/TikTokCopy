@@ -25,11 +25,10 @@ export default function NewsfeedVideos() {
   return (
     <div className="newsfeedVideoContainer">
       <div className="newsfeedVideosContain">
-        {videos.map((mp4, index) => {
+        {videos.map((video, index) => {
           return <VideoCard 
-          // picture={users[index].picture} 
-          // nickname={users[index].nickname} 
-          key={index} mp4={mp4} />;
+          key={index}
+          mp4={video} />;
         })}
       </div>
     </div>

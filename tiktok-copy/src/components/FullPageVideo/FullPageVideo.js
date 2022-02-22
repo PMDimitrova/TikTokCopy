@@ -34,7 +34,6 @@ export default function FullPageVideo(props) {
 
   const { onClose, selectedVideo, open } = props;
   console.log(selectedVideo);
-  // const selectMp4 = JSON.parse(selectedVideo.comments);
 
   const handleClose = (event, reason) => {
     if (reason && reason !== "backdropClick") {
@@ -76,7 +75,7 @@ export default function FullPageVideo(props) {
             <div className="infoContainerFPV">
                 <div className="profilePictureContainFPV">
                     <div className="profilePicContainFPV">
-                        <img className="avatarPicFPV" src={profilePeople.profilePicture} alt="profile picture"></img>
+                      {selectedVideo && <img className="avatarPicFPV" src={selectedVideo.profilePicture} alt="profile picture"></img>}
                     </div>
                 </div>
                 <div className="usernameNickameContainerFPV">
@@ -147,16 +146,16 @@ export default function FullPageVideo(props) {
             </div>
             {/* COMMENTS CONTAINER FPV */}
             <div className="commentsContainerFPV">
-            {/* {selectMp4 && selectMp4.map((user, comment) => {
-              return <CommentFPV user={user} comment={comment}/>})}; */}
-            
-                
-                <CommentFPV />
-                <CommentFPV />
-                <CommentFPV />
-                <CommentFPV />
-                <CommentFPV />
-                <CommentFPV />
+            {selectedVideo && selectedVideo.comments.map((comment) => {
+  
+
+              let user = comment.username;
+              let userComment = comment.comment;
+              let userPicture = comment.profilePicture;
+              return <CommentFPV 
+                user={user} 
+                comment={userComment}
+                picture={userPicture}/>})};
             </div>
             {/* ADD COMMENT SECTION */}
             <div className="addCommentContainerFPV">HERE YOU CAN ADD COMMENT</div>

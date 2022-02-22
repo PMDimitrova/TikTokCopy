@@ -7,7 +7,7 @@ export default function CommentFPV(props){
                 <div className="commentProfilePicContainFPV">
                     <span className='profilePicCommentContainerFPV'>
                         <img className='profilePicCommentFPVComments'
-                        src= 'https://wallpaperaccess.com/full/2213424.jpg'
+                        src= {props.picture}
                         alt='profile picture'></img>
                     </span>
                 </div>

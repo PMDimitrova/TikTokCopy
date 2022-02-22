@@ -1,6 +1,6 @@
 import styles from "./Login.module.scss";
 import {GrClose} from "react-icons/gr";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import DatePicker from "./DatePicker";
 import tickSvg from "../../images/password_not_ok.380ea4fb.svg"
 import {useState} from "react";
@@ -90,7 +90,7 @@ export default function SignUp(props){
                 myVideos: "",
                 nickname: userN,
                 password: pass,
-                picture: "",
+                picture: "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/empty_profile_picture.jpeg?alt=media&token=0240b2a9-4dad-44a0-bbda-f5aa14892a0d",
                 username: userN
             }
 
@@ -100,9 +100,10 @@ export default function SignUp(props){
                     body: JSON.stringify(userData)
                 })
                     .then(res => res.json())
-                    .then(data => console.log(data));
-                dispatch({type : 'LOGIN', payload: userN});
-                console.log('passwords match')
+                    .then(data => data);
+                // dispatch({type : 'LOGIN_AND_SET_USERNAME', payload: userN});
+                dispatch({type: 'LOGIN_AFTER_REGISTER',
+                    payload: {picture: userData.picture, username: userN}});
             }else{
                 console.log('passwords do NOT match')
                 showPasswordNotMatchWarning();

@@ -43,6 +43,7 @@ export default function LoginWithEmail(props){
                     if (us === username){
                         if(details.password === password){
                             dispatch({type : 'LOGIN', payload: username});
+                            //todo add all the data from the firebase from the users
                         }else {
                             incorrectPassword = true;
                         }
@@ -73,9 +74,11 @@ export default function LoginWithEmail(props){
                                    placeholder={'Password'} type={'password'} onChange={checkIfBothAreFilled}/>
                         </form>
                     <div className={styles.loginForgotPass}>Forgot password?</div>
-                    <button id={'logInButton'} className={styles.loginBtnDisabled} disabled={logInBtnState} onClick={logUser}>Log in</button>
+                    <button id={'logInButton'} className={styles.loginBtnDisabled}
+                            disabled={logInBtnState} onClick={logUser}>Log in</button>
                     </div>
-                    {wrongCredentials ? <Alert variant="outlined" severity="error" style={{marginTop:12}}>Wrong credentials</Alert> : <></>}
+                    {wrongCredentials ? <Alert variant="outlined" severity="error"
+                                               style={{marginTop:12}}>Wrong credentials</Alert> : <></>}
                 </div>
             </div>
             <div className={styles.loginFooterContainer}>

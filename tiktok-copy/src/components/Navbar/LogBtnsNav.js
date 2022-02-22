@@ -8,11 +8,11 @@ import { MenuItem, Menu } from '@mui/material';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import {useDispatch} from "react-redux";
 
 
 export default function LogBtnsNav() {
-    //todo change src of profile picture
-
+    const dispatch = useDispatch();
 
 //FOR HANDLING THE DROP DOWN MENU ON MY PROFILE
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -33,6 +33,11 @@ const HtmlTooltip = styled(({ className, ...props }) => (
     left:'10px',
   },
 }));
+
+//LOGOUT functionality:
+    const logoutUser = () => {
+        dispatch({type : 'LOGOUT'});
+    }
 
   return (
     <div className="bntsLog">
@@ -77,8 +82,8 @@ const HtmlTooltip = styled(({ className, ...props }) => (
         <MenuItem onClick={handleClose}>English</MenuItem>
         <MenuItem onClick={handleClose}>Feedback and help</MenuItem>
         <MenuItem onClick={handleClose}>Keyboard and shortcuts</MenuItem>
-        <hr></hr>
-        <MenuItem onClick={handleClose}>Log out</MenuItem>
+        <hr/>
+        <MenuItem onClick={logoutUser}>Log out</MenuItem>
       </Menu>
 
       

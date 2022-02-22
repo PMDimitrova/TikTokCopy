@@ -30,6 +30,12 @@ export default function DatePicker(props) {
         }
         return arr;
     }
+    const fillTheOptionsReverse = (a, b, arr) => {
+        for (let i = b; i >= a; i--) {
+            arr.push(i);
+        }
+        return arr;
+    }
 
     return (
         <>
@@ -73,7 +79,7 @@ export default function DatePicker(props) {
                     onChange={handleChangeYear}
                     style={{maxWidth:112, backgroundColor: '#f1f1f2'}}
                 >
-                    {fillTheOptions(1920, 2022, []).map((i) => {
+                    {fillTheOptionsReverse(1920, 2022, []).map((i) => {
                         return <MenuItem key={i} value={i}>{i}</MenuItem>;
                     })}
                 </Select>

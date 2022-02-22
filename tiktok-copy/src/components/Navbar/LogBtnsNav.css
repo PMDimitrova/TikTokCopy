@@ -11,3 +11,9 @@
     text-decoration: none;
     color: rgba(22, 24, 35);
 }
+
+#profilePicHeader{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}

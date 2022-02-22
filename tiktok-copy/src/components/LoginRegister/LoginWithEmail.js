@@ -42,8 +42,20 @@ export default function LoginWithEmail(props){
                 for (const [us, details] of Object.entries(users)) {
                     if (us === username){
                         if(details.password === password){
-                            dispatch({type : 'LOGIN', payload: username});
-                            //todo add all the data from the firebase from the users
+                            fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/users/${us}.json`)
+                                .then(res => res.json())
+                                .then(data => {
+                                    console.log(data);
+
+                                    dispatch({type : 'LOGIN', payload: {
+                                            username: data.username,
+                                            profilePicture: data.picture,
+                                            bio: data.bio,
+                                            iFollow: data.iFollow,
+                                            myVideos: data.myVideos,
+                                            nickname: data.nickname,
+                                        }});
+                                });
                         }else {
                             incorrectPassword = true;
                         }

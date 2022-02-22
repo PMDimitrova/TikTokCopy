@@ -6,7 +6,6 @@ const INITIAL_STATE = {
     iFollow: '',
     myVideos: '',
     nickname: null,
-    picture: ''
 };
 
 export const userReducer = (state = INITIAL_STATE, action) => {
@@ -16,7 +15,12 @@ export const userReducer = (state = INITIAL_STATE, action) => {
             return{
                 ...state,
                 logged: true,
-                username: action.payload,
+                username: action.payload.username,
+                profilePicture: action.payload.profilePicture,
+                bio: action.payload.bio,
+                iFollow: action.payload.iFollow,
+                myVideos: action.payload.myVideos,
+                nickname: action.payload.nickname,
             }
         case 'LOGOUT':
             return {
@@ -28,7 +32,6 @@ export const userReducer = (state = INITIAL_STATE, action) => {
                 iFollow: '',
                 myVideos: '',
                 nickname: null,
-                picture: ''
             }
         case 'LOGIN_AFTER_REGISTER':
             console.log(action.payload);

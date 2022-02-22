@@ -13,8 +13,10 @@ export default function SignUp(props){
     const [year, setYear] = useState(0);
     const [isEligible, setEligibility] = useState(true);
     const [inputValues, setInputValues] = useState({
-        username: '', password: '', codeBtnRelease: true, code: ''
+        username: '', password: '', rePassword: '',
+        passwordsNotMatching: false
     });
+    const [nextBtnState, nextBtnEnable] = useState(true);
 
     const handleShowLoginWithEmail = () => {
         props.closingFunc();
@@ -26,6 +28,16 @@ export default function SignUp(props){
 
     const showTipsDialogue = () => {
         document.getElementById('tipsDialogue').style.display = 'flex';
+        document.getElementById('passwordsWarning').style.display = 'none';
+    }
+
+    const checkIfNexBtnShouldBeEnabled = () => {
+        if(inputValues.username &&  inputValues.password && inputValues.rePassword){
+            if (nextBtnState){
+                nextBtnEnable(!nextBtnState);
+            }
+                document.getElementById('nextBtn').className = styles.signUpBtnEnabled;
+        }
     }
 
     const checkBirthday = () => {
@@ -47,30 +59,30 @@ export default function SignUp(props){
         }
     }
 
-    const checkForCodeBtnRelease = () => {
-        console.log(inputValues.username + inputValues.password)
-      if (inputValues.username && inputValues.password){
-          setInputValues({...inputValues, codeBtnRelease : true});
-      }
-    }
-
     const handleUsernameChange = (input) => {
         setInputValues({...inputValues, username : input});
-        checkForCodeBtnRelease();
+        checkIfNexBtnShouldBeEnabled();
     }
 
     const handlePasswordChange = (input) => {
         setInputValues({...inputValues, password : input});
-        checkForCodeBtnRelease();
+        checkIfNexBtnShouldBeEnabled();
     }
-    const handleCodeChange = (input) => {
-        setInputValues({...inputValues, code : input});
+    const handleRePasswordChange = (input) => {
+        setInputValues({...inputValues, rePassword : input});
+        checkIfNexBtnShouldBeEnabled();
+    }
+
+    const showPasswordNotMatchWarning = () => {
+        document.getElementById('tipsDialogue').style.display = 'none';
+        document.getElementById('passwordsWarning').style.display = 'flex';
     }
 
     const registerUser = () => {
         if(checkBirthday()){ //if above 13yo
             let userN = inputValues.username;
             let pass = inputValues.password;
+            let rePass = inputValues.rePassword;
 
             let userData = {
                 bio: "",
@@ -82,12 +94,19 @@ export default function SignUp(props){
                 username: userN
             }
 
-            fetch('https://tiktok-635d3-default-rtdb.firebaseio.com/users.json', {
-                method: 'POST',
-                body: JSON.stringify(userData)
-            })
-                .then(res => res.json())
-                .then(data => console.log(data));
+            if(rePass === pass){
+                fetch('https://tiktok-635d3-default-rtdb.firebaseio.com/users.json', {
+                    method: 'POST',
+                    body: JSON.stringify(userData)
+                })
+                    .then(res => res.json())
+                    .then(data => console.log(data));
+                dispatch({type : 'LOGIN', payload: userN});
+                console.log('passwords match')
+            }else{
+                console.log('passwords do NOT match')
+                showPasswordNotMatchWarning();
+            }
         }
     }
 
@@ -110,25 +129,22 @@ export default function SignUp(props){
                             <div style={{fontWeight: 600}}>Username</div>
                             <div>Sign up with phone</div>
                         </div>
-
                         <input className={styles.singUpInput} placeholder={'Username'}
                                onChange={(ev) => handleUsernameChange(ev.target.value)} />
                         <input className={styles.singUpInput} placeholder={'Password'}
                                onChange={(ev) => handlePasswordChange(ev.target.value)}
+                               onFocus={showTipsDialogue} onClick={showTipsDialogue} type={'text'}/>
+                        <input className={styles.singUpInput} placeholder={'Repeat password'}
+                               onChange={(ev) => handleRePasswordChange(ev.target.value)}
                                onFocus={showTipsDialogue} onClick={showTipsDialogue} type={'text'}/>
                         <div id={'tipsDialogue'} className={styles.signUpPasswordTip}>
                             <div style={{fontWeight:600, marginTop:4, marginBottom:0}}>Your Password must have:</div>
                             <div style={{color:'#8f9095'}}><img src={tickSvg} alt={'tick'}/>8 to 20 characters<br/>
                                 <img src={tickSvg} alt={'tick'}/>Letters, numbers, and special characters</div>
                         </div>
-                        <div className={styles.singUpCodeWrapper}>
-                            <input className={styles.singUpCode} placeholder={'Enter 6-digit code //123456'}
-                                   onChange={(ev) => handleCodeChange(ev.target.value)}/>
-                            {/*<div className={styles.signUpSendCode}*/}
-                                 {/*>Send code</div>*/}
-                            <button className={styles.signUpSendCode} disabled={inputValues.codeBtnRelease}>Send code</button>
-                        </div>
-                        <button className={styles.signUpBtn} onClick={registerUser}>Next</button>
+                        <div id={'passwordsWarning'} className={styles.singUpPasswordsWarning}>
+                            Password and Re-password do not match!</div>
+                        <button id={'nextBtn'} className={styles.signUpBtn} disabled={nextBtnState} onClick={registerUser}>Next</button>
                     </div>
                 </div>
                 <div className={styles.signUpFooter}>By continuing, you agree to TikTok's Terms of Service and confirm that you have read TikTok's Privacy Policy.</div>
@@ -139,3 +155,15 @@ export default function SignUp(props){
         </div>
     )
 }
+
+//Regex explanation:
+// ^(?=.*\d)(?=.*[a-zA-Z])(?=[.!@#\$%\^&*_+\-=])[0-9a-zA-Z.!@#\$%\^&*_+\-=]{8,20}$
+
+// /^(?=.*\d)(?=.*[a-zA-Z])(?=[.!@#\$%\^&*_+-=])[0-9a-zA-Z.!@#\$%\^&*_+-=]{8,20}$/
+// /^(?=.*\d)(?=.*[a-zA-Z])(?=[.!@#\$%\^&*_+\-=])[0-9a-zA-Z.!@#\$%\^&*_+\-=]{8,20}$
+// /^
+// (?=.*\d)          // should contain at least one digit
+// (?=.*[a-zA-Z])    // should contain at least one alphabet
+// (?=.*[c])//should have at least one special character
+// [a-zA-Z0-9.!@#\$%\^&*_+-=]{8,20}   // should contain at least 8 from the mentioned characters
+// $/

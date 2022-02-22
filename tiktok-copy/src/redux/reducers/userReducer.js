@@ -10,10 +10,6 @@ const INITIAL_STATE = {
 };
 
 export const userReducer = (state = INITIAL_STATE, action) => {
-    if (action.payload){
-        console.log('line here ' + action.payload)
-
-    }
 
     switch (action.type){
         case 'LOGIN':

@@ -3,7 +3,7 @@ import "./Newsfeed.css";
 import VideoCard from "./VideoCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllVideos } from "../../../redux/actions/allVideosAction";
-import { getAllUsers } from "../../../redux/actions/allUsersAction";
+// import { getAllUsers } from "../../../redux/actions/allUsersAction";
 
 export default function NewsfeedVideos() {
   const dispatch = useDispatch();
@@ -13,6 +13,7 @@ export default function NewsfeedVideos() {
     dispatch(getAllVideos());
   }, []);
   const videos = useSelector((state) => state.allVideoData.videos);
+  const userLogged = useSelector((state) => state.userData);
   console.log(videos)
 
   //GET DATA FOR USERS FROM REDUX
@@ -26,9 +27,18 @@ export default function NewsfeedVideos() {
     <div className="newsfeedVideoContainer">
       <div className="newsfeedVideosContain">
         {videos.map((video, index) => {
-          return <VideoCard 
+          if(video.likedBy.includes(userLogged.username)) {
+            return <VideoCard 
+            key={index}
+            mp4={video}
+            isLiked={true} />;
+          } else {
+            return <VideoCard 
           key={index}
-          mp4={video} />;
+          mp4={video}
+          isLiked={false} />;
+          }
+          
         })}
       </div>
     </div>

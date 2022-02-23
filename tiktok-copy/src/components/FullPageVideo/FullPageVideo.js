@@ -4,6 +4,7 @@ import video from "../../videos/IMG_6662.MP4";
 import closeLogo from "../../images/tiktok-close-icon-fpv.PNG";
 import tiktokSmallLogo from "../../images/tiktok-SmallLogo-icon.png";
 import heartIcon from '../../images/tiktok-heart-icon.PNG'
+import likedHeartIcon from '../../images/tiktok-heart-icon-liked.PNG'
 import commentIcon from '../../images/tiktok-comment-icon.PNG';
 import embedIcon from '../../images/tiktok-share-1.PNG'
 import shareIcon from '../../images/tiktok-share-2.PNG'
@@ -13,26 +14,8 @@ import whatsIcon from '../../images/tiktok-share-5.PNG';
 import CommentFPV from "./CommentFPV";
 
 export default function FullPageVideo(props) {
-    const profilePeople = 
-        {
-          profilePicture:
-            "http://images6.fanpop.com/image/photos/41700000/It-s-a-girl-prettygirls-41785076-564-1002.jpg",
-          username: "vladi24t6",
-          nickname: "Vladito",
-          myUploadedVideos: 
-            {
-              description: "sport game play",
-              song: "Original sound - Metalika",
-              video: video,
-              likes: 456,
-              comments: 346,
-              shares: 5,
-            }
-        };
 
-
-
-  const { onClose, selectedVideo, open } = props;
+  const { onClose, selectedVideo, open, isLiked } = props;
   console.log(selectedVideo);
 
   const handleClose = (event, reason) => {
@@ -41,6 +24,27 @@ export default function FullPageVideo(props) {
     }
   };
 
+// LIKE BTN TEMPLATE
+let likeHeartBtnTemplate = (
+  <button 
+  // onClick={isLiked=true fetch s POST} 
+  className="heartBtnFPV">
+    <span className="iconWrapperFPV">
+      <img className="iconHeartBtnFPV" src={heartIcon} alt="heart icon"></img>
+    </span>
+  {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likesCounter}</strong>}
+</button>
+)
+let unlikeHeartBtnTemplate = (
+  <button 
+  // onClick={isLiked = false fech s delete s userLogged.username}
+  className="heartBtnFPV">
+    <span className="iconWrapperFPV">
+      <img className="iconHeartBtnFPV" src={likedHeartIcon} alt="heart icon"></img>
+    </span>
+  {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likesCounter}</strong>}
+</button>
+)
   return (
     <Dialog onClose={handleClose} open={open}>
       <div className="fullPageVideoWrapper">
@@ -81,7 +85,8 @@ export default function FullPageVideo(props) {
                 <div className="usernameNickameContainerFPV">
                     {selectedVideo &&
                     <div className="usernameContainerFPV">{selectedVideo.owner}</div>}
-                    <div className="nicknameContainerFPV"> {profilePeople.nickname}</div>
+                    {selectedVideo && 
+                    <div className="nicknameContainerFPV"> {selectedVideo.nickname}</div>}
                 </div>
                 <button className="followBtnFPV">
                     Follow
@@ -99,12 +104,8 @@ export default function FullPageVideo(props) {
                 <div className="likesSharesLinkWrapperFPV">
                     <div className="likesSharesContainerFPV">
                         <div className="likesWrapperFPV">
-                            <button className="heartBtnFPV">
-                                <span className="iconWrapperFPV">
-                                    <img className="iconHeartBtnFPV" src={heartIcon} alt="heart icon"></img>
-                                </span>
-                                {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likesCounter}</strong>}
-                            </button>
+                            {isLiked && unlikeHeartBtnTemplate}
+                            {!isLiked && likeHeartBtnTemplate}
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <button className="heartBtnFPV">
                                 <span className="iconWrapperFPV">

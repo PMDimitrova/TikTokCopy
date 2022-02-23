@@ -9,8 +9,22 @@ export const allVideoReducer = (state = INITIAL_STATE, action) => {
             return{
                 ...state, 
                 videos : action.payload
-
             }
+        // case 'LIKE_VIDEO':
+        //     return{
+        //         ...state,
+        //         likesCounter: action.payload
+        //     }
+        // case 'UNLIKE_VIDEO':
+        //     return{
+        //         ...state,
+        //         likesCounter: action.payload
+        //     }
+        // case 'COMMENT_VIDEO':
+        //     return{
+        //         ...state,
+        //         comments: action.payload
+        //     }
         default: return state;
     }
 };

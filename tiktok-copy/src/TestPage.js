@@ -1,35 +1,40 @@
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import LogBtnsNav from "./components/Navbar/LogBtnsNav";
 import NotLogBntsNav from "./components/Navbar/NotLogBntsNav";
 
 export default function TestPage() {
     let id = '-MwWCgKRZ96LglljUc5E';
+    const dispatch = useDispatch();
+    let allUsersArr = [];
+    fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/users.json`)
+        .then(resp => resp.json())
+        .then(data => {
+            allUsersArr = Object.values(data);
 
-    // fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy.json`, {
-    //     method: 'POST',
-    //     body: JSON.stringify(userData)
-    // })
-    //     .then(res => res.json())
-    //     .then(data => data);
+            console.log( 'here' + allUsersArr)
+            dispatch({type: 'GET_ALL_USERS', payload: allUsersArr});
+            dispatch({type: 'COMBINE_USERNAME_AND_PROFILE_PICTURE', payload: allUsersArr});
+        });
+
 
 
 //this is change
 
-    //get the id of the video
-    fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy.json`)
-        .then(res => res.json())
-        .then(data => {
-
-            //push the username as a string
-            data.push('yesbeeee');
-
-            fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy/.json`, {
-                method: 'PUT',
-                body: JSON.stringify(data)
-            })
-                .then(res => res.json())
-                .then(data => data);
-        })
+    // //get the id of the video
+    // fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy.json`)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //
+    //         //push the username as a string
+    //         data.push('yesbeeee');
+    //
+    //         fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy/.json`, {
+    //             method: 'PUT',
+    //             body: JSON.stringify(data)
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => data);
+    //     })
     return (
         <>
 
@@ -39,6 +44,12 @@ export default function TestPage() {
     )
 
 
+    // fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy.json`, {
+    //     method: 'POST',
+    //     body: JSON.stringify(userData)
+    // })
+    //     .then(res => res.json())
+    //     .then(data => data);
     // const videoData = {
     //     comments : [{Vasko_P:'...'}, {pipi90:'brawo!'}],
     //     commentsCounter : 2,
@@ -68,9 +79,4 @@ export default function TestPage() {
     //         })
     //     })
 
-
-
-    return (
-        <></>
-    )
 }

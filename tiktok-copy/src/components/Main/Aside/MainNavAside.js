@@ -13,17 +13,13 @@ export default function MainNavAside() {
                 </Link>
             </div>
             <div className='MainAsideBtn'>
-                <Link to='/' className='MainBtn'
-                    //***PALMINA to do onClick={go to under construction}
-                >
+                <Link to='/' className='MainBtn'>
                     <BsPeople className={'MainAsideTopIcons'}/>
                     <h2 className='MainBtnText'>Following</h2>
                 </Link>
             </div>
             <div className='MainAsideBtn'>
-                <Link to='/LIVE' className='MainBtn'
-                    //***PALMINA to do onClick={go to under construction}
-                >
+                <Link to='/underconstruction' className='MainBtn'>
                     <VscDeviceCameraVideo className={'MainAsideTopIcons'}/>
                     <h2 className='MainBtnText'>LIVE</h2>
                 </Link>

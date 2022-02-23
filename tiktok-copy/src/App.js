@@ -6,6 +6,7 @@ import MainContainer from "./components/Main/MainContainer";
 import TestPage from "./TestPage";
 import { useDispatch, useSelector } from "react-redux";
 import ErrorPage from './components/Main/ErrorPage'
+import UnderConstructionPage from "./components/Main/UnderConstructionPage";
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
           }
         />
           <Route path ="/test" element={<TestPage/>}/>
+          <Route path ="/underconstruction" element={<UnderConstructionPage/>}/>
           <Route path="*" element={<ErrorPage/>}></Route>
       </Routes>
     </BrowserRouter>

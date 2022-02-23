@@ -7,10 +7,10 @@ import shareIcon from "../../../images/tiktok-share-icon.PNG";
 import ShareCompFromVideoCard from "./ShareCompFromVideoCard";
 import { useSelector, useDispatch } from "react-redux";
 import {toggleVideoLike} from '../../../redux/actions/allVideosAction';
-import {toggleFollow} from ''
+import {toggleFollow} from '../../../redux/actions/allUsersAction';
 
 export default function VideoCard({ mp4, isLiked }) {
-const isFollowed = false;
+
 // FOR THE VIDEO PLAY
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
@@ -21,6 +21,7 @@ const isFollowed = false;
   const scrollArea = useRef(null);
   
   const userLogged = useSelector((state) => state.userData);
+  const isFollowed = userLogged.iFollow.includes(mp4.owner);
 
 // TOGGLE LIKE FUNCTION ON LIKE BUTTON
 const likeVideoCard = () =>{
@@ -65,7 +66,7 @@ const iFollowUser = () =>{
   userLogged.iFollow.push(usernameToFollow);
   dispatch(toggleFollow(userLogged))
 }
-const iUnFollow = () =>{
+const iUnFollowUser = () =>{
   const usernameToFollow = mp4.owner;
   userLogged.iFollow = userLogged.iFollow.filter(el => el !== usernameToFollow)
   dispatch(toggleFollow(userLogged))
@@ -80,7 +81,7 @@ onClick={iFollowUser}>
 let unFollowBtnTemplate = (
   <button 
 className="unFollowBtnVideoCard"
-onClick={iUnFollow}>
+onClick={iUnFollowUser}>
   Following</button>
 );
 ///
@@ -125,6 +126,7 @@ onClick={iUnFollow}>
         fullScreen={true}
         selectedVideo={selectedVideo}
         isLiked={isLiked}
+        isFollowed={isFollowed}
         onClose={() => setIsOpen(false)}
       ></FullPageVideo>
 

@@ -15,13 +15,6 @@ export const getAllVideos = () => {
     }
 }
 
-// fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy/.json`, {
-//                 method: 'PUT',
-//                 body: JSON.stringify(data)
-//             })
-//                 .then(res => res.json())
-//                 .then(data => data);
-
 export const toggleVideoLike = (video) => {
     return function(dispatch){
         console.log(video, ' video')

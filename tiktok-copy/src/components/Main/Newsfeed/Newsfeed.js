@@ -3,7 +3,6 @@ import "./Newsfeed.css";
 import VideoCard from "./VideoCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllVideos } from "../../../redux/actions/allVideosAction";
-// import { getAllUsers } from "../../../redux/actions/allUsersAction";
 
 export default function NewsfeedVideos() {
   const dispatch = useDispatch();
@@ -15,13 +14,6 @@ export default function NewsfeedVideos() {
   const videos = useSelector((state) => state.allVideoData.videos);
   const userLogged = useSelector((state) => state.userData);
   console.log(videos)
-
-  //GET DATA FOR USERS FROM REDUX
-  // useEffect(() => {
-  //   dispatch(getAllUsers());
-  // }, []);
-  // const users = useSelector((state) => state.allUsersData.users);
-  // console.log(users)
 
   return (
       <div className="newsfeedVideoContainer">

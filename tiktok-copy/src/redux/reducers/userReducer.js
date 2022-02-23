@@ -3,7 +3,7 @@ const INITIAL_STATE = {
     username: null,
     profilePicture: '',
     bio: '',
-    iFollow: '',
+    iFollow: [],
     myVideos: '',
     nickname: null,
 };
@@ -42,6 +42,12 @@ export const userReducer = (state = INITIAL_STATE, action) => {
                 username: action.payload.username,
                 nickname: action.payload.nickname
 
+            }
+        case 'TOGGLE_FOLLOW':
+            console.log(action.payload);
+            return{
+                ...state,
+                iFollow: action.payload.iFollow
             }
         default: return state;
     }

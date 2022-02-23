@@ -13,11 +13,12 @@ import faceIcon from '../../images/tiktok-share-4.PNG'
 import whatsIcon from '../../images/tiktok-share-5.PNG';
 import CommentFPV from "./CommentFPV";
 import { useSelector, useDispatch } from "react-redux";
-import {toggleVideoLike} from '../../redux/actions/allVideosAction'
+import {toggleVideoLike} from '../../redux/actions/allVideosAction';
+import {toggleFollow} from '../../redux/actions/allUsersAction';
 
 export default function FullPageVideo(props) {
 
-  const { onClose, selectedVideo, open, isLiked } = props;
+  const { onClose, selectedVideo, open, isLiked, isFollowed } = props;
   console.log(selectedVideo);
 
   const handleClose = (event, reason) => {
@@ -59,6 +60,36 @@ let unlikeHeartBtnTemplate = (
   {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likesCounter}</strong>}
 </button>
 )
+
+//TOGGLE FOLLOW FUNCTION ON FOLLOW BTN
+const iFollowUser = () =>{
+  const usernameToFollow = selectedVideo.owner;
+  userLogged.iFollow.push(usernameToFollow);
+  dispatch(toggleFollow(userLogged))
+}
+const iUnFollowUser = () =>{
+  const usernameToFollow = selectedVideo.owner;
+  userLogged.iFollow = userLogged.iFollow.filter(el => el !== usernameToFollow)
+  dispatch(toggleFollow(userLogged))
+}
+//FOLLOW BTN TEMPLATE
+let followButtonTemplate =(
+    <button 
+    className="followBtnFPV"
+    onClick={iFollowUser}>
+      Follow
+    </button>
+    
+    );
+  
+  let unFollowButtonTemplate = (
+    <button 
+    className="unFollowBtnFPV"
+    onClick={iUnFollowUser}>
+      Following
+    </button>
+  );
+
   return (
     <Dialog onClose={handleClose} open={open}>
       <div className="fullPageVideoWrapper">
@@ -93,7 +124,7 @@ let unlikeHeartBtnTemplate = (
             <div className="infoContainerFPV">
                 <div className="profilePictureContainFPV">
                     <div className="profilePicContainFPV">
-                      {selectedVideo && <img className="avatarPicFPV" src={selectedVideo.profilePicture} alt="profile picture"></img>}
+                      {selectedVideo && <img className="avatarPicFPV" src={selectedVideo.profilePicture} alt="profile pic"></img>}
                     </div>
                 </div>
                 <div className="usernameNickameContainerFPV">
@@ -102,9 +133,8 @@ let unlikeHeartBtnTemplate = (
                     {selectedVideo && 
                     <div className="nicknameContainerFPV"> {selectedVideo.nickname}</div>}
                 </div>
-                <button className="followBtnFPV">
-                    Follow
-                </button>
+                {isFollowed && unFollowButtonTemplate}
+                {!isFollowed && followButtonTemplate}
             </div>
             {/* DESCRIPTION CONTAINER FPV */}
             <div className="descriptionContainerFPV">

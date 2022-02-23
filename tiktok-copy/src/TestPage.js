@@ -15,12 +15,20 @@ export default function TestPage() {
 
 //this is change
 
-
-
+    //get the id of the video
     fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy.json`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+
+            //push the username as a string
+            data.push('yesbeeee');
+
+            fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy/.json`, {
+                method: 'PUT',
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(data => data);
         })
     return (
         <>

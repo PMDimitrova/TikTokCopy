@@ -15,6 +15,8 @@ export default function TestPage() {
 
 
 
+
+
     fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy.json`)
         .then(res => res.json())
         .then(data => {

@@ -1,75 +1,66 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Login from "./components/LoginRegister/Login";
+import {useSelector} from "react-redux";
+import LogBtnsNav from "./components/Navbar/LogBtnsNav";
+import NotLogBntsNav from "./components/Navbar/NotLogBntsNav";
 
 export default function TestPage() {
-    const [open, setOpen] = React.useState(false);
+    let id = '-MwWCgKRZ96LglljUc5E';
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
+    // fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy.json`, {
+    //     method: 'POST',
+    //     body: JSON.stringify(userData)
+    // })
+    //     .then(res => res.json())
+    //     .then(data => data);
 
-    const handleClose = () => {
-        setOpen(false);
-    };
+
+
+
+    fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy.json`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
+    return (
+        <>
+
+        </>
+
+
+    )
+
+
+    // const videoData = {
+    //     comments : [{Vasko_P:'...'}, {pipi90:'brawo!'}],
+    //     commentsCounter : 2,
+    //     description : "Mydrost ot starite hora",
+    //     likedBy : ['plami1234'],
+    //     likesCounter : 2323,
+    //     owner : "test_user",
+    //     nickname : "Test User",
+    //     profilePicture: "https://media-exp1.licdn.com/dms/image/C5603AQElqY18xp0Ivg/profile-displayphoto-shrink_200_200/0/1520964910793?e=1646870400&v=beta&t=W8Z7GXGLxRms2mVSeax8FzUUnTJcvULIOagiMVu7odc",
+    //     sharesCounter : 12,
+    //     song : "original sound",
+    //     video : "https://firebasestorage.googleapis.com/v0/b/tiktok-635d3.appspot.com/o/babata.mp4?alt=media&token=ff484740-7fd5-437e-a05e-f3e3c8944a4d"
+    // }
+    //
+    // fetch('https://tiktok-635d3-default-rtdb.firebaseio.com/videos.json', {
+    //     method: 'POST',
+    //     body: JSON.stringify(videoData)
+    // })
+    //     .then(res => res.json())
+    //     .then(data => console.log(data));
+
+    // fetch('https://tiktok-635d3-default-rtdb.firebaseio.com/videos.json')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         Object.values(data).map(entry => {
+    //             console.log(entry)
+    //         })
+    //     })
+
+
 
     return (
-        <div>
-            <div className='bunsNoLog'>
-                <div className='uploadBtn' onClick={handleClickOpen}>Upload</div>
-                <button className='logInBtn' onClick={handleClickOpen}>Log in</button>
-                <i className='dotsNav'>...</i>
-            </div>
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                {/*<DialogTitle id="alert-dialog-title">*/}
-                {/*    {"Use Google's location service?"}*/}
-                {/*</DialogTitle>*/}
-                <DialogContent>
-                    <Login/>
-                    {/*<DialogContentText id="alert-dialog-description">*/}
-                    {/*    Let Google help apps determine location. This means sending anonymous*/}
-                    {/*    location data to Google, even when no apps are running.*/}
-                    {/*</DialogContentText>*/}
-                </DialogContent>
-                <DialogActions>
-                    {/*<Button onClick={handleClose}>Disagree</Button>*/}
-                    {/*<Button onClick={handleClose} autoFocus>*/}
-                    {/*    Agree*/}
-                    {/*</Button>*/}
-                </DialogActions>
-            </Dialog>
-        </div>
-    );
+        <></>
+    )
 }
-
-
-
-
-// export default function TestPage(){
-//
-//     const displayLogin = () =>{
-//         console.log('display')
-//
-//     }
-//
-//     return(
-//         <>
-//             <div id={'blackout'} style={{visibility:'none'}}>
-//             </div>
-//             <div><h1>testing div here</h1>
-//                 <button onClick={displayLogin}>Click me</button>
-//                 <div id={'placeholderId'}></div>
-//             </div>
-//         </>
-//     )
-// }

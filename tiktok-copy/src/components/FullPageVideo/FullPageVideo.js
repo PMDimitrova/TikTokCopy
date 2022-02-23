@@ -12,6 +12,8 @@ import twitIcon from '../../images/tiktok-share-3.PNG'
 import faceIcon from '../../images/tiktok-share-4.PNG'
 import whatsIcon from '../../images/tiktok-share-5.PNG';
 import CommentFPV from "./CommentFPV";
+import { useSelector, useDispatch } from "react-redux";
+import {toggleVideoLike} from '../../redux/actions/allVideosAction'
 
 export default function FullPageVideo(props) {
 
@@ -23,11 +25,23 @@ export default function FullPageVideo(props) {
       onClose(selectedVideo);
     }
   };
-
+  // TOGGLE LIKE FUNCTION ON LIKE BUTTON
+  const dispatch = useDispatch();
+  const userLogged = useSelector((state) => state.userData);
+  const likeVideoCard = () =>{
+    const username = userLogged.username;
+    selectedVideo.likedBy.push(username)
+    dispatch(toggleVideoLike(selectedVideo))
+  }
+  const ulikeVideoCard = () => {
+    const username = userLogged.username;
+    selectedVideo.likedBy = selectedVideo.likedBy.filter((el) => el !== username)
+    dispatch(toggleVideoLike(selectedVideo))
+  }
 // LIKE BTN TEMPLATE
 let likeHeartBtnTemplate = (
   <button 
-  // onClick={isLiked=true fetch s POST} 
+  onClick={likeVideoCard}
   className="heartBtnFPV">
     <span className="iconWrapperFPV">
       <img className="iconHeartBtnFPV" src={heartIcon} alt="heart icon"></img>
@@ -37,7 +51,7 @@ let likeHeartBtnTemplate = (
 )
 let unlikeHeartBtnTemplate = (
   <button 
-  // onClick={isLiked = false fech s delete s userLogged.username}
+  onClick={ulikeVideoCard}
   className="heartBtnFPV">
     <span className="iconWrapperFPV">
       <img className="iconHeartBtnFPV" src={likedHeartIcon} alt="heart icon"></img>

@@ -5,11 +5,14 @@ import likeHeartIcon from "../../../images/tiktok-heart-icon-liked.PNG";
 import commentIcon from "../../../images/tiktok-comment-icon.PNG";
 import shareIcon from "../../../images/tiktok-share-icon.PNG";
 import ShareCompFromVideoCard from "./ShareCompFromVideoCard";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {toggleVideoLike} from '../../../redux/actions/allVideosAction';
+import {toggleFollow} from ''
 
 export default function VideoCard({ mp4, isLiked }) {
-
+const isFollowed = false;
 // FOR THE VIDEO PLAY
+  const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -19,13 +22,21 @@ export default function VideoCard({ mp4, isLiked }) {
   
   const userLogged = useSelector((state) => state.userData);
 
+// TOGGLE LIKE FUNCTION ON LIKE BUTTON
 const likeVideoCard = () =>{
-  
+  const username = userLogged.username;
+  mp4.likedBy.push(username)
+  dispatch(toggleVideoLike(mp4))
+}
+const ulikeVideoCard = () => {
+  const username = userLogged.username;
+  mp4.likedBy = mp4.likedBy.filter((el) => el !== username)
+  dispatch(toggleVideoLike(mp4))
 }
 // TEMPLATE FOR THE LIKE BUTN
 let likeButtonTemplate = (
   <button 
-  // onClick={isLiked=true fetch s POST} 
+  onClick={likeVideoCard} 
   className="buttonActionVideoCard">
     <span className="buttonIconVideoCard">
       <img src={heartIcon} alt="buttonIconVideoCard"></img>
@@ -37,7 +48,7 @@ let likeButtonTemplate = (
 );
 let unlikeButtonTemplate = (
   <button 
-  // onClick={isLiked = false fech s delete s userLogged.username} 
+  onClick={ulikeVideoCard} 
   className="buttonActionVideoCard">
     <span className="buttonIconVideoCard">
       <img src={likeHeartIcon} alt="buttonIconVideoCard"></img>
@@ -46,6 +57,31 @@ let unlikeButtonTemplate = (
       {mp4.likesCounter}
     </strong>
   </button>
+);
+
+// TOGGLE FOLLOW FUNCTION ON FOLLOW BTN
+const iFollowUser = () =>{
+  const usernameToFollow = mp4.owner;
+  userLogged.iFollow.push(usernameToFollow);
+  dispatch(toggleFollow(userLogged))
+}
+const iUnFollow = () =>{
+  const usernameToFollow = mp4.owner;
+  userLogged.iFollow = userLogged.iFollow.filter(el => el !== usernameToFollow)
+  dispatch(toggleFollow(userLogged))
+}
+//TEMPLATE FOR THE FOLLOW BTN
+let followBtnTemplate =(
+<button 
+className="followBtnVideoCard"
+onClick={iFollowUser}>
+  Follow</button>);
+
+let unFollowBtnTemplate = (
+  <button 
+className="unFollowBtnVideoCard"
+onClick={iUnFollow}>
+  Following</button>
 );
 ///
 
@@ -84,6 +120,7 @@ let unlikeButtonTemplate = (
   return (
     <>
       <FullPageVideo
+        key={mp4.id}
         open={isOpen}
         fullScreen={true}
         selectedVideo={selectedVideo}
@@ -120,7 +157,8 @@ let unlikeButtonTemplate = (
               </div>
             </div>
     {/* FOLLOW BTN VIDEO CARD */}
-            <button className="followBtnVideoCard">Follow</button>
+            {isFollowed && unFollowBtnTemplate}
+            {!isFollowed && followBtnTemplate}
     {/* DESCRIPTION */}
             <div className="descriptionContainVideoCard">
               {mp4.description}

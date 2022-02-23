@@ -1,30 +1,28 @@
 const INITIAL_STATE = {
-    videos: []
+  videos: [],
 };
 
 export const allVideoReducer = (state = INITIAL_STATE, action) => {
-    switch (action.type){
-        case 'GET_ALL_VIDEOS':
-            console.log(action)
-            return{
-                ...state, 
-                videos : action.payload
-            }
-        // case 'LIKE_VIDEO':
-        //     return{
-        //         ...state,
-        //         likesCounter: action.payload
-        //     }
-        // case 'UNLIKE_VIDEO':
-        //     return{
-        //         ...state,
-        //         likesCounter: action.payload
-        //     }
-        // case 'COMMENT_VIDEO':
-        //     return{
-        //         ...state,
-        //         comments: action.payload
-        //     }
-        default: return state;
-    }
+  switch (action.type) {
+    case "GET_ALL_VIDEOS":
+      console.log(action);
+      return {
+        ...state,
+        videos: action.payload,
+      };
+    case "TOGGLE_VIDEO_LIKE":
+      const newVideosPost = state.videos.map((el) => {
+        if (el.id === action.payload.id) {
+          el.likedBy = action.payload.likedBy;
+          console.log(el);
+        }
+        return el;
+      });
+      return {
+        ...state,
+        videos: [...newVideosPost],
+      };
+    default:
+      return state;
+  }
 };

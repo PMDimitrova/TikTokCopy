@@ -3,28 +3,32 @@ export const getAllVideos = () => {
     return function(dispatch){
         fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos.json`)
         .then(resp => resp.json())
-        .then(data => {allVideosArr = Object.values(data)
+        .then(data => { 
+            for(const key in data) {
+                let element = data[key];
+                element.id = key;
+                allVideosArr.push(element)
+            }
             console.log(allVideosArr)
         dispatch({type : 'GET_ALL_VIDEOS', payload : allVideosArr}) } )
         
     }
 }
 
-export const likeVideo = (videoID)=> {
-    return function(dispatch){
-        fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos.json`, 
-        {method: 'POST', body: {id: JSON.stringify(videoID), increment: true}})
-            .then(resp => resp.json())
-            .then(data => dispatch({type : 'LIKE_VIDEO', payload : data}));
-    }
-}
+// fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${id}/likedBy/.json`, {
+//                 method: 'PUT',
+//                 body: JSON.stringify(data)
+//             })
+//                 .then(res => res.json())
+//                 .then(data => data);
 
-export const unlikeVideo = (videoID) =>{
+export const toggleVideoLike = (video) => {
     return function(dispatch){
-        fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos.json`, 
-        {method: 'POST', body:  {id: JSON.stringify(videoID), increment: false}})
-        .then(resp => resp.json())
-        .then(data => dispatch({type : 'UNLIKE_VIDEO', payload : data}))
+        console.log(video, ' video')
+        fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${video.id}/likedBy/.json`, 
+        {method: 'PUT', body: JSON.stringify(video.likedBy)})
+            .then(resp => resp.json())
+            .then(data => dispatch({type : 'TOGGLE_VIDEO_LIKE', payload : {likedBy: data, id: video.id}}));
     }
 }
 

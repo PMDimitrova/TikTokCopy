@@ -100,9 +100,30 @@
         color: rgba(254, 44, 85, 1.0);
         border-color: rgba(254, 44, 85, 1.0);
         background-color: rgba(255, 255, 255, 1.0);
+        min-height: 28px;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        justify-content: center;
+        box-sizing: border-box;
+        right: 0;
+        position: absolute;
+        top: 28px;
+        min-width: 88px;
+        padding: 0 10px;
+    }
+    .unFollowBtnVideoCard{
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 1.0);
         /* when i change on click follow --> Following */
-        /* color: rgb(22, 24, 35); */
-        /* border-color: rgba(22, 24, 35, 0.12); */
+        color: rgb(22, 24, 35);
+        border-color: rgba(22, 24, 35, 0.12);
         min-height: 28px;
         font-size: 16px;
         line-height: 22px;

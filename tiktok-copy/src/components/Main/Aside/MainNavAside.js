@@ -8,19 +8,19 @@ export default function MainNavAside(){
         <div className='MainNavAside'>
             <div className='MainAsideBtn'>
                 <Link to='/' className='MainBtn'>
-                        <img className='MainBtnLogo' src={homeLogo} alt='MainBtnLogo'></img>
+                        <img className='MainBtnLogo' src={homeLogo} alt='MainBtnLogo'/>
                         <h2 className='MainBtnText'>For You</h2>
                 </Link>
             </div>
             <div className='MainAsideBtn'>
                 <Link to='/' className='MainBtn'>
-                    <img className='MainBtnLogo' src={followingLogo} alt='MainBtnLogo'></img>
+                    <img className='MainBtnLogo' src={followingLogo} alt='MainBtnLogo'/>
                     <h2 className='MainBtnText'>Following</h2>
                 </Link>
             </div>
             <div className='MainAsideBtn'>
                 <Link to='/LIVE' className='MainBtn'>
-                    <img className='MainBtnLogo' src={liveLogo} alt='MainBtnLogo'></img>
+                    <img className='MainBtnLogo' src={liveLogo} alt='MainBtnLogo'/>
                     <h2 className='MainBtnText'>LIVE</h2>
                 </Link>
             </div>

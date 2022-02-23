@@ -4,18 +4,19 @@ import NotLogBntsNav from "./components/Navbar/NotLogBntsNav";
 
 export default function TestPage() {
     let id = '-MwWCgKRZ96LglljUc5E';
-    const dispatch = useDispatch();
-    let allUsersArr = [];
-    fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/users.json`)
-        .then(resp => resp.json())
-        .then(data => {
-            allUsersArr = Object.values(data);
+    // const dispatch = useDispatch();
+    // let allUsersArr = [];
+    // fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/users.json`)
+    //     .then(resp => resp.json())
+    //     .then(data => {
+    //         allUsersArr = Object.values(data);
 
-            console.log( 'here' + allUsersArr)
-            dispatch({type: 'GET_ALL_USERS', payload: allUsersArr});
-            dispatch({type: 'COMBINE_USERNAME_AND_PROFILE_PICTURE', payload: allUsersArr});
-        });
+    //         console.log( 'here' + allUsersArr)
+    //         dispatch({type: 'GET_ALL_USERS', payload: allUsersArr});
+    //         dispatch({type: 'COMBINE_USERNAME_AND_PROFILE_PICTURE', payload: allUsersArr});
+    //     });
 
+    // This is testing
 
 
 //this is change

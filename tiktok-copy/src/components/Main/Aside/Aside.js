@@ -8,6 +8,9 @@ import {useSelector} from "react-redux";
 
 export default function Aside(){
     const isLogged = useSelector(state => state.userData.logged);
+    // const videos = useSelector((state) => state.allVideoData.videos);
+    // const userLogged = useSelector((state) => state.userData);
+
     let suggesteTitle = "Suggested accounts";
     let followingTitle = "Following accounts"
     return(

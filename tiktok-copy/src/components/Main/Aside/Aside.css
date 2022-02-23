@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'ProximaNova';
+    src: local('ProximaNova-bold'), url(../../../fonts/Proxima-Nova-Bold.ttf) format('ttf');
+    src: local('ProximaNova-semibold'), url(../../../fonts/Proxima-Nova-Sbold.ttf) format('ttf');
+}
+
 .AsideContainer{
     width: 356px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: ProximaNova-bold, Helvetica, sans-serif;
 }
 .asideInsideContain{
     overflow-x: hidden;
@@ -35,8 +41,12 @@
         height: 144px;
     }
         .MainAsideBtn{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             width: 340px;
             height: 48px;
+            transition: color 250ms ease 500ms;
         }
         .MainAsideBtn:hover{
             background-color: rgb(244, 244, 248)
@@ -52,24 +62,25 @@
             cursor: pointer;
             text-decoration: none;
         }
-            .MainBtnLogo{
-                width: 32px;
-                height: 32px;
+            .MainAsideTopIcons{
+                width: 28px;
+                height: 28px;
+                color: black;
             }
             .MainBtnText{
                 color: rgba(22, 24, 35, 1.0);
-                font-family: Arial,Tahoma,PingFangSC,sans-serif;
+                font-family: ProximaNova-bold,sans-serif;
                 font-weight: 700;
                 font-size: 18px;
                 line-height: 25px;
                 margin-left: 8px;
             }
-    
+
 
     .SuggestedAccountsNavAside{
         padding: 16px 0;
         color: rgba(22, 24, 35, 0.75);
-        font-family: Arial,Tahoma,PingFangSC,sans-serif;
+        font-family: ProximaNova-bold,sans-serif;
         font-weight: 600;
         font-size: 14px;
         line-height: 20px;
@@ -95,7 +106,7 @@
         margin-inline-start: 0px;
         margin-inline-end: 0px;
         color: rgba(22, 24, 35, 0.50);
-        font-family: Arial,Tahoma,PingFangSC,sans-serif;
+        font-family: ProximaNova-bold,sans-serif;
         font-weight: 600;
     }
     .seeAllContainer{
@@ -110,7 +121,7 @@
     }
     .seeAllText{
         color: rgb(254, 44, 85);
-        font-family: Arial, Tahoma, PingFangSC, sans-serif;
+        font-family: ProximaNova-bold, sans-serif;
         font-weight: 600;
         font-size: 14px;
         line-height: 20px;
@@ -127,7 +138,7 @@
 }
 .discoverText{
     color: rgba(22, 24, 35, 0.50);
-    font-family: Arial, Tahoma, PingFangSC, sans-serif;
+    font-family: ProximaNova-bold, sans-serif;
     font-weight: 600;
     font-size: 14px;
     line-height: 20px;
@@ -171,7 +182,7 @@
 
 }
 .footerLink{
-    font-family: Arial,Tahoma,PingFangSC,sans-serif;
+    font-family: ProximaNova-bold,sans-serif;
     font-weight: 600;
     font-size: 12px;
     line-height: 17px;

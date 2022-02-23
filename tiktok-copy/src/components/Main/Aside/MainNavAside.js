@@ -13,13 +13,17 @@ export default function MainNavAside(){
                 </Link>
             </div>
             <div className='MainAsideBtn'>
-                <Link to='/' className='MainBtn'>
+                <Link to='/' className='MainBtn'
+//***PALMINA to do onClick={go to under construction}
+                >
                     <img className='MainBtnLogo' src={followingLogo} alt='MainBtnLogo'/>
                     <h2 className='MainBtnText'>Following</h2>
                 </Link>
             </div>
             <div className='MainAsideBtn'>
-                <Link to='/LIVE' className='MainBtn'>
+                <Link to='/LIVE' className='MainBtn'
+//***PALMINA to do onClick={go to under construction}
+>
                     <img className='MainBtnLogo' src={liveLogo} alt='MainBtnLogo'/>
                     <h2 className='MainBtnText'>LIVE</h2>
                 </Link>

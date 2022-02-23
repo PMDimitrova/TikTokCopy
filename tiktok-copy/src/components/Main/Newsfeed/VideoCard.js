@@ -159,6 +159,8 @@ onClick={iUnFollowUser}>
               </div>
             </div>
     {/* FOLLOW BTN VIDEO CARD */}
+
+{/* //***PALMINA to do onClick={handleClickLoginOpen} */}
             {isFollowed && unFollowBtnTemplate}
             {!isFollowed && followBtnTemplate}
     {/* DESCRIPTION */}
@@ -171,6 +173,8 @@ onClick={iUnFollowUser}>
             </h4>
           </div>
     {/* VIDEO IN VIDEO CARD */}
+
+{/* //***PALMINA to do onClick={handleClickLoginOpen} */}
           <div className="VideoAndBntsWrapper">
             <div className="VideoWrapper">
               <div className="videoPlayer">
@@ -190,10 +194,14 @@ onClick={iUnFollowUser}>
               </div>
             </div>
     {/* LIKE BTN VIDEO CARD*/}
+
+{/* //***PALMINA to do onClick={handleClickLoginOpen} */}
             <div className="BtnsWrapper">
               {isLiked && unlikeButtonTemplate}
               {!isLiked && likeButtonTemplate}
     {/* COMMENT BTN VIDEO CARD */}
+
+{/* //***PALMINA to do onClick={handleClickLoginOpen} */}
               <button className="buttonActionVideoCard">
                 <span
                   className="buttonIconVideoCard"

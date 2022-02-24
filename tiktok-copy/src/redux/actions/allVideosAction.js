@@ -9,7 +9,7 @@ export const getAllVideos = () => {
                 element.id = key;
                 allVideosArr.push(element)
             }
-            console.log(allVideosArr)
+            // console.log(allVideosArr)
         dispatch({type : 'GET_ALL_VIDEOS', payload : allVideosArr}) } )
         
     }

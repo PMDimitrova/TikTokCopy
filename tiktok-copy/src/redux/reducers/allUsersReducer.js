@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
-    users: []
+    users: [],
+    usernamesAndProfilePictures: []
 };
 
 export const allUsersReducer = (state = INITIAL_STATE, action) => {

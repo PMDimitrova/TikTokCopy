@@ -13,7 +13,7 @@ export default function NewsfeedVideos() {
   }, []);
   const videos = useSelector((state) => state.allVideoData.videos);
   const userLogged = useSelector((state) => state.userData);
-  console.log(videos)
+  // console.log(videos)
 
   return (
       <div className="newsfeedVideoContainer">

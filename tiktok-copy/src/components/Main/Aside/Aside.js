@@ -8,8 +8,8 @@ import {useSelector} from "react-redux";
 
 export default function Aside(){
     const isLogged = useSelector(state => state.userData.logged);
-    const iFollow = useSelector(state => state.userData.iFollow);
-    const allUserData = useSelector(state =>state.allUsersData.users);
+
+    // const usersTheUserIsFollowing = useSelector(state =>state.userData.usernamesAndProfilePictures);
 
     const HardcodedPeople = [
         {
@@ -59,10 +59,12 @@ export default function Aside(){
                     {!isLogged && <BigLoginBtn/>}
 
                     <AccountsNavAsideComp
-                        title={"Suggested accounts"} people={HardcodedPeople}/>
+                        // title={"Suggested accounts"} people={HardcodedPeople}/>
+                        title={"Suggested accounts"}/>
 
                     {isLogged && <AccountsNavAsideComp
-                        title={"Following accounts"} people={HardcodedPeople}/>}
+                        // title={"Following accounts"} people={HardcodedPeople}/>}
+                        title={"Following accounts"}/>}
                     <DiscoverHashtags/>
                     <FooterAside/>
                 </div>

@@ -19,7 +19,7 @@ import {toggleFollow} from '../../redux/actions/allUsersAction';
 export default function FullPageVideo(props) {
 
   const { onClose, selectedVideo, open, isLiked, isFollowed } = props;
-  console.log(selectedVideo);
+  // console.log(selectedVideo);
 
   const handleClose = (event, reason) => {
     if (reason && reason !== "backdropClick") {

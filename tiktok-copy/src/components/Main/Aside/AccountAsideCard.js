@@ -40,6 +40,9 @@ export default function AccountAsideCard(props) {
             nickname: "Mariika",
         },
     ];
+
+    //todo filter all users
+
     /* const iFollow = useSelector(state => state.userData.usernamesAndProfilePictures);
 
     let inputDataLength = props.pplToShow.length;

@@ -26,7 +26,6 @@ export const toggleVideoLike = (video) => {
 }
 
 export const commentVideo = (video) => {
-    let counter = Math.random();
     console.log(video)
     return function(dispatch){
         fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${video.id}/comments/.json`, 
@@ -34,7 +33,7 @@ export const commentVideo = (video) => {
         .then(resp => resp.json())
         .then(data => {
             console.log(data)
-            dispatch({type : 'ADD_COMMENT', payload : {comments: data, id: counter}})
+            dispatch({type : 'ADD_COMMENT', payload : {comments: data, id: video.id}})
         })
     }
 }

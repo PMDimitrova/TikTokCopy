@@ -209,12 +209,12 @@ function handleOnEnter (text) {
             </div>
             {/* COMMENTS CONTAINER FPV */}
             <div className="commentsContainerFPV">
-              {selectedVideo && selectedVideo.comments.map((comment) => {
+              {selectedVideo && selectedVideo.comments.map((comment, index) => {
               let user = comment.username;
               let userComment = comment.comment;
               let userPicture = comment.profilePicture;
               return <CommentFPV 
-              key={user}
+              key={index}
               user={user} 
               comment={userComment}
               picture={userPicture}/>})}

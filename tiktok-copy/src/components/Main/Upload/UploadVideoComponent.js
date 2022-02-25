@@ -187,7 +187,7 @@ export default function UploadVideoComponent() {
                                     posting.
                                 </div>
                                 <div className={styles.uploadButtons}>
-                                    <button className={styles.uploadDiscardBtn}>Discard</button>
+                                    <button className={styles.uploadDiscardBtn} onClick={ev => setRedirect(true)}>Discard </button>
                                     {urlOfNewUpload === '' ?
                                         (<button id={'uploadPostBtn'} className={styles.uploadPostBtnDisabled}
                                                  disabled={'disabled'}>Post</button>)

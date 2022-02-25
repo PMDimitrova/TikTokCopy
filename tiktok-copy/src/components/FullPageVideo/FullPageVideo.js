@@ -22,8 +22,8 @@ import {commentVideo} from '../../redux/actions/allVideosAction'
 export default function FullPageVideo(props) {
 
   const { onClose, selectedVideo, open, isLiked, isFollowed } = props;
-  // console.log(selectedVideo);
 
+  // CLOSING THE POP UP DIALOG
   const handleClose = (event, reason) => {
     if (reason && reason !== "backdropClick") {
       onClose(selectedVideo);
@@ -32,6 +32,7 @@ export default function FullPageVideo(props) {
 
   const dispatch = useDispatch();
   const userLogged = useSelector((state) => state.userData);
+  
   // TOGGLE LIKE FUNCTION ON LIKE BUTTON
   const likeVideoCard = () =>{
     const username = userLogged.username;
@@ -51,7 +52,7 @@ let likeHeartBtnTemplate = (
     <span className="iconWrapperFPV">
       <img className="iconHeartBtnFPV" src={heartIcon} alt="heart icon"></img>
     </span>
-  {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likesCounter}</strong>}
+  {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likedBy.length}</strong>}
 </button>
 )
 let unlikeHeartBtnTemplate = (
@@ -61,7 +62,7 @@ let unlikeHeartBtnTemplate = (
     <span className="iconWrapperFPV">
       <img className="iconHeartBtnFPV" src={likedHeartIcon} alt="heart icon"></img>
     </span>
-  {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likesCounter}</strong>}
+  {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likedBy.length}</strong>}
 </button>
 )
 
@@ -174,7 +175,7 @@ function handleOnEnter (text) {
                                     <img className="iconHeartBtnFPV" src={commentIcon} alt="comment icon"></img>
                                 </span>
                                 {selectedVideo &&
-                                <strong className='likesCounterFPV'>{selectedVideo.commentsCounter}</strong>}
+                                <strong className='likesCounterFPV'>{selectedVideo.comments.length}</strong>}
                             </button>
                         </div>
                         <div className="sharesWrapperFPV">

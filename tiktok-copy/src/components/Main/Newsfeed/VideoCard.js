@@ -16,7 +16,6 @@ export default function VideoCard({ mp4, isLiked }) {
   const [isShown, setIsShown] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
-  // const [isLiked, setIsLiked] = useState(false)
   const videoRef = useRef(null);
   const scrollArea = useRef(null);
   
@@ -43,7 +42,7 @@ let likeButtonTemplate = (
       <img src={heartIcon} alt="buttonIconVideoCard"></img>
     </span>
     <strong className="textLikesVideoCard">
-      {mp4.likesCounter}
+      {mp4.likedBy.length}
     </strong>
   </button>
 );
@@ -55,7 +54,7 @@ let unlikeButtonTemplate = (
       <img src={likeHeartIcon} alt="buttonIconVideoCard"></img>
     </span>
     <strong className="textLikesVideoCard">
-      {mp4.likesCounter}
+      {mp4.likedBy.length}
     </strong>
   </button>
 );
@@ -90,33 +89,32 @@ onClick={iUnFollowUser}>
   //   // videoRef.current.play();
   // };
 
-  useEffect(() => {
-    let options = {
-      rootMargin: "0px",
-      threshold: 0.75,
-    };
+useEffect(() => {
+  let options = {
+    rootMargin: "0px",
+    threshold: 0.75,
+  };
 
-    let handlePlay = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          videoRef.current.play();
-        } else {
-          videoRef.current.pause();
-        }
-      });
-    };
+  let handlePlay = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    });
+  };
 
-    let observer = new IntersectionObserver(handlePlay, options);
-
-    observer.observe(videoRef.current);
-  });
+  let observer = new IntersectionObserver(handlePlay, options);
+  observer.observe(videoRef.current);
+});
 
 // FOR THE DIALOG POP UP
-  const openDialog = (mp4) => {
-    videoRef.current.pause();
-    setSelectedVideo(mp4);
-    setIsOpen(true);
-  };
+const openDialog = (mp4) => {
+  videoRef.current.pause();
+  setSelectedVideo(mp4);
+  setIsOpen(true);
+};
   
   return (
     <>
@@ -213,7 +211,7 @@ onClick={iUnFollowUser}>
                 </span>
                 <strong className="textLikesVideoCard">
 
-                  {mp4.commentsCounter}
+                  {mp4.comments.length}
                 </strong>
               </button>
     {/* SHARE BTN VIDEO CARD */}

@@ -58,6 +58,17 @@
       color: #5c5d66;
     }
 
+    .uploadSideTopics{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .uploadSelectedVidText{
+        text-align: center;
+        margin-bottom: 8px;
+      }
+    }
     .uploadSmallText{
       display: flex;
       flex-direction: column;
@@ -68,13 +79,19 @@
 
     .uploadSelectBtn{
       width: 154px;
-      height: 36px;
+      height: 32px;
       border: none;
       border-radius: 3px;
       margin-top: 32px;
       color: white;
       background-color: #ff3a5e;
       font-size: 14px;
+      padding-top: 14px;
+      text-align: center;
+    }
+    .uploadHiddenInput{
+
+      display: none;
     }
   }
   .uploadSideContainer:hover{
@@ -102,13 +119,21 @@
     }
 
     .uploadInputCaption{
-      border: 1px solid #e4e4e5;
+      border: 1px solid #c5c5c5;
       border-radius: 3px;
       height: 44px;
       width: 704px;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       font-family: ProximaNova-regular,sans-serif;
       font-size: 18px;
+      padding-left: 12px;
+    }
+    .uploadOptionsWrapper{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      margin-top: 16px;
+      margin-bottom: 16px;
     }
 
     .uploadCoverBox{
@@ -127,8 +152,7 @@
     }
 
     .uploadCheckBoxWrapper{
-      margin-bottom: 24px;
-      margin-top: 24px;
+      margin-left: 20px;
 
       .uploadCheckbox{
         width: 110px;
@@ -173,7 +197,7 @@
       .uploadDiscardBtn{
         width: 158px;
         height: 44px;
-        border: 1.5px solid #e4e4e5;
+        border: 1.5px solid #c5c5c5;
         border-radius: 3px;
         background-color: #fefefe;
         font-family: ProximaNova-regular,sans-serif;
@@ -186,13 +210,26 @@
         cursor: pointer;
       }
 
-      .uploadPostBtn{
+      .uploadPostBtnDisabled{
         width: 158px;
         height: 44px;
         border: 0px;
         border-radius: 3px;
       }
+      .uploadPostBtnEnabled{
+        width: 158px;
+        height: 44px;
+        border: 0px;
+        border-radius: 3px;
+        background-color: #ff2c55;
+        color: white;
+      }
     }
-
+    .uploadSuccessAlert{
+      margin-top: 16px;
+      border: 1.5px solid #ff2c55;
+      //border-color: ;
+      width: 300px;
+    }
   }
 }

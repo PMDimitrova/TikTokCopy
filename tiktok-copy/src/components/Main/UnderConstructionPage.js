@@ -11,7 +11,7 @@ export default function UnderConstructionPage(){
             <div className='errorPageContainer'>
                 <img className='errorPagePicture' src={constructionImg} alt="Under Construction page"/>
                 <Link to='/'>
-                    <button className='btnErrorPage'>Watch now</button>
+                    <button className='btnUnderConstruction'>Watch now</button>
                 </Link>
             </div>
             <Footer/>

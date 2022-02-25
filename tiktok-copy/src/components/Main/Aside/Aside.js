@@ -9,47 +9,6 @@ import {useSelector} from "react-redux";
 export default function Aside(){
     const isLogged = useSelector(state => state.userData.logged);
 
-    // const usersTheUserIsFollowing = useSelector(state =>state.userData.usernamesAndProfilePictures);
-
-    const HardcodedPeople = [
-        {
-            profilePicture:
-                "http://images6.fanpop.com/image/photos/41700000/It-s-a-girl-prettygirls-41785076-564-1002.jpg",
-            username: "vladi24t6",
-            nickname: "Vladito",
-        },
-        {
-            profilePicture:
-                "http://images6.fanpop.com/image/photos/41700000/It-s-a-girl-prettygirls-41785076-564-1002.jpg",
-            username: "katenceto",
-            nickname: "Katq Dimitrova",
-        },
-        {
-            profilePicture:
-                "http://images6.fanpop.com/image/photos/41700000/It-s-a-girl-prettygirls-41785076-564-1002.jpg",
-            username: "sweetyKote",
-            nickname: "Ivan",
-        },
-        {
-            profilePicture:
-                "http://images6.fanpop.com/image/photos/41700000/It-s-a-girl-prettygirls-41785076-564-1002.jpg",
-            username: "MelissaLisa",
-            nickname: "Mila Mila",
-        },
-        {
-            profilePicture:
-                "http://images6.fanpop.com/image/photos/41700000/It-s-a-girl-prettygirls-41785076-564-1002.jpg",
-            username: "Vaseto",
-            nickname: "Vasil",
-        },
-        {
-            profilePicture:
-                "http://images6.fanpop.com/image/photos/41700000/It-s-a-girl-prettygirls-41785076-564-1002.jpg",
-            username: "Mimityyy",
-            nickname: "Mariika",
-        },
-    ];
-
     return (
         <div className='AsideContainer'>
             <div className='asideInsideContain'>
@@ -58,12 +17,10 @@ export default function Aside(){
 
                     {!isLogged && <BigLoginBtn/>}
 
-                    <AccountsNavAsideComp
-                        // title={"Suggested accounts"} people={HardcodedPeople}/>
+                    <AccountsNavAsideComp content={'suggestedAccounts'}
                         title={"Suggested accounts"}/>
 
-                    {isLogged && <AccountsNavAsideComp
-                        // title={"Following accounts"} people={HardcodedPeople}/>}
+                    {isLogged && <AccountsNavAsideComp content={'followedAccounts'}
                         title={"Following accounts"}/>}
                     <DiscoverHashtags/>
                     <FooterAside/>

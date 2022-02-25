@@ -17,22 +17,22 @@ export default function NewsfeedVideos() {
 
   return (
       <div className="newsfeedVideoContainer">
-        <div className="newsfeedVideosContain">
-          {videos.map((video, index) => {
-            if(video.likedBy.includes(userLogged.username)) {
-              return <VideoCard
-                  key={index}
-                  mp4={video}
-                  isLiked={true} />;
-            } else {
-              return <VideoCard
-                  key={index}
-                  mp4={video}
-                  isLiked={false} />;
-            }
+        {/*<div className="newsfeedVideosContain">*/}
+        {/*  {videos.map((video, index) => {*/}
+        {/*    if(video.likedBy.includes(userLogged.username)) {*/}
+        {/*      return <VideoCard*/}
+        {/*          key={index}*/}
+        {/*          mp4={video}*/}
+        {/*          isLiked={true} />;*/}
+        {/*    } else {*/}
+        {/*      return <VideoCard*/}
+        {/*          key={index}*/}
+        {/*          mp4={video}*/}
+        {/*          isLiked={false} />;*/}
+        {/*    }*/}
 
-          })}
-        </div>
+        {/*  })}*/}
+        {/*</div>*/}
       </div>
   );
 }

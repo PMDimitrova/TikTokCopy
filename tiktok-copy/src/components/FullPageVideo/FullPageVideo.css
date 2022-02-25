@@ -350,3 +350,52 @@
     margin: 0px 30px;
     padding: 21px 0px;
 }
+.addCommentWrapperFPV{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 484px;
+}
+.addCommentWrapFPV{
+    flex: 1 1 auto;
+    width: 484px;
+    height: 30px;
+    display: flex;
+}
+.addCommentInputEmoji{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    /* background-color: rgba(22, 24, 35, 0.06);
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 8px; */
+    padding: 0px 9px;
+    width: 412px;
+    height: 38px;
+}
+.react-emoji{
+    color: rgb(22, 24, 35);
+    font-size: 14px;
+    line-height: 15px;
+    caret-color: rgb(254, 44, 85);
+    background: transparent;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.postBtnAddCommentFPV{
+    color: rgba(22, 24, 35, 0.34);
+    font-size: 14px;
+    cursor: default;
+    line-height: 38px;
+    text-align: right;
+    margin-right: 4px;
+    width: 48px;
+    height: 38px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* color: rgb(254, 44, 85);
+    cursor: pointer;
+    if there is text in the input else btn is unactive*/
+}

@@ -15,6 +15,9 @@ import CommentFPV from "./CommentFPV";
 import { useSelector, useDispatch } from "react-redux";
 import {toggleVideoLike} from '../../redux/actions/allVideosAction';
 import {toggleFollow} from '../../redux/actions/allUsersAction';
+import { useState } from "react";
+import InputEmoji from 'react-input-emoji';
+import {commentVideo} from '../../redux/actions/allVideosAction'
 
 export default function FullPageVideo(props) {
 
@@ -26,9 +29,10 @@ export default function FullPageVideo(props) {
       onClose(selectedVideo);
     }
   };
-  // TOGGLE LIKE FUNCTION ON LIKE BUTTON
+
   const dispatch = useDispatch();
   const userLogged = useSelector((state) => state.userData);
+  // TOGGLE LIKE FUNCTION ON LIKE BUTTON
   const likeVideoCard = () =>{
     const username = userLogged.username;
     selectedVideo.likedBy.push(username)
@@ -79,8 +83,7 @@ let followButtonTemplate =(
     onClick={iFollowUser}>
       Follow
     </button>
-    
-    );
+    )
   
   let unFollowButtonTemplate = (
     <button 
@@ -88,7 +91,22 @@ let followButtonTemplate =(
     onClick={iUnFollowUser}>
       Following
     </button>
-  );
+  )
+// FOR EMOJI LIBRARY AND ADD COMMENT
+const [ text, setText ] = useState('')
+  
+function handleOnEnter (text) {
+  // console.log('enter', text)
+  const newComment = {
+    comment: text,
+    profilePicture: userLogged.profilePicture,
+    username: userLogged.username
+  }
+    selectedVideo.comments.push(newComment)
+    // console.log(newComment)
+    console.log(userLogged)
+    dispatch(commentVideo(selectedVideo))
+}
 
   return (
     <Dialog onClose={handleClose} open={open}>
@@ -191,19 +209,33 @@ let followButtonTemplate =(
             </div>
             {/* COMMENTS CONTAINER FPV */}
             <div className="commentsContainerFPV">
-            {selectedVideo && selectedVideo.comments.map((comment) => {
-  
-
+              {selectedVideo && selectedVideo.comments.map((comment) => {
               let user = comment.username;
               let userComment = comment.comment;
               let userPicture = comment.profilePicture;
               return <CommentFPV 
-                user={user} 
-                comment={userComment}
-                picture={userPicture}/>})};
+              key={user}
+              user={user} 
+              comment={userComment}
+              picture={userPicture}/>})}
             </div>
             {/* ADD COMMENT SECTION */}
-            <div className="addCommentContainerFPV">HERE YOU CAN ADD COMMENT</div>
+            <div className="addCommentContainerFPV">
+              <div className="addCommentWrapperFPV">
+                <div className="addCommentWrapFPV">
+                  <div className="addCommentInputEmoji">
+                      <InputEmoji
+                      value={text}
+                      onChange={setText}
+                      cleanOnEnter
+                      onEnter={handleOnEnter}
+                      placeholder="Add comment..."
+                      ></InputEmoji>
+                  </div>
+                  <div className="postBtnAddCommentFPV">Post</div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </Dialog>

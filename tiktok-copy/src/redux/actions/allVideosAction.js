@@ -25,11 +25,16 @@ export const toggleVideoLike = (video) => {
     }
 }
 
-export const commentVideo = (videoID, inputComment) => {
+export const commentVideo = (video) => {
+    let counter = Math.random();
+    console.log(video)
     return function(dispatch){
-        fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos.json`, 
-        {method: 'POST', body:  {id: JSON.stringify(videoID), inputComment}})
+        fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${video.id}/comments/.json`, 
+        {method: 'PUT', body: JSON.stringify(video.comments)})
         .then(resp => resp.json())
-        .then(data => dispatch({type : 'COMMENT_VIDEO', payload : data}))
+        .then(data => {
+            console.log(data)
+            dispatch({type : 'ADD_COMMENT', payload : {comments: data, id: counter}})
+        })
     }
 }

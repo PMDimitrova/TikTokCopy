@@ -14,13 +14,23 @@ export const allVideoReducer = (state = INITIAL_STATE, action) => {
       const newVideosPost = state.videos.map((el) => {
         if (el.id === action.payload.id) {
           el.likedBy = action.payload.likedBy;
-          // console.log(el);
         }
         return el;
       });
       return {
         ...state,
         videos: [...newVideosPost],
+      };
+      case "ADD_COMMENT":
+        const newComments = state.videos.map((el) => {
+          if (el.id === action.payload.id) {
+            el.comments = action.payload.comments;
+          }
+          return el;
+        });
+        return {
+          ...state,
+          comments: [...newComments],
       };
     default:
       return state;

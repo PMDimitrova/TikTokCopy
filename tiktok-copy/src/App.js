@@ -7,6 +7,7 @@ import TestPage from "./TestPage";
 import { useDispatch, useSelector } from "react-redux";
 import ErrorPage from './components/Main/ErrorPage'
 import UnderConstructionPage from "./components/Main/UnderConstructionPage";
+import MyProfile from './components/ProfilePage/MyProfile'
 
 function App() {
 
@@ -19,23 +20,22 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<>
-              <Navbar />
-              <MainContainer 
-              newsfeed= {true}/>
-            </>
+        <Route path="/" element={
+          <>
+            <Navbar />
+            <MainContainer 
+            newsfeed= {true}/>
+          </>
           }/>
 
-        <Route
-          path="/videoUpload" element={
-            <>
-              <Navbar />
-              <UploadVideoComponent />
-            </>
+        <Route path="/videoUpload" element={
+          <>
+            <Navbar />
+            <UploadVideoComponent />
+          </>
           }
         />
-        <Route
-          path="/LIVE" element={
+        <Route path="/LIVE" element={
             <>
               <Navbar />
               <MainContainer 
@@ -43,12 +43,11 @@ function App() {
             </>
           }
         />
-        <Route
-          path='/myProfile' element={
-            <>
-              <Navbar />
-              {/* <MyProfile/> */}
-            </>
+        <Route path='/myProfile' element={
+          <>
+            <Navbar />
+            <MyProfile/>
+          </>
           }
         />
           <Route path ="/test" element={<TestPage/>}/>

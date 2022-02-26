@@ -12,7 +12,6 @@ import {useDispatch, useSelector} from "react-redux";
 
 export default function LogBtnsNav() {
     const dispatch = useDispatch();
-
     const userProfilePic = useSelector(state => state.userData.profilePicture);
 
 //FOR HANDLING THE DROP DOWN MENU ON MY PROFILE

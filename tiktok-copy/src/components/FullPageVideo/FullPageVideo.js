@@ -95,7 +95,7 @@ let followButtonTemplate =(
 // FOR EMOJI LIBRARY AND ADD COMMENT
 const [ text, setText ] = useState('')
   
-function handleOnEnter (text) {
+function handleOnEnter () {
   // console.log('enter', text)
   const newComment = {
     comment: text,
@@ -103,9 +103,8 @@ function handleOnEnter (text) {
     username: userLogged.username
   }
     selectedVideo.comments.push(newComment)
-    // console.log(newComment)
-    console.log(userLogged)
     dispatch(commentVideo(selectedVideo))
+    setText('');
 }
 
   return (
@@ -232,7 +231,9 @@ function handleOnEnter (text) {
                       placeholder="Add comment..."
                       ></InputEmoji>
                   </div>
-                  <div className="postBtnAddCommentFPV">Post</div>
+                  <div 
+                  onClick={handleOnEnter}
+                  className="postBtnAddCommentFPV">Post</div>
                 </div>
               </div>
             </div>

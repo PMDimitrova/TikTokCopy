@@ -4,4 +4,20 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 100%;
+  }
+  /* Track */
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(22, 24, 35, .06);
+  }
+
 

@@ -3,7 +3,7 @@ import Aside from '../Main/Aside/Aside.js';
 import NewsfeedVideos from './Newsfeed/Newsfeed';
 import LIVE from './Newsfeed/LIVE'
 import {useDispatch, useSelector} from "react-redux";
-import FollowingPage from "../FollowingPage/FollowingPage";
+import FollowingPage from "./FollowingPage/FollowingPage";
 
 export default function MainContainer(props){
     // const dispatch = useDispatch();
@@ -15,7 +15,6 @@ export default function MainContainer(props){
             <Aside />
             {props.newsfeed?<NewsfeedVideos /> : <></>}
             {props.followingAccounts? <FollowingPage/> : <></>}
-
         </div>
     )
 }

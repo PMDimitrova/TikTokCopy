@@ -20,8 +20,8 @@ function App() {
             <MainContainer 
             newsfeed= {true}/>
           </>
-          }/>
-
+          }
+        />
         <Route path="/videoUpload" element={
           <>
             <Navbar />
@@ -30,11 +30,11 @@ function App() {
           }
         />
         <Route path="/LIVE" element={
-            <>
-              <Navbar />
-              <MainContainer 
-              newsfeed ={false}/>
-            </>
+          <>
+            <Navbar />
+            <MainContainer 
+            newsfeed ={false}/>
+          </>
           }
         />
         <Route path='/myProfile' element={
@@ -44,18 +44,18 @@ function App() {
           </>
           }
         />
-          <Route path='/following' element={
-            <>
-              <Navbar />
-              <MainContainer
-                  newsfeed= {false}
-                  followingAccounts={true}/>
-            </>
-
-          }/>
-          <Route path ="/test" element={<TestPage/>}/>
-          <Route path ="/underconstruction" element={<UnderConstructionPage/>}/>
-          <Route path="*" element={<ErrorPage/>}/>
+        <Route path='/following' element={
+          <>
+            <Navbar />
+            <MainContainer
+            newsfeed= {false}
+            followingAccounts={true}/>
+          </>
+          }
+        />
+        <Route path ="/test" element={<TestPage/>}/>
+        <Route path ="/underconstruction" element={<UnderConstructionPage/>}/>
+        <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </BrowserRouter>
   );

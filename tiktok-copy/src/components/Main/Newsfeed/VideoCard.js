@@ -10,17 +10,47 @@ import {toggleVideoLike} from '../../../redux/actions/allVideosAction';
 import {toggleFollow} from '../../../redux/actions/allUsersAction';
 
 export default function VideoCard({ mp4, isLiked }) {
-
-// FOR THE VIDEO PLAY
   const dispatch = useDispatch();
-  const [isShown, setIsShown] = useState(false);
+// FOR THE VIDEO POP UP DIALOG
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
-  const videoRef = useRef(null);
-  const scrollArea = useRef(null);
-  
+// FOR LIKE AND FOLLOW BTN AND ACTIONS
   const userLogged = useSelector((state) => state.userData);
   const isFollowed = userLogged.iFollow.includes(mp4.owner);
+// FOR THE SHARE POP UP BTN
+  const [isShown, setIsShown] = useState(false);
+// FOR VIDEO PLAY AND PAUSE
+  const videoRef = useRef(null);
+  const scrollArea = useRef(null);
+
+// FOR VIDEO PLAY ON VIEWPORT
+useEffect(() => {
+  let options = {
+    rootMargin: "0px",
+    threshold: 0.75,
+  };
+
+  if(!isOpen){
+    // FOR VIDEO PLAY AND PAUSE
+  let handlePlay = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    });
+  };
+    let observer = new IntersectionObserver(handlePlay, options);
+    observer.observe(videoRef.current);
+  }
+});
+
+// FOR THE DIALOG POP UP
+const openDialog = (mp4) => {
+  setSelectedVideo(mp4);
+  setIsOpen(true);
+};
 
 // TOGGLE LIKE FUNCTION ON LIKE BUTTON
 const likeVideoCard = () =>{
@@ -85,36 +115,6 @@ onClick={iUnFollowUser}>
 );
 ///
 
-  // const videoInit = () => {
-  //   // videoRef.current.play();
-  // };
-
-useEffect(() => {
-  let options = {
-    rootMargin: "0px",
-    threshold: 0.75,
-  };
-
-  let handlePlay = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-    });
-  };
-
-  let observer = new IntersectionObserver(handlePlay, options);
-  observer.observe(videoRef.current);
-});
-
-// FOR THE DIALOG POP UP
-const openDialog = (mp4) => {
-  videoRef.current.pause();
-  setSelectedVideo(mp4);
-  setIsOpen(true);
-};
   
   return (
     <>
@@ -177,7 +177,6 @@ const openDialog = (mp4) => {
             <div className="VideoWrapper">
               <div className="videoPlayer">
                 <video
-                  // onLoadedData={videoInit}
                   ref={videoRef}
                   onClick={() => {
                     openDialog(mp4);
@@ -210,7 +209,6 @@ const openDialog = (mp4) => {
                   <img src={commentIcon} alt="buttonIconVideoCard"></img>
                 </span>
                 <strong className="textLikesVideoCard">
-
                   {mp4.comments.length}
                 </strong>
               </button>

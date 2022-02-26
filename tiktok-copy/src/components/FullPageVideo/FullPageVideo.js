@@ -22,6 +22,8 @@ import {commentVideo} from '../../redux/actions/allVideosAction'
 export default function FullPageVideo(props) {
 
   const { onClose, selectedVideo, open, isLiked, isFollowed } = props;
+  const dispatch = useDispatch();
+  const userLogged = useSelector((state) => state.userData);
 
   // CLOSING THE POP UP DIALOG
   const handleClose = (event, reason) => {
@@ -30,9 +32,6 @@ export default function FullPageVideo(props) {
     }
   };
 
-  const dispatch = useDispatch();
-  const userLogged = useSelector((state) => state.userData);
-  
   // TOGGLE LIKE FUNCTION ON LIKE BUTTON
   const likeVideoCard = () =>{
     const username = userLogged.username;

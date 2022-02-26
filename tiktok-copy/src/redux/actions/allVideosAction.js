@@ -7,7 +7,7 @@ export const getAllVideos = () => {
             for(const key in data) {
                 let element = data[key];
                 element.id = key;
-                allVideosArr.push(element)
+                allVideosArr.push(element);
             }
         dispatch({type : 'GET_ALL_VIDEOS', payload : allVideosArr}) } )
         

@@ -35,7 +35,7 @@ export default function MainNavAside() {
                             <BsPeople className={'MainAsideTopIcons'}/>
                             <h2 className='MainBtnText'>Following</h2>
                         </div>)
-                        : (<Link to='/' className='MainBtn'>
+                        : (<Link to='/following' className='MainBtn'>
                             <BsPeople className={'MainAsideTopIcons'}/>
                             <h2 className='MainBtnText'>Following</h2>
                         </Link>)}

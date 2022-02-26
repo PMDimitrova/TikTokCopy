@@ -11,12 +11,6 @@ import MyProfile from './components/ProfilePage/MyProfile'
 
 function App() {
 
-  const dispatch = useDispatch();
-
-  // login
-  //logout
-
-
   return (
     <BrowserRouter>
       <Routes>
@@ -50,9 +44,18 @@ function App() {
           </>
           }
         />
+          <Route path='/following' element={
+            <>
+              <Navbar />
+              <MainContainer
+                  newsfeed= {false}
+                  followingAccounts={true}/>
+            </>
+
+          }/>
           <Route path ="/test" element={<TestPage/>}/>
           <Route path ="/underconstruction" element={<UnderConstructionPage/>}/>
-          <Route path="*" element={<ErrorPage/>}></Route>
+          <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </BrowserRouter>
   );

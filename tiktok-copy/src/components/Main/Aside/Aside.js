@@ -9,8 +9,7 @@ import {useSelector} from "react-redux";
 export default function Aside(){
     const isLogged = useSelector(state => state.userData.logged);
     const currentPath = window.location.pathname;
-    console.log(currentPath);
-    const myProfilePath = '/path/to/myProfile'
+    const myProfilePath = '/myProfile'
 
     return (
         <div className='AsideContainer'>
@@ -19,11 +18,14 @@ export default function Aside(){
                     <MainNavAside/>
 
                     {!isLogged && <BigLoginBtn/>}
-                    {/* {if(myProfilePath !== currentPath){
-                        
-                    }} */}
-                    <AccountsNavAsideComp content={'suggestedAccounts'}
-                        title={"Suggested accounts"}/>
+                    {isLogged ?
+                        ((myProfilePath !== currentPath) ?
+                        (<AccountsNavAsideComp content={'suggestedAccounts'}
+                                              title={"Suggested accounts"}/> )
+                        :(<></>))
+                        : (<AccountsNavAsideComp content={'suggestedAccounts'}
+                                                 title={"Suggested accounts"}/>)
+                    }
 
                     {isLogged && <AccountsNavAsideComp content={'followedAccounts'}
                         title={"Following accounts"}/>}

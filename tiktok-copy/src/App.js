@@ -7,7 +7,7 @@ import TestPage from "./TestPage";
 import { useDispatch, useSelector } from "react-redux";
 import ErrorPage from './components/Main/ErrorPage'
 import UnderConstructionPage from "./components/Main/UnderConstructionPage";
-import MyProfile from './components/ProfilePage/MyProfile'
+import ProfilePage from './components/ProfilePage/ProfilePage'
 
 function App() {
 
@@ -40,7 +40,7 @@ function App() {
         <Route path='/myProfile' element={
           <>
             <Navbar />
-            <MyProfile/>
+            <ProfilePage/>
           </>
           }
         />

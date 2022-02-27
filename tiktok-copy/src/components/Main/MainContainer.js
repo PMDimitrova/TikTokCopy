@@ -3,7 +3,7 @@ import Aside from '../Main/Aside/Aside.js';
 import NewsfeedVideos from './Newsfeed/Newsfeed';
 import LIVE from './Newsfeed/LIVE'
 import {useDispatch, useSelector} from "react-redux";
-import FollowingPage from "./FollowingPage/FollowingPage";
+import FollowingPage from "../Main/FollowingPage/FollowingPage";
 
 export default function MainContainer(props){
     // const dispatch = useDispatch();

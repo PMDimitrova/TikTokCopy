@@ -8,6 +8,8 @@ import {toggleVideoLike} from '../../../redux/actions/allVideosAction';
 import {toggleFollow} from '../../../redux/actions/allUsersAction';
 import LikeButton from "./LikeButton";
 import UnlikeButton from "./UnlikeButton";
+import heartIcon from "../../../images/tiktok-heart-icon.PNG";
+import likeHeartIcon from "../../../images/tiktok-heart-icon-liked.PNG";
 
 export default function VideoCard({mp4, isLiked}) {
     const dispatch = useDispatch();
@@ -188,10 +190,10 @@ export default function VideoCard({mp4, isLiked}) {
 
                         <div className="BtnsWrapper">
                             {isLogged ?
-                                (isLiked ? (<UnlikeButton onClick={unlikeVideoCard} likeByLength={mp4.likedBy.length}/>) : (
-                                    <LikeButton mp4={mp4} actionOnClick={likeVideoCard}
+                                (isLiked ? (<UnlikeButton onClick={unlikeVideoCard} likeByLength={mp4.likedBy.length} pic={likeHeartIcon}/>) : (
+                                    <LikeButton mp4={mp4} actionOnClick={likeVideoCard} pic={heartIcon} likeByLength={mp4.likedBy.length}
                                                 actionClose={handleClickLoginClose} openLoginState={openLogin}/>))
-                                : (<LikeButton mp4={mp4} actionOnClick={handleClickLoginOpen}
+                                : (<LikeButton mp4={mp4} actionOnClick={handleClickLoginOpen}  pic={heartIcon} likeByLength={mp4.likedBy.length}
                                                actionClose={handleClickLoginClose} openLoginState={openLogin}/>)
                             }
 

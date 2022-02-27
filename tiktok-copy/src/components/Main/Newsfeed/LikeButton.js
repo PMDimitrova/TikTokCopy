@@ -1,4 +1,3 @@
-import heartIcon from "../../../images/tiktok-heart-icon.PNG";
 import React from "react";
 import {Dialog, DialogContent} from "@mui/material";
 import LoginSignUpMain from "../../LoginRegister/LoginSignUpMain";
@@ -10,10 +9,10 @@ export default function LikeButton(props) {
             onClick={props.actionOnClick}
             className="buttonActionVideoCard">
         <span className="buttonIconVideoCard">
-            <img src={heartIcon} alt="buttonIconVideoCard"/>
+            <img src={props.pic} alt="buttonIconVideoCard"/>
         </span>
             <strong className="textLikesVideoCard">
-                {props.mp4.likedBy.length}
+                {props.likeByLength}
             </strong>
         </button>
         <Dialog

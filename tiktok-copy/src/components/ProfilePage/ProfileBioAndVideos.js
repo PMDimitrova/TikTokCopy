@@ -14,7 +14,9 @@ export default function ProfileBioAndVideos() {
 
     //we get the user we want to display from the <Link>, where this page is called from
     const location = useLocation();
-    const user = location.state.loggedUser;
+    console.log(location.state)
+    const user = location.state.user;
+
 
     useEffect(() => {
         dispatch(getAllVideos());
@@ -63,8 +65,7 @@ export default function ProfileBioAndVideos() {
             return(
                 <div className={styles.profileLikedBtns}>
                     <div className={styles.messageButtonBox}>Message</div>
-                    <div className={styles.followedIcon}><RiUserFollowLine style={{width: 20, height: 20}}/>
-                    </div>
+                    <div className={styles.followedIcon}><RiUserFollowLine style={{width: 20, height: 20}}/></div>
                 </div>
             )
         }else if (!isUserFollowedByCurrentUser){
@@ -84,11 +85,14 @@ export default function ProfileBioAndVideos() {
         changeLikesTab(!showLikes);
     }
 
+    //get the correct key, because of naming mismatches in redux & firebase
+    let profilePictureSrc = user.profilePicture || user.picture;
+
     return (
         <div className={styles.profileWrapper}>
             <div className={styles.infoContainer}>
                 <div className={styles.userData}>
-                    <img className={styles.profilePicture} src={user.profilePicture} alt={'profilePictureOfUser'}/>
+                    <img className={styles.profilePicture} src={profilePictureSrc} alt={'profilePictureOfUser'}/>
                     <div className={styles.namesBox}>
                         <p className={styles.userName}>{user.username}</p>
                         <p className={styles.userNickname}>{user.nickname}</p>

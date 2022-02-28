@@ -42,7 +42,7 @@ export default function SearchNav(props) {
       <ul className="ulOfSuggestions">
         {searchArr.map((element, index) => (
           <li className="liOfSuggestionUsers" key={index}>
-            <Link className="linkToMyProfileMenu" to='/userProfile' state={{element}} onClick={showSearchUsers("")}>
+            <Link className="linkToMyProfileMenu" to='/userProfile' state={{element}}>
               <MenuItem>
                 <div className="profilePictureContainFPV">
                   <div className="profilePicContainFPV">

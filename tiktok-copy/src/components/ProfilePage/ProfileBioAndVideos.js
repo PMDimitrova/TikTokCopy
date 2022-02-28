@@ -5,13 +5,17 @@ import {getAllVideos} from "../../redux/actions/allVideosAction";
 import styles from './ProfilePage.module.scss';
 import {RiUserFollowLine} from "react-icons/ri";
 import {BiLockAlt} from "react-icons/bi";
+import * as React from "react";
+import {useLocation} from "react-router-dom";
 
-export default function ProfileBioAndVideos(props) {
+export default function ProfileBioAndVideos() {
     //with props we would expect to receive a string telling us whether
     // we should show myProfilePage or another user page
     const dispatch = useDispatch();
 
-    const user = useSelector(state => state.userData);
+    const location = useLocation();
+    const user = location.state.loggedUser;
+
     useEffect(() => {
         dispatch(getAllVideos());
         dispatch(getAllUsers());
@@ -27,32 +31,25 @@ export default function ProfileBioAndVideos(props) {
     let likes = 0;
     let bio = '';
 
-    let searchedUsername = '';
+    following = user.iFollow.length; //counting following
 
-    if (props.pageType === 'myProfile') {
-        following = user.iFollow.length; //counting following
+    allUsers.users.map(us => { //counting followers
+        if (us.iFollow.includes(user.username)) {
+            followers++;
+        }
+    })
+    let myVideos = user.myVideos;
 
-        allUsers.users.map(us => { //counting followers
-            if (us.iFollow.includes(user.username)) {
-                followers++;
-            }
-        })
-        let myVideos = user.myVideos;
+    myVideos.map(vid => {
+        fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${vid}.json`)
+            .then(res => res.json())
+            .then((videoData => {
+                let currentLikes = videoData.likedBy.length
+                likes += currentLikes;
+            }))
+    })
 
-        myVideos.map(vid => {
-            fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${vid}.json`)
-                .then(res => res.json())
-                .then((videoData => {
-                    let currentLikes = videoData.likedBy.length
-                    likes += currentLikes;
-                }))
-        })
-
-        bio = user.bio;
-
-    } else if (props.pageType === 'userProfile') {
-        //todo write logic based on click on another user username
-    }
+    bio = user.bio;
 
     const ifProfileIsLikedByCurrentUser = () => {
         //todo write logic if we're at another user's profile and not to display the btns in our profile at all
@@ -109,7 +106,7 @@ export default function ProfileBioAndVideos(props) {
                     : (<div className={styles.likedVideosArePrivate}>
                         <BiLockAlt className={styles.lockIcon}/>
                         <hr/>
-                        <div style={{fontWeight:600}}>This user's liked videos are private</div>
+                        <div style={{fontWeight: 600}}>This user's liked videos are private</div>
                         <hr/>
                         <div>Videos liked by {user.username} are currently hidden</div>
                     </div>)}
@@ -118,3 +115,9 @@ export default function ProfileBioAndVideos(props) {
 
     )
 }
+
+// <HtmlTooltip title='Inbox' arrow>
+//     <div className="inbox">
+//         <img className="logBtnsEach" src={inboxBtn} alt="inboxBtn"/>
+//     </div>
+// </HtmlTooltip>

@@ -1,10 +1,7 @@
 import Dialog from "@mui/material/Dialog";
 import "./FullPageVideo.css";
-import video from "../../videos/IMG_6662.MP4";
 import closeLogo from "../../images/tiktok-close-icon-fpv.PNG";
 import tiktokSmallLogo from "../../images/tiktok-SmallLogo-icon.png";
-import heartIcon from '../../images/tiktok-heart-icon.PNG'
-import likedHeartIcon from '../../images/tiktok-heart-icon-liked.PNG'
 import commentIcon from '../../images/tiktok-comment-icon.PNG';
 import embedIcon from '../../images/tiktok-share-1.PNG'
 import shareIcon from '../../images/tiktok-share-2.PNG'
@@ -13,11 +10,12 @@ import faceIcon from '../../images/tiktok-share-4.PNG'
 import whatsIcon from '../../images/tiktok-share-5.PNG';
 import CommentFPV from "./CommentFPV";
 import { useSelector, useDispatch } from "react-redux";
-import {toggleVideoLike} from '../../redux/actions/allVideosAction';
 import {toggleFollow} from '../../redux/actions/allUsersAction';
 import { useState } from "react";
 import InputEmoji from 'react-input-emoji';
-import {commentVideo} from '../../redux/actions/allVideosAction'
+import {commentVideo} from '../../redux/actions/allVideosAction';
+import UnlikeButton from '../Main/Newsfeed/UnlikeButton';
+import LikeButton from '../Main/Newsfeed/LikeButton'
 
 export default function FullPageVideo(props) {
 
@@ -31,39 +29,6 @@ export default function FullPageVideo(props) {
       onClose(selectedVideo);
     }
   };
-
-  // TOGGLE LIKE FUNCTION ON LIKE BUTTON
-  const likeVideoCard = () =>{
-    const username = userLogged.username;
-    selectedVideo.likedBy.push(username)
-    dispatch(toggleVideoLike(selectedVideo))
-  }
-  const ulikeVideoCard = () => {
-    const username = userLogged.username;
-    selectedVideo.likedBy = selectedVideo.likedBy.filter((el) => el !== username)
-    dispatch(toggleVideoLike(selectedVideo))
-  }
-// LIKE BTN TEMPLATE
-let likeHeartBtnTemplate = (
-  <button 
-  onClick={likeVideoCard}
-  className="heartBtnFPV">
-    <span className="iconWrapperFPV">
-      <img className="iconHeartBtnFPV" src={heartIcon} alt="heart icon"></img>
-    </span>
-  {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likedBy.length}</strong>}
-</button>
-)
-let unlikeHeartBtnTemplate = (
-  <button 
-  onClick={ulikeVideoCard}
-  className="heartBtnFPV">
-    <span className="iconWrapperFPV">
-      <img className="iconHeartBtnFPV" src={likedHeartIcon} alt="heart icon"></img>
-    </span>
-  {selectedVideo && <strong className='likesCounterFPV'>{selectedVideo.likedBy.length}</strong>}
-</button>
-)
 
 //TOGGLE FOLLOW FUNCTION ON FOLLOW BTN
 const iFollowUser = () =>{
@@ -165,11 +130,13 @@ function handleOnEnter () {
                 <div className="likesSharesLinkWrapperFPV">
                     <div className="likesSharesContainerFPV">
                         <div className="likesWrapperFPV">
-                            {isLiked && unlikeHeartBtnTemplate}
-                            {!isLiked && likeHeartBtnTemplate}
+                            {selectedVideo && 
+                            (isLiked? (<UnlikeButton video={selectedVideo} />): 
+                                      (<LikeButton video={selectedVideo} />))}
+                            
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <button className="heartBtnFPV">
-                                <span className="iconWrapperFPV">
+                            <button className="buttonActionVideoCard">
+                                <span className="buttonIconVideoCard">
                                     <img className="iconHeartBtnFPV" src={commentIcon} alt="comment icon"></img>
                                 </span>
                                 {selectedVideo &&

@@ -10,7 +10,6 @@ export const getAllVideos = () => {
                 allVideosArr.push(element);
             }
         dispatch({type : 'GET_ALL_VIDEOS', payload : allVideosArr}) } )
-        
     }
 }
 

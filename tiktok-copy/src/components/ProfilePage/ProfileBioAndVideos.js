@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {getAllUsers} from "../../redux/actions/allUsersAction";
+import {getAllUsers, toggleFollow} from "../../redux/actions/allUsersAction";
 import {useEffect, useState} from "react";
 import {getAllVideos} from "../../redux/actions/allVideosAction";
 import styles from './ProfilePage.module.scss';
@@ -14,7 +14,6 @@ export default function ProfileBioAndVideos() {
 
     //we get the user we want to display from the <Link>, where this page is called from
     const location = useLocation();
-    console.log(location.state)
     const user = location.state.user;
 
 
@@ -56,20 +55,35 @@ export default function ProfileBioAndVideos() {
 
     bio = user.bio; //getting user's bio
 
+    const followUser = () => {
+        const usernameToFollow = user.username;
+        loggedUser.iFollow.push(usernameToFollow);
+        dispatch(toggleFollow(loggedUser));
+
+    }
+    const unfollowUser = () => {
+        const usernameToFollow = user.username;
+        loggedUser.iFollow = loggedUser.iFollow.filter(
+            (el) => el !== usernameToFollow
+        );
+        dispatch(toggleFollow(loggedUser));
+
+    }
+
     //function returns correct buttons
     const displayCorrectButtonsForUser = () => {
         let isUserFollowedByCurrentUser = loggedUser.iFollow.includes(user.username);
-        if(user.username === loggedUser.username) {//todo remove this line
+        if(user.username === loggedUser.username) {
             return (<></>)
         } else if (isUserFollowedByCurrentUser){
             return(
                 <div className={styles.profileLikedBtns}>
                     <div className={styles.messageButtonBox}>Message</div>
-                    <div className={styles.followedIcon}><RiUserFollowLine style={{width: 20, height: 20}}/></div>
+                    <button className={styles.followedIcon} onClick={unfollowUser}><RiUserFollowLine style={{width: 20, height: 20}}/></button>
                 </div>
             )
         }else if (!isUserFollowedByCurrentUser){
-            return (<div className={styles.followButtonBox}>Follow</div>)
+            return (<button className={styles.followButtonBox} onClick={followUser}>Follow</button>)
         }
 
     }

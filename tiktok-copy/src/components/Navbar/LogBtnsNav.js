@@ -2,7 +2,7 @@ import "./LogBtnsNav.css";
 import videoBtn from "../../images/tiktok-video-icon.PNG";
 import messageBtn from "../../images/tiktok-message-icon.PNG";
 import inboxBtn from "../../images/tiktok-inbox-icon.PNG";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {MenuItem, Menu} from '@mui/material';
 import * as React from 'react';
 import {styled} from '@mui/material/styles';
@@ -12,6 +12,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 export default function LogBtnsNav() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const userProfilePic = useSelector(state => state.userData.profilePicture);
     const user = useSelector(state => state.userData);
 
@@ -38,6 +39,7 @@ export default function LogBtnsNav() {
 //LOGOUT functionality:
     const logoutUser = () => {
         dispatch({type: 'LOGOUT'});
+        navigate('/');
     }
 
     return (

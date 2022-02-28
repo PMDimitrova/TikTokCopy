@@ -9,10 +9,10 @@ import * as React from "react";
 import {useLocation} from "react-router-dom";
 
 export default function ProfileBioAndVideos() {
-    //with props we would expect to receive a string telling us whether
-    // we should show myProfilePage or another user page
+
     const dispatch = useDispatch();
 
+    //we get the user we want to display from the <Link>, where this page is called from
     const location = useLocation();
     const user = location.state.loggedUser;
 
@@ -21,11 +21,14 @@ export default function ProfileBioAndVideos() {
         dispatch(getAllUsers());
     }, []);
 
+    //holding state of what to show in the container - liked or my videos
     const [showVideos, changeVideoTab] = useState(true);
     const [showLikes, changeLikesTab] = useState(false);
 
     const allUsers = useSelector(state => state.allUsersData);
+    const loggedUser = useSelector(state => state.userData);
 
+    //stats for user we're displaying
     let following = 0;
     let followers = 0;
     let likes = 0;
@@ -40,7 +43,7 @@ export default function ProfileBioAndVideos() {
     })
     let myVideos = user.myVideos;
 
-    myVideos.map(vid => {
+    myVideos.map(vid => { //counting likes
         fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${vid}.json`)
             .then(res => res.json())
             .then((videoData => {
@@ -49,19 +52,33 @@ export default function ProfileBioAndVideos() {
             }))
     })
 
-    bio = user.bio;
+    bio = user.bio; //getting user's bio
 
-    const ifProfileIsLikedByCurrentUser = () => {
-        //todo write logic if we're at another user's profile and not to display the btns in our profile at all
-        return true;
+    //function returns correct buttons
+    const displayCorrectButtonsForUser = () => {
+        let isUserFollowedByCurrentUser = loggedUser.iFollow.includes(user.username);
+        if(user.username === loggedUser.username) {//todo remove this line
+            return (<></>)
+        } else if (isUserFollowedByCurrentUser){
+            return(
+                <div className={styles.profileLikedBtns}>
+                    <div className={styles.messageButtonBox}>Message</div>
+                    <div className={styles.followedIcon}><RiUserFollowLine style={{width: 20, height: 20}}/>
+                    </div>
+                </div>
+            )
+        }else if (!isUserFollowedByCurrentUser){
+            return (<div className={styles.followButtonBox}>Follow</div>)
+        }
+
     }
 
+    //handlers for of what to show in the container - liked or my videos
     const handleVideosTabClick = () => {
         changeVideoTab(!showVideos);
         changeLikesTab(!showLikes);
 
     }
-
     const handleLikesTabClick = () => {
         changeVideoTab(!showVideos);
         changeLikesTab(!showLikes);
@@ -75,14 +92,8 @@ export default function ProfileBioAndVideos() {
                     <div className={styles.namesBox}>
                         <p className={styles.userName}>{user.username}</p>
                         <p className={styles.userNickname}>{user.nickname}</p>
-                        {ifProfileIsLikedByCurrentUser() ?
-                            (<div className={styles.profileLikedBtns}>
-                                <div className={styles.messageButtonBox}>Message</div>
-                                <div className={styles.followedIcon}><RiUserFollowLine style={{width: 20, height: 20}}/>
-                                </div>
-                            </div>)
-                            : (<div className={styles.followButtonBox}>Follow</div>)}
-
+                        {/*the function below would decide which buttons to display or nothing at all*/}
+                        {displayCorrectButtonsForUser()}
                     </div>
                 </div>
                 <div className={styles.followData}>
@@ -99,7 +110,7 @@ export default function ProfileBioAndVideos() {
                             onClick={handleVideosTabClick}>Videos
                     </button>
                     <button className={!showLikes ? styles.tabVideosLikedUnchecked : styles.tabVideosLikedChecked}
-                            onClick={handleLikesTabClick}>Likes
+                            onClick={handleLikesTabClick}>Liked
                     </button>
                 </div>
                 {showVideos ? (<div>Here would be the user's videos</div>)

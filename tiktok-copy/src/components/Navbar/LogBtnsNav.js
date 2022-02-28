@@ -13,6 +13,7 @@ import {useDispatch, useSelector} from "react-redux";
 export default function LogBtnsNav() {
     const dispatch = useDispatch();
     const userProfilePic = useSelector(state => state.userData.profilePicture);
+    const loggedUser = useSelector(state => state.userData);
 
 //FOR HANDLING THE DROP DOWN MENU ON MY PROFILE
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -75,7 +76,7 @@ export default function LogBtnsNav() {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                <Link className="linkToMyProfileMenu" to='/myProfile'>
+                <Link className="linkToMyProfileMenu" to='/myProfile' state={{loggedUser}}>
                     <MenuItem onClick={handleClose}>View profile</MenuItem>
                 </Link>
                 <MenuItem onClick={handleClose}>Settings</MenuItem>

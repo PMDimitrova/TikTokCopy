@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import UploadVideoComponent from "./components/Main/Upload/UploadVideoComponent";
 import MainContainer from "./components/Main/MainContainer";
 import TestPage from "./TestPage";
-import { useDispatch, useSelector } from "react-redux";
 import ErrorPage from './components/Main/ErrorPage'
 import UnderConstructionPage from "./components/Main/UnderConstructionPage";
 import ProfilePage from './components/ProfilePage/ProfilePage'
@@ -43,6 +42,13 @@ function App() {
             <ProfilePage/>
           </>
           }
+        />
+        <Route path='/userProfile' element={
+          <>
+            <Navbar />
+            <ProfilePage />
+          </>
+        }
         />
         <Route path='/following' element={
           <>

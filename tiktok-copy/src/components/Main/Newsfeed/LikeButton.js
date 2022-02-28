@@ -10,6 +10,7 @@ export default function LikeButton(props) {
     const dispatch = useDispatch();
     const userLogged = useSelector((state) => state.userData);
     const isUserlogged = props.isLogged;
+
     const likeVideoCard = () =>{
         const username = userLogged.username;
         props.video.likedBy.push(username)
@@ -25,6 +26,7 @@ export default function LikeButton(props) {
     const handleClickLoginOpen = () => {
         setOpenLogin(true);
       };
+      
     return (
         <>
         <button

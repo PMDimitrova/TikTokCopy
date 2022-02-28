@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleFollow } from "../../../redux/actions/allUsersAction";
 import LikeButton from "./LikeButton";
 import UnlikeButton from "./UnlikeButton";
+import UnFollowButton from "./UnFollowButton";
+import FollowButton from "./FollowButton";
 
 export default function VideoCard({ mp4, isLiked }) {
   const dispatch = useDispatch();
@@ -53,30 +55,30 @@ export default function VideoCard({ mp4, isLiked }) {
   };
 
   // TOGGLE FOLLOW FUNCTION ON FOLLOW BTN
-  const iFollowUser = () => {
-    const usernameToFollow = mp4.owner;
-    userLogged.iFollow.push(usernameToFollow);
-    dispatch(toggleFollow(userLogged));
-  };
-  const iUnFollowUser = () => {
-    const usernameToFollow = mp4.owner;
-    userLogged.iFollow = userLogged.iFollow.filter(
-      (el) => el !== usernameToFollow
-    );
-    dispatch(toggleFollow(userLogged));
-  };
-  //TEMPLATE FOR THE FOLLOW BTN
-  let followBtnTemplate = (
-    <button className="followBtnVideoCard" onClick={iFollowUser}>
-      Follow
-    </button>
-  );
+  // const iFollowUser = () => {
+  //   const usernameToFollow = mp4.owner;
+  //   userLogged.iFollow.push(usernameToFollow);
+  //   dispatch(toggleFollow(userLogged));
+  // };
+  // const iUnFollowUser = () => {
+  //   const usernameToFollow = mp4.owner;
+  //   userLogged.iFollow = userLogged.iFollow.filter(
+  //     (el) => el !== usernameToFollow
+  //   );
+  //   dispatch(toggleFollow(userLogged));
+  // };
+  // //TEMPLATE FOR THE FOLLOW BTN
+  // let followBtnTemplate = (
+  //   <button className="followBtnVideoCard" onClick={iFollowUser}>
+  //     Follow
+  //   </button>
+  // );
 
-  let unFollowBtnTemplate = (
-    <button className="unFollowBtnVideoCard" onClick={iUnFollowUser}>
-      Following
-    </button>
-  );
+  // let unFollowBtnTemplate = (
+  //   <button className="unFollowBtnVideoCard" onClick={iUnFollowUser}>
+  //     Following
+  //   </button>
+  // );
 
   return (
     <>
@@ -115,20 +117,22 @@ export default function VideoCard({ mp4, isLiked }) {
               </div>
             </div>
             {/* FOLLOW BTN VIDEO CARD */}
+            {isLogged? (
+              isFollowed? (
+                <UnFollowButton 
+                video={mp4}/>
+              ) : (
+                <FollowButton 
+                video={mp4}
+                isLogged={isLogged}/>
+              )
+            ):
+            (
+              <FollowButton
+              video={mp4}
+              isLogged={isLogged}/>
+            )}
 
-            {/* //***PALMINA to do onClick={handleClickLoginOpen} */}
-
-            {/* {isLogged ?     ---> train of events template
-                                (isFollowed ? ('unfollow'): ('follow'))
-                                :('follow s action-login')*/}
-            {/* } */}
-            {/*{isLogged ? (isFollowed ? (<UnFollowButton onClick={iUnFollowUser}/>)*/}
-            {/*                        : (<FollowButton onClick={iFollowUser}/>))*/}
-            {/*        :(<FollowButton onClick={() => console.log('user not logged')}/>)*/}
-            {/*}*/}
-
-            {isFollowed && unFollowBtnTemplate}
-            {!isFollowed && followBtnTemplate}
             {/* DESCRIPTION */}
             <div className="descriptionContainVideoCard">{mp4.description}</div>
             {/* SONG */}

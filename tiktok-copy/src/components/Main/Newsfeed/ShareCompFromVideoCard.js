@@ -5,14 +5,14 @@ import faceIcon from '../../../images/tiktok-share-4.PNG'
 import whatsIcon from '../../../images/tiktok-share-5.PNG'
 import copyIcon from '../../../images/tiktok-share-6.PNG'
 
-export default function ShareCompFromVideoCard(){
-    return(
+export default function ShareCompFromVideoCard() {
+    return (
         <div className="shareContainerVideoCard">
             <div className="shareContainVideoCard">
                 <div className="shareRowVideoCard">
                     <img className="shareRowIcon"
-                    src={embedIcon}
-                    alt="shareRowIcon">
+                         src={embedIcon}
+                         alt="shareRowIcon">
                     </img>
                     <span className="shareRowText">
                     Embed
@@ -20,8 +20,8 @@ export default function ShareCompFromVideoCard(){
                 </div>
                 <div className="shareRowVideoCard">
                     <img className="shareRowIcon"
-                    src={shareIcon}
-                    alt="shareRowIcon">
+                         src={shareIcon}
+                         alt="shareRowIcon">
                     </img>
                     <span className="shareRowText">
                     Send to friends
@@ -29,8 +29,8 @@ export default function ShareCompFromVideoCard(){
                 </div>
                 <div className="shareRowVideoCard">
                     <img className="shareRowIcon"
-                    src={twitIcon}
-                    alt="shareRowIcon">
+                         src={twitIcon}
+                         alt="shareRowIcon">
                     </img>
                     <span className="shareRowText">
                     Share to Twitter
@@ -38,8 +38,8 @@ export default function ShareCompFromVideoCard(){
                 </div>
                 <div className="shareRowVideoCard">
                     <img className="shareRowIcon"
-                    src={faceIcon}
-                    alt="shareRowIcon">
+                         src={faceIcon}
+                         alt="shareRowIcon">
                     </img>
                     <span className="shareRowText">
                     Share to Facebook
@@ -47,8 +47,8 @@ export default function ShareCompFromVideoCard(){
                 </div>
                 <div className="shareRowVideoCard">
                     <img className="shareRowIcon"
-                    src={whatsIcon}
-                    alt="shareRowIcon">
+                         src={whatsIcon}
+                         alt="shareRowIcon">
                     </img>
                     <span className="shareRowText">
                     Share to WhatsApp
@@ -56,8 +56,8 @@ export default function ShareCompFromVideoCard(){
                 </div>
                 <div className="shareRowVideoCard">
                     <img className="shareRowIcon"
-                    src={copyIcon}
-                    alt="shareRowIcon">
+                         src={copyIcon}
+                         alt="shareRowIcon">
                     </img>
                     <span className="shareRowText">
                     Copy link

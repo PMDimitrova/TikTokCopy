@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function LikeButton(props) {
     const dispatch = useDispatch();
     const userLogged = useSelector((state) => state.userData);
-    const isUserlogged = props.isLogged;
+    const isUserLogged = props.isLogged;
 
     const likeVideoCard = () =>{
         const username = userLogged.username;
@@ -30,7 +30,7 @@ export default function LikeButton(props) {
     return (
         <>
         <button
-            onClick={ isUserlogged? likeVideoCard : handleClickLoginOpen} 
+            onClick={ isUserLogged? likeVideoCard : handleClickLoginOpen}
             className="buttonActionVideoCard">
         <span className="buttonIconVideoCard">
             <img src={heartIcon} alt="buttonIconVideoCard"/>

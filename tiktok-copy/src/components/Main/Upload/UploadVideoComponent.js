@@ -103,10 +103,6 @@ export default function UploadVideoComponent() {
     }
 
         //Just a middle layer handler for the invoking of the actual upload to the DB
-    const postVideo = () => {
-        //todo -> uncomment here ->
-        // updateUsersAndVideosDB();
-    }
 
         //If no video is uploaded it's rendering the main view ot the upload;
             //if video is uploaded it's rendering the <Navigate> and redirecting the user to Newsfeed page
@@ -192,7 +188,7 @@ export default function UploadVideoComponent() {
                                         (<button id={'uploadPostBtn'} className={styles.uploadPostBtnDisabled}
                                                  disabled={'disabled'}>Post</button>)
                                         : (<button id={'uploadPostBtn'} className={styles.uploadPostBtnEnabled}
-                                                   onClick={postVideo}>Post</button>)
+                                                   onClick={updateUsersAndVideosDB}>Post</button>)
                                     }
 
                                 </div>

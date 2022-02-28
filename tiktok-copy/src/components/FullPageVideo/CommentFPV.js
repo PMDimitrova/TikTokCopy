@@ -8,7 +8,7 @@ export default function CommentFPV(props){
                     <span className='profilePicCommentContainerFPV'>
                         <img className='profilePicCommentFPVComments'
                         src= {props.picture}
-                        alt='profile picture'></img>
+                        alt='profile picture'/>
                     </span>
                 </div>
                 <div className="commentContentContainFPV">
@@ -20,7 +20,7 @@ export default function CommentFPV(props){
                     <div className='heartNumberCommentsFPV'>
                         <img className='heartCommentIconFPV' 
                         src={commentHeartIcon} 
-                        alt='heart icon comment'></img>
+                        alt='heart icon comment'/>
                         <span className='counterRandomLikesCommentFPV'>
                             {Math.ceil(Math.random()*100)}
                         </span>

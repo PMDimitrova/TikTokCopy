@@ -55,22 +55,22 @@ function handleOnEnter () {
             <div className="videoContainFPV">
               <div className="theVideoContainFPV">
                 {selectedVideo && <video
-                  className="videoFPV"
-                  playsInline
-                  loop
-                  autoPlay
-                  controls
-                  src={selectedVideo.video}
-                  alt="video full page"
-                ></video>}
+                    className="videoFPV"
+                    playsInline
+                    loop
+                    autoPlay
+                    controls
+                    src={selectedVideo.video}
+                    alt="video full page"
+                    />}
               </div>
             </div>
           </div>
           <button onClick={onClose} className="closeBtnFPV">
-            <img src={closeLogo} alt="closeLogo"></img>
+            <img src={closeLogo} alt="closeLogo"/>
           </button>
           <div className="tiktokSmallLogo">
-            <img src={tiktokSmallLogo} alt="tiktokSmallLogo"></img>
+            <img src={tiktokSmallLogo} alt="tiktokSmallLogo"/>
           </div>
         </div>
 
@@ -80,7 +80,7 @@ function handleOnEnter () {
             <div className="infoContainerFPV">
                 <div className="profilePictureContainFPV">
                     <div className="profilePicContainFPV">
-                      {selectedVideo && <img className="avatarPicFPV" src={selectedVideo.profilePicture} alt="profile pic"></img>}
+                      {selectedVideo && <img className="avatarPicFPV" src={selectedVideo.profilePicture} alt="profile pic"/>}
                     </div>
                 </div>
                 <div className="usernameNickameContainerFPV">
@@ -113,7 +113,7 @@ function handleOnEnter () {
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <button className="buttonActionVideoCard">
                                 <span className="buttonIconVideoCard">
-                                    <img className="iconHeartBtnFPV" src={commentIcon} alt="comment icon"></img>
+                                    <img className="iconHeartBtnFPV" src={commentIcon} alt="comment icon"/>
                                 </span>
                                 {selectedVideo &&
                                 <strong className='likesCounterFPV'>{selectedVideo.comments.length}</strong>}
@@ -167,12 +167,12 @@ function handleOnEnter () {
                 <div className="addCommentWrapFPV">
                   <div className="addCommentInputEmoji">
                       <InputEmoji
-                      value={text}
-                      onChange={setText}
-                      cleanOnEnter
-                      onEnter={handleOnEnter}
-                      placeholder="Add comment..."
-                      ></InputEmoji>
+                        value={text}
+                        onChange={setText}
+                        cleanOnEnter
+                        onEnter={handleOnEnter}
+                        placeholder="Add comment..."
+                        />
                   </div>
                   <div 
                   onClick={handleOnEnter}

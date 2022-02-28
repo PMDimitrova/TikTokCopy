@@ -144,9 +144,3 @@ export default function ProfileBioAndVideos() {
 
     )
 }
-
-// <HtmlTooltip title='Inbox' arrow>
-//     <div className="inbox">
-//         <img className="logBtnsEach" src={inboxBtn} alt="inboxBtn"/>
-//     </div>
-// </HtmlTooltip>

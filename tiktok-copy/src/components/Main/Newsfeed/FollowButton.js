@@ -20,7 +20,7 @@ export default function FollowButton(props) {
   const [openLogin, setOpenLogin] = useState(false);
   const handleClickLoginClose = () => {
     setOpenLogin(false);
-    dispatch({ type: "SHOW_LOGIN_OPTIONS" });
+    dispatch({ type: "SHOW_LOGIN" });
   };
   const handleClickLoginOpen = () => {
     setOpenLogin(true);

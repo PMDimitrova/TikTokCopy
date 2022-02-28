@@ -15,7 +15,8 @@ export default function NotLogBntsNav() {
     const handleClickLoginOpen = () => {setOpenLogin(true);};
     const handleClickLoginClose = () => {
         setOpenLogin(false);
-        dispatch({type : 'SHOW_LOGIN_OPTIONS'});
+        // dispatch({type : 'SHOW_LOGIN_OPTIONS'});
+        dispatch({type : 'SHOW_LOGIN'});
     };
 
     const [openSignUp, setOpenSignUp] = useState(false);

@@ -4,14 +4,12 @@ import commentIcon from "../../../images/tiktok-comment-icon.PNG";
 import shareIcon from "../../../images/tiktok-share-icon.PNG";
 import ShareCompFromVideoCard from "./ShareCompFromVideoCard";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleFollow } from "../../../redux/actions/allUsersAction";
 import LikeButton from "./LikeButton";
 import UnlikeButton from "./UnlikeButton";
 import UnFollowButton from "./UnFollowButton";
 import FollowButton from "./FollowButton";
 
 export default function VideoCard({ mp4, isLiked }) {
-  const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.userData.logged);
   // FOR THE VIDEO POP UP DIALOG
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +29,6 @@ export default function VideoCard({ mp4, isLiked }) {
       rootMargin: "0px",
       threshold: 0.75,
     };
-
     if (!isOpen) {
       // FOR VIDEO PLAY AND PAUSE
       let handlePlay = (entries, observer) => {
@@ -53,32 +50,6 @@ export default function VideoCard({ mp4, isLiked }) {
     setSelectedVideo(mp4);
     setIsOpen(true);
   };
-
-  // TOGGLE FOLLOW FUNCTION ON FOLLOW BTN
-  // const iFollowUser = () => {
-  //   const usernameToFollow = mp4.owner;
-  //   userLogged.iFollow.push(usernameToFollow);
-  //   dispatch(toggleFollow(userLogged));
-  // };
-  // const iUnFollowUser = () => {
-  //   const usernameToFollow = mp4.owner;
-  //   userLogged.iFollow = userLogged.iFollow.filter(
-  //     (el) => el !== usernameToFollow
-  //   );
-  //   dispatch(toggleFollow(userLogged));
-  // };
-  // //TEMPLATE FOR THE FOLLOW BTN
-  // let followBtnTemplate = (
-  //   <button className="followBtnVideoCard" onClick={iFollowUser}>
-  //     Follow
-  //   </button>
-  // );
-
-  // let unFollowBtnTemplate = (
-  //   <button className="unFollowBtnVideoCard" onClick={iUnFollowUser}>
-  //     Following
-  //   </button>
-  // );
 
   return (
     <>
@@ -120,17 +91,20 @@ export default function VideoCard({ mp4, isLiked }) {
             {isLogged? (
               isFollowed? (
                 <UnFollowButton 
-                video={mp4}/>
+                video={mp4}
+                className={"unFollowBtnVideoCard"}/>
               ) : (
                 <FollowButton 
                 video={mp4}
-                isLogged={isLogged}/>
+                isLogged={isLogged}
+                className={"followBtnVideoCard"}/>
               )
             ):
             (
               <FollowButton
               video={mp4}
-              isLogged={isLogged}/>
+              isLogged={isLogged}
+              className={"followBtnVideoCard"}/>
             )}
 
             {/* DESCRIPTION */}

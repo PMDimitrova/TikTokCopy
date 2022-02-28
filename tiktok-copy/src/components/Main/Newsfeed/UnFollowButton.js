@@ -13,7 +13,7 @@ export default function UnFollowButton(props){
         dispatch(toggleFollow(userLogged));
       };
     return(
-        <button className="unFollowBtnVideoCard" 
+        <button className={props.className} 
                 onClick={iUnFollowUser}>
         Following
         </button>

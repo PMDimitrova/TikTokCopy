@@ -10,12 +10,13 @@ import faceIcon from '../../images/tiktok-share-4.PNG'
 import whatsIcon from '../../images/tiktok-share-5.PNG';
 import CommentFPV from "./CommentFPV";
 import { useSelector, useDispatch } from "react-redux";
-import {toggleFollow} from '../../redux/actions/allUsersAction';
 import { useState } from "react";
 import InputEmoji from 'react-input-emoji';
 import {commentVideo} from '../../redux/actions/allVideosAction';
 import UnlikeButton from '../Main/Newsfeed/UnlikeButton';
-import LikeButton from '../Main/Newsfeed/LikeButton'
+import LikeButton from '../Main/Newsfeed/LikeButton';
+import UnFollowButton from '../Main/Newsfeed/UnFollowButton';
+import FollowButton from "../Main/Newsfeed/FollowButton";
 
 export default function FullPageVideo(props) {
 
@@ -30,33 +31,6 @@ export default function FullPageVideo(props) {
     }
   };
 
-//TOGGLE FOLLOW FUNCTION ON FOLLOW BTN
-const iFollowUser = () =>{
-  const usernameToFollow = selectedVideo.owner;
-  userLogged.iFollow.push(usernameToFollow);
-  dispatch(toggleFollow(userLogged))
-}
-const iUnFollowUser = () =>{
-  const usernameToFollow = selectedVideo.owner;
-  userLogged.iFollow = userLogged.iFollow.filter(el => el !== usernameToFollow)
-  dispatch(toggleFollow(userLogged))
-}
-//FOLLOW BTN TEMPLATE
-let followButtonTemplate =(
-    <button 
-    className="followBtnFPV"
-    onClick={iFollowUser}>
-      Follow
-    </button>
-    )
-  
-  let unFollowButtonTemplate = (
-    <button 
-    className="unFollowBtnFPV"
-    onClick={iUnFollowUser}>
-      Following
-    </button>
-  )
 // FOR EMOJI LIBRARY AND ADD COMMENT
 const [ text, setText ] = useState('')
   
@@ -115,8 +89,9 @@ function handleOnEnter () {
                     {selectedVideo && 
                     <div className="nicknameContainerFPV"> {selectedVideo.nickname}</div>}
                 </div>
-                {isFollowed && unFollowButtonTemplate}
-                {!isFollowed && followButtonTemplate}
+                {isFollowed?
+                  (<UnFollowButton video={selectedVideo} className={'unFollowBtnFPV'}/>):
+                  (<FollowButton video={selectedVideo} className={'followBtnFPV'}/>)}
             </div>
             {/* DESCRIPTION CONTAINER FPV */}
             <div className="descriptionContainerFPV">
@@ -131,8 +106,9 @@ function handleOnEnter () {
                     <div className="likesSharesContainerFPV">
                         <div className="likesWrapperFPV">
                             {selectedVideo && 
-                            (isLiked? (<UnlikeButton video={selectedVideo} />): 
-                                      (<LikeButton video={selectedVideo} />))}
+                            (isLiked?
+                              (<UnlikeButton video={selectedVideo} />): 
+                              (<LikeButton video={selectedVideo} />))}
                             
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <button className="buttonActionVideoCard">

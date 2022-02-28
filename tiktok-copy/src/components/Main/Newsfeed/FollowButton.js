@@ -29,7 +29,7 @@ export default function FollowButton(props) {
   return (
     <>
       <button
-        className="followBtnVideoCard"
+        className={props.className}
         onClick={isUserlogged ? iFollowUser : handleClickLoginOpen}
       >
         Follow

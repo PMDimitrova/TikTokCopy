@@ -17,7 +17,8 @@ export default function Navbar() {
           <img className="logoButtonNav" src={logo} alt="TikTokLogo" />
         </Link>
         <SearchNav
-        isLogged={isLogged} />
+        isLogged={isLogged}
+        />
         {isLogged ? <LogBtnsNav /> : <NotLogBntsNav />}
       </div>
     </div>

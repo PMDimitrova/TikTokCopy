@@ -1,0 +1,13 @@
+.ulOfSuggestions{
+    width: 356px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: rgb(0 0 0 /12%) 0px 4px 16px;
+    opacity: 1;
+    padding: 0;
+}
+.liOfSuggestionUsers{
+    list-style-type: none;
+    width: 100%;
+}

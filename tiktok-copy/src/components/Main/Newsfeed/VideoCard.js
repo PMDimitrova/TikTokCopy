@@ -3,7 +3,7 @@ import FullPageVideo from "../../FullPageVideo/FullPageVideo";
 import commentIcon from "../../../images/tiktok-comment-icon.PNG";
 import shareIcon from "../../../images/tiktok-share-icon.PNG";
 import ShareCompFromVideoCard from "./ShareCompFromVideoCard";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import LikeButton from "./LikeButton";
 import UnlikeButton from "./UnlikeButton";
 import UnFollowButton from "./UnFollowButton";

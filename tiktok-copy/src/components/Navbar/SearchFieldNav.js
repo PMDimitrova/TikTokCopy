@@ -33,6 +33,7 @@ export default function SearchNav(props) {
 
   return (
     <div className="searchContainer">
+  {/* INPUT FIELD */}
       <form className="formSearch">
         <DebounceInput
           minLength={1}
@@ -50,6 +51,7 @@ export default function SearchNav(props) {
           <img src={search} alt="Search Icon Logo" />
         </button>
       </form>
+  {/* SUGGESTIONS */}
       <ul className="ulOfSuggestions">
         {searchArr.map((user, index) => (
           <li className="liOfSuggestionUsers" key={index}>

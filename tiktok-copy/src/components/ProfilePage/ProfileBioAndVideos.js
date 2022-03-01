@@ -180,6 +180,7 @@ export default function ProfileBioAndVideos() {
             Liked
           </button>
         </div>
+  {/* SHOWING LITTLE VIDEO CARDS */}
         {showVideos ? (
           <div className="LittleVideoCardsWrapper">
             <div className="LittleVideoCardsGrid">

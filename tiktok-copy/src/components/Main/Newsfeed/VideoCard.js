@@ -70,7 +70,7 @@ export default function VideoCard({ mp4, isLiked }) {
             <ShareCompFromVideoCard />
           </div>
         )}
-        {/* PROFILE PIC IN VIDEO CARD */}
+    {/* PROFILE PIC IN VIDEO CARD */}
         <span className="profilePhotoVideoCard">
           <img
             className="profilePicVideoCard"
@@ -88,7 +88,7 @@ export default function VideoCard({ mp4, isLiked }) {
                 <h4 className="nicknameVideoCard">{mp4.nickname}</h4>
               </div>
             </div>
-            {/* FOLLOW BTN VIDEO CARD */}
+    {/* FOLLOW BTN VIDEO CARD */}
             {isLogged? (
               isFollowed? (
                 <UnFollowButton 
@@ -108,12 +108,12 @@ export default function VideoCard({ mp4, isLiked }) {
               className={"followBtnVideoCard"}/>
             )}
 
-            {/* DESCRIPTION */}
+    {/* DESCRIPTION */}
             <div className="descriptionContainVideoCard">{mp4.description}</div>
             {/* SONG */}
             <h4 className="songContainVideoCard">{mp4.song}</h4>
           </div>
-          {/* VIDEO IN VIDEO CARD */}
+    {/* VIDEO IN VIDEO CARD */}
           <div className="VideoAndBntsWrapper">
             <div className="VideoWrapper">
               <div className="videoPlayer">
@@ -131,8 +131,7 @@ export default function VideoCard({ mp4, isLiked }) {
                 />
               </div>
             </div>
-            {/* LIKE BTN VIDEO CARD*/}
-
+    {/* LIKE BTN VIDEO CARD*/}
             <div className="BtnsWrapper">
               {isLogged ? (
                 isLiked ? (
@@ -149,8 +148,7 @@ export default function VideoCard({ mp4, isLiked }) {
                   isLogged={isLogged}
                 />
               )}
-
-              {/* COMMENT BTN VIDEO CARD */}
+    {/* COMMENT BTN VIDEO CARD */}
               <button className="buttonActionVideoCard">
                 <span
                   className="buttonIconVideoCard"
@@ -164,7 +162,7 @@ export default function VideoCard({ mp4, isLiked }) {
                   {mp4.comments.length}
                 </strong>
               </button>
-              {/* SHARE BTN VIDEO CARD */}
+    {/* SHARE BTN VIDEO CARD */}
               <button
                 className="buttonActionVideoCard"
                 onMouseEnter={() => setIsShown(true)}

@@ -15,8 +15,9 @@ export default function Aside(){
         <div className='AsideContainer'>
             <div className='asideInsideContain'>
                 <div className='asideInside'>
+    {/* 3 MAIN BTNS */}
                     <MainNavAside/>
-
+    {/* SUGGESTED ACCOUNTS */}
                     {!isLogged && <BigLoginBtn/>}
                     {isLogged ?
                         ((myProfilePath !== currentPath) ?
@@ -26,10 +27,12 @@ export default function Aside(){
                         : (<AccountsNavAsideComp content={'suggestedAccounts'}
                                                  title={"Suggested accounts"}/>)
                     }
-
+    {/* FOLLOWING ACCOUNTS */}
                     {isLogged && <AccountsNavAsideComp content={'followedAccounts'}
                         title={"Following accounts"}/>}
+    {/* HASHTAGS */}
                     <DiscoverHashtags/>
+    {/* FOOTER */}
                     <FooterAside/>
                 </div>
             </div>

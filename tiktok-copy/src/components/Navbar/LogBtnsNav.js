@@ -44,6 +44,7 @@ export default function LogBtnsNav() {
 
     return (
         <div className="bntsLog">
+        {/* UPLOAD BTN */}
             <HtmlTooltip title='Upload video' arrow>
                 <div className="uploadVideo">
                     <Link to="/videoUpload">
@@ -51,16 +52,19 @@ export default function LogBtnsNav() {
                     </Link>
                 </div>
             </HtmlTooltip>
+        {/* MESSAGE BTN */}
             <HtmlTooltip title='Message' arrow>
                 <div className="textMessages">
                     <img className="logBtnsEach" src={messageBtn} alt="messageBtn"/>
                 </div>
             </HtmlTooltip>
+        {/* INBOX BTN */}
             <HtmlTooltip title='Inbox' arrow>
                 <div className="inbox">
                     <img className="logBtnsEach" src={inboxBtn} alt="inboxBtn"/>
                 </div>
             </HtmlTooltip>
+        {/* PROFILE PIC BTN */}
             <div id="basic-button"
                  aria-controls={open ? 'basic-menu' : undefined}
                  aria-haspopup="true"
@@ -88,8 +92,6 @@ export default function LogBtnsNav() {
                 <hr/>
                 <MenuItem onClick={logoutUser}>Log out</MenuItem>
             </Menu>
-
-
         </div>
     );
 }

@@ -13,12 +13,15 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <div className="navWrapper">
+  {/* LOGO */}
         <Link to='/'>
           <img className="logoButtonNav" src={logo} alt="TikTokLogo" />
         </Link>
+  {/* SEARCH FIELD */}
         <SearchNav
         isLogged={isLogged}
         />
+  {/* BTNS LOGGED OR NOT */}
         {isLogged ? <LogBtnsNav /> : <NotLogBntsNav />}
       </div>
     </div>

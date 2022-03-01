@@ -92,7 +92,7 @@ function handleOnEnter () {
                 </div>
                 {isFollowed?
                   (<UnFollowButton video={selectedVideo} className={'unFollowBtnFPV'}/>):
-                  (<FollowButton video={selectedVideo} className={'followBtnFPV'}/>)}
+                  (<FollowButton video={selectedVideo} className={'followBtnFPV'} isLogged={isLogged}/>)}
             </div>
             {/* DESCRIPTION CONTAINER FPV */}
             <div className="descriptionContainerFPV">
@@ -109,7 +109,7 @@ function handleOnEnter () {
                             {selectedVideo && 
                             (isLiked?
                               (<UnlikeButton video={selectedVideo} />): 
-                              (<LikeButton video={selectedVideo} />))}
+                              (<LikeButton video={selectedVideo} isLogged={isLogged}/>))}
                             
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             <button className="buttonActionVideoCard">

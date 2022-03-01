@@ -1,6 +1,6 @@
 import styles from "./Login.module.scss";
 import {GrClose} from "react-icons/gr";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import DatePicker from "./DatePicker";
 import tickSvg from "../../images/password_not_ok.380ea4fb.svg"
 import {useState} from "react";
@@ -76,6 +76,12 @@ export default function SignUp(props){
     const showPasswordNotMatchWarning = () => {
         document.getElementById('tipsDialogue').style.display = 'none';
         document.getElementById('passwordsWarning').style.display = 'flex';
+        document.getElementById('passwordsErrWarning').style.display = 'none';
+    }
+    const passwordNotGood = () => {
+        document.getElementById('tipsDialogue').style.display = 'none';
+        document.getElementById('passwordsWarning').style.display = 'none';
+        document.getElementById('passwordsErrWarning').style.display = 'flex';
     }
 
     const registerUser = () => {
@@ -95,16 +101,21 @@ export default function SignUp(props){
             }
 
             if(rePass === pass){
-                fetch('https://tiktok-635d3-default-rtdb.firebaseio.com/users.json', {
-                    method: 'POST',
-                    body: JSON.stringify(userData)
-                })
-                    .then(res => res.json())
-                    .then(data => data);
-                dispatch({type: 'LOGIN_AFTER_REGISTER',
-                    payload: {picture: userData.picture, username: userN}});
+                const regularExp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+                if (regularExp.test(pass)){
+                    fetch('https://tiktok-635d3-default-rtdb.firebaseio.com/users.json', {
+                        method: 'POST',
+                        body: JSON.stringify(userData)
+                    })
+                        .then(res => res.json())
+                        .then(data => data);
+                    dispatch({type: 'LOGIN_AFTER_REGISTER',
+                        payload: {picture: userData.picture, username: userN}});
+                }else{
+                    passwordNotGood();
+                }
+
             }else{
-                console.log('passwords do NOT match')
                 showPasswordNotMatchWarning();
             }
         }
@@ -144,6 +155,8 @@ export default function SignUp(props){
                         </div>
                         <div id={'passwordsWarning'} className={styles.singUpPasswordsWarning}>
                             Password and Re-password do not match!</div>
+                        <div id={'passwordsErrWarning'} className={styles.singUpPasswordsWarning}>
+                            Password must contain letters, special characters and numbers</div>
                         <button id={'nextBtn'} className={styles.signUpBtn} disabled={nextBtnState} onClick={registerUser}>Next</button>
                     </div>
                 </div>
@@ -155,15 +168,3 @@ export default function SignUp(props){
         </div>
     )
 }
-
-//Regex explanation:
-// ^(?=.*\d)(?=.*[a-zA-Z])(?=[.!@#\$%\^&*_+\-=])[0-9a-zA-Z.!@#\$%\^&*_+\-=]{8,20}$
-
-// /^(?=.*\d)(?=.*[a-zA-Z])(?=[.!@#\$%\^&*_+-=])[0-9a-zA-Z.!@#\$%\^&*_+-=]{8,20}$/
-// /^(?=.*\d)(?=.*[a-zA-Z])(?=[.!@#\$%\^&*_+\-=])[0-9a-zA-Z.!@#\$%\^&*_+\-=]{8,20}$
-// /^
-// (?=.*\d)          // should contain at least one digit
-// (?=.*[a-zA-Z])    // should contain at least one alphabet
-// (?=.*[c])//should have at least one special character
-// [a-zA-Z0-9.!@#\$%\^&*_+-=]{8,20}   // should contain at least 8 from the mentioned characters
-// $/

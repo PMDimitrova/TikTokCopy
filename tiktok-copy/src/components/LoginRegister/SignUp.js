@@ -144,7 +144,7 @@ export default function SignUp(props){
                                onChange={(ev) => handleUsernameChange(ev.target.value)} />
                         <input className={styles.singUpInput} placeholder={'Password'}
                                onChange={(ev) => handlePasswordChange(ev.target.value)}
-                               onFocus={showTipsDialogue} onClick={showTipsDialogue} type={'text'}/>
+                               onFocus={showTipsDialogue} onClick={showTipsDialogue} type={'password'}/>
                         <input className={styles.singUpInput} placeholder={'Repeat password'}
                                onChange={(ev) => handleRePasswordChange(ev.target.value)}
                                onFocus={showTipsDialogue} onClick={showTipsDialogue} type={'text'}/>

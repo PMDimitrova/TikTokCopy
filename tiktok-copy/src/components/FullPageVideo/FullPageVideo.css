@@ -367,10 +367,6 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    /* background-color: rgba(22, 24, 35, 0.06);
-    box-sizing: border-box;
-    border: 1px solid transparent;
-    border-radius: 8px; */
     padding: 0px 9px;
     width: 412px;
     height: 38px;
@@ -394,8 +390,51 @@
     width: 48px;
     height: 38px;
     font-family: Arial, Helvetica, sans-serif;
+}
 
-    /* color: rgb(254, 44, 85);
+/* FOR COMMENT WHEN NOT LOGGED GO TO LOGG */
+.CommentGoToLogWrapper{
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 60px;
+    text-align: center;
+}
+.LoginTitleonComments{
+    font-family: Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 8px;
+}
+.logInLittleTitle{
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 20px;
+    font-family: Arial, Tahoma, PingFangSC, sans-serif;
+}
+.logInBtnonCommentsLog{
+    border-radius: 4px;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(254, 44, 85);
+    min-width: 168px;
+    min-height: 48px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    font-family: Arial, Tahoma, PingFangSC, sans-serif;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 8px;
+    user-select: none;
     cursor: pointer;
-    if there is text in the input else btn is unactive*/
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
 }

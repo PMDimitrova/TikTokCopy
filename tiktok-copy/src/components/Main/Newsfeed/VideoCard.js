@@ -60,6 +60,7 @@ export default function VideoCard({ mp4, isLiked }) {
         selectedVideo={selectedVideo}
         isLiked={isLiked}
         isFollowed={isFollowed}
+        isLogged={isLogged}
         onClose={() => setIsOpen(false)}
       />
 
@@ -113,8 +114,6 @@ export default function VideoCard({ mp4, isLiked }) {
             <h4 className="songContainVideoCard">{mp4.song}</h4>
           </div>
           {/* VIDEO IN VIDEO CARD */}
-
-          {/* //***PALMINA to do onClick={handleClickLoginOpen} */}
           <div className="VideoAndBntsWrapper">
             <div className="VideoWrapper">
               <div className="videoPlayer">

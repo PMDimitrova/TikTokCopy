@@ -17,10 +17,11 @@ import UnlikeButton from '../Main/Newsfeed/UnlikeButton';
 import LikeButton from '../Main/Newsfeed/LikeButton';
 import UnFollowButton from '../Main/Newsfeed/UnFollowButton';
 import FollowButton from "../Main/Newsfeed/FollowButton";
+import NotLoggedComment from "./NotLoggedComment";
 
 export default function FullPageVideo(props) {
 
-  const { onClose, selectedVideo, open, isLiked, isFollowed } = props;
+  const { onClose, selectedVideo, open, isLiked, isFollowed, isLogged } = props;
   const dispatch = useDispatch();
   const userLogged = useSelector((state) => state.userData);
 
@@ -150,7 +151,8 @@ function handleOnEnter () {
                 </div>
             </div>
             {/* COMMENTS CONTAINER FPV */}
-            <div className="commentsContainerFPV">
+            {isLogged? 
+            (<div className="commentsContainerFPV">
               {selectedVideo && selectedVideo.comments.map((comment, index) => {
               let user = comment.username;
               let userComment = comment.comment;
@@ -160,9 +162,11 @@ function handleOnEnter () {
               user={user} 
               comment={userComment}
               picture={userPicture}/>})}
-            </div>
+            </div>)
+            :(<NotLoggedComment/>)}
             {/* ADD COMMENT SECTION */}
-            <div className="addCommentContainerFPV">
+            {isLogged? 
+            (<div className="addCommentContainerFPV">
               <div className="addCommentWrapperFPV">
                 <div className="addCommentWrapFPV">
                   <div className="addCommentInputEmoji">
@@ -179,7 +183,8 @@ function handleOnEnter () {
                   className="postBtnAddCommentFPV">Post</div>
                 </div>
               </div>
-            </div>
+            </div>)
+            :(<></>)}
         </div>
       </div>
     </Dialog>

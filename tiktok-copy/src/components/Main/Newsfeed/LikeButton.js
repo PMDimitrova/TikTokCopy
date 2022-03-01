@@ -1,56 +1,57 @@
 import React from "react";
-import {Dialog, DialogContent} from "@mui/material";
+import { Dialog, DialogContent } from "@mui/material";
 import LoginSignUpMain from "../../LoginRegister/LoginSignUpMain";
 import { useSelector, useDispatch } from "react-redux";
-import {toggleVideoLike} from '../../../redux/actions/allVideosAction';
-import heartIcon from '../../../images/tiktok-heart-icon.PNG';
+import { toggleVideoLike } from "../../../redux/actions/allVideosAction";
+import heartIcon from "../../../images/tiktok-heart-icon.PNG";
 import { useState } from "react";
 
 export default function LikeButton(props) {
-    const dispatch = useDispatch();
-    const userLogged = useSelector((state) => state.userData);
-    const isUserlogged = props.isLogged;
+  const dispatch = useDispatch();
+  const userLogged = useSelector((state) => state.userData);
+  const isUserlogged = props.isLogged;
 
-    const likeVideoCard = () =>{
-        const username = userLogged.username;
-        props.video.likedBy.push(username)
-        dispatch(toggleVideoLike(props.video))
-      }
+  const likeVideoCard = () => {
+    const username = userLogged.username;
+    props.video.likedBy.push(username);
+    dispatch(toggleVideoLike(props.video));
+  };
 
-//Functions for opening the Log in dialog, when user's not allowed to perform action if not logged in
-    const [openLogin, setOpenLogin] = useState(false);
-    const handleClickLoginClose = () => {
-        setOpenLogin(false);
-        dispatch({ type: "SHOW_LOGIN_OPTIONS" });
-    };
-    const handleClickLoginOpen = () => {
-        setOpenLogin(true);
-      };
-      
-    return (
-        <>
-        <button
-            onClick={ isUserlogged? likeVideoCard : handleClickLoginOpen} 
-            className="buttonActionVideoCard">
+  //Functions for opening the Log in dialog, when user's not allowed to perform action if not logged in
+  const [openLogin, setOpenLogin] = useState(false);
+  const handleClickLoginClose = () => {
+    setOpenLogin(false);
+    dispatch({ type: "SHOW_LOGIN_OPTIONS" });
+  };
+  const handleClickLoginOpen = () => {
+    setOpenLogin(true);
+  };
+
+  return (
+    <>
+      <button
+        onClick={isUserlogged ? likeVideoCard : handleClickLoginOpen}
+        className="buttonActionVideoCard"
+      >
         <span className="buttonIconVideoCard">
-            <img src={heartIcon} alt="buttonIconVideoCard"/>
+          <img src={heartIcon} alt="buttonIconVideoCard" />
         </span>
-            {props.video && 
-            <strong className="textLikesVideoCard">
-                {props.video.likedBy.length}
-            </strong>}
-        </button>
-        <Dialog
-            open={openLogin}
-            onClose={handleClickLoginClose}
-            aria-labelledby="alert-dialog-title"
-            aria-describedby="alert-dialog-description"
-        >
-            <DialogContent>
-                <LoginSignUpMain closingFunction={handleClickLoginClose}/>
-            </DialogContent>
-        </Dialog>
-        </>
-
-    )
+        {props.video && (
+          <strong className="textLikesVideoCard">
+            {props.video.likedBy.length}
+          </strong>
+        )}
+      </button>
+      <Dialog
+        open={openLogin}
+        onClose={handleClickLoginClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogContent>
+          <LoginSignUpMain closingFunction={handleClickLoginClose} />
+        </DialogContent>
+      </Dialog>
+    </>
+  );
 }

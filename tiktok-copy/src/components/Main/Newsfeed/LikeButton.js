@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function LikeButton(props) {
   const dispatch = useDispatch();
   const userLogged = useSelector((state) => state.userData);
-  const isUserlogged = props.isLogged;
+  const isUserLogged = props.isLogged;
 
   const likeVideoCard = () => {
     const username = userLogged.username;
@@ -17,22 +17,21 @@ export default function LikeButton(props) {
     dispatch(toggleVideoLike(props.video));
   };
 
-  //Functions for opening the Log in dialog, when user's not allowed to perform action if not logged in
-  const [openLogin, setOpenLogin] = useState(false);
-  const handleClickLoginClose = () => {
-    setOpenLogin(false);
-    dispatch({ type: "SHOW_LOGIN_OPTIONS" });
-  };
-  const handleClickLoginOpen = () => {
-    setOpenLogin(true);
-  };
-
-  return (
-    <>
-      <button
-        onClick={isUserlogged ? likeVideoCard : handleClickLoginOpen}
-        className="buttonActionVideoCard"
-      >
+//Functions for opening the Log in dialog, when user's not allowed to perform action if not logged in
+    const [openLogin, setOpenLogin] = useState(false);
+    const handleClickLoginClose = () => {
+        setOpenLogin(false);
+        dispatch({ type: "SHOW_LOGIN" });
+    };
+    const handleClickLoginOpen = () => {
+        setOpenLogin(true);
+      };
+      
+    return (
+        <>
+        <button
+            onClick={ isUserLogged? likeVideoCard : handleClickLoginOpen}
+            className="buttonActionVideoCard">
         <span className="buttonIconVideoCard">
           <img src={heartIcon} alt="buttonIconVideoCard" />
         </span>

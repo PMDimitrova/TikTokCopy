@@ -7,23 +7,13 @@ import {useDispatch} from "react-redux";
 
 export default function NotLogBntsNav() {
     const dispatch = useDispatch();
-    const handleShowLoginWithEmail = () => {
-        dispatch({type : 'SHOW_LOGIN_OPTIONS'});
-    }
 
     const [openLogin, setOpenLogin] = useState(false);
     const handleClickLoginOpen = () => {setOpenLogin(true);};
     const handleClickLoginClose = () => {
         setOpenLogin(false);
-        dispatch({type : 'SHOW_LOGIN_OPTIONS'});
+        dispatch({type : 'SHOW_LOGIN'});
     };
-
-    const [openSignUp, setOpenSignUp] = useState(false);
-    const handleClickSignUpOpen = () => {
-        setOpenSignUp(true);
-        console.log('sign up func')
-    };
-    const handleClickSignUpClose = () => {setOpenSignUp(false);};
 
     return (
         <>
@@ -45,6 +35,5 @@ export default function NotLogBntsNav() {
                 </Dialog>
             </div>
         </>
-
     )
 }

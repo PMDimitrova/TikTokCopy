@@ -101,7 +101,6 @@ export default function SignUp(props){
                 })
                     .then(res => res.json())
                     .then(data => data);
-                // dispatch({type : 'LOGIN_AND_SET_USERNAME', payload: userN});
                 dispatch({type: 'LOGIN_AFTER_REGISTER',
                     payload: {picture: userData.picture, username: userN}});
             }else{

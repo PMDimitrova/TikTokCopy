@@ -151,8 +151,6 @@ export default function VideoCard({ mp4, isLiked }) {
               )}
 
               {/* COMMENT BTN VIDEO CARD */}
-
-              {/* //***PALMINA to do onClick={handleClickLoginOpen} */}
               <button className="buttonActionVideoCard">
                 <span
                   className="buttonIconVideoCard"

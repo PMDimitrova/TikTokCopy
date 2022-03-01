@@ -18,7 +18,7 @@ export default function MainNavAside() {
     };
     const handleClickLoginClose = () => {
         setOpenLogin(false);
-        dispatch({type: 'SHOW_LOGIN_OPTIONS'});
+        dispatch({type: 'SHOW_LOGIN'});
     };
 
     return (

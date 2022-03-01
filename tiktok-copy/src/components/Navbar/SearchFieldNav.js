@@ -61,7 +61,7 @@ export default function SearchNav(props) {
                       className="avatarPicFPV"
                       src={user.picture}
                       alt="profile pic"
-                    ></img>
+                      />
                   </div>
                 </div>
                 <div className="usernameNickameContainerFPV">

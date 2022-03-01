@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function FollowButton(props) {
   const userLogged = useSelector((state) => state.userData);
   const dispatch = useDispatch();
-  const isUserlogged = props.isLogged;
+  const isUserLogged = props.isLogged;
 
   const iFollowUser = () => {
     const usernameToFollow = props.video.owner;
@@ -20,7 +20,7 @@ export default function FollowButton(props) {
   const [openLogin, setOpenLogin] = useState(false);
   const handleClickLoginClose = () => {
     setOpenLogin(false);
-    dispatch({ type: "SHOW_LOGIN_OPTIONS" });
+    dispatch({ type: "SHOW_LOGIN" });
   };
   const handleClickLoginOpen = () => {
     setOpenLogin(true);
@@ -30,7 +30,7 @@ export default function FollowButton(props) {
     <>
       <button
         className={props.className}
-        onClick={isUserlogged ? iFollowUser : handleClickLoginOpen}
+        onClick={isUserLogged ? iFollowUser : handleClickLoginOpen}
       >
         Follow
       </button>

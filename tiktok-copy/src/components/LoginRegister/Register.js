@@ -21,7 +21,6 @@ export default function Register(props){
       dispatch({type : 'SHOW_SIGNUP'});
     }
 
-
     return (
         <div className={styles.loginContainer}>
             <div className={styles.closeBtn} onClick={handleShowLoginWithEmail}><GrClose/></div>

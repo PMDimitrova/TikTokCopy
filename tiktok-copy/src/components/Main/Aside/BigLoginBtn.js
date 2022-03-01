@@ -12,7 +12,7 @@ export default function BigLoginBtn() {
     const handleClickLoginOpen = () => {setOpenLogin(true);};
     const handleClickLoginClose = () => {
         setOpenLogin(false);
-        dispatch({type : 'SHOW_LOGIN_OPTIONS'});
+        dispatch({type : 'SHOW_LOGIN'});
     };
     return (
         <>

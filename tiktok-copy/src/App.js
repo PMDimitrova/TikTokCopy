@@ -3,8 +3,8 @@ import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import UploadVideoComponent from "./components/Main/Upload/UploadVideoComponent";
 import MainContainer from "./components/Main/MainContainer";
-import ErrorPage from './components/Main/ErrorPage'
-import UnderConstructionPage from "./components/Main/UnderConstructionPage";
+import ErrorPage from './components/ErrorAndConstructionPages/ErrorPage'
+import UnderConstructionPage from "./components/ErrorAndConstructionPages/UnderConstructionPage";
 import ProfilePage from './components/ProfilePage/ProfilePage'
 
 function App() {

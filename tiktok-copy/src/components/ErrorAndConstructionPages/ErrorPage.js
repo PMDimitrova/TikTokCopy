@@ -1,5 +1,5 @@
 import errorIcon from '../../images/tiktok-error-page.PNG';
-import Footer from "./Footer/Footer";
+import Footer from "../Main/Footer/Footer";
 import './ErrorPage.css';
 import Navbar from '../Navbar/Navbar';
 import { Link } from 'react-router-dom';

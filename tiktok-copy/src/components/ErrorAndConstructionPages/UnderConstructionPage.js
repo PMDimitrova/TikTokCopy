@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import constructionImg from "../../images/underconstructionpage.png";
 import {Link} from "react-router-dom";
-import Footer from "./Footer/Footer";
+import Footer from "../Main/Footer/Footer";
 import './ErrorPage.css';
 
 export default function UnderConstructionPage(){

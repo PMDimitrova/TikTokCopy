@@ -57,17 +57,17 @@ export default function ProfileBioAndVideos() {
       followers++;
     }
   });
-  let myVideos = user.myVideos;
+  // let myVideos = user.myVideos;
 
-  myVideos.map((vid) => {
-    //counting likes
-    fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${vid}.json`)
-      .then((res) => res.json())
-      .then((videoData) => {
-        let currentLikes = videoData.likedBy.length;
-        likes += currentLikes;
-      });
-  });
+  // myVideos.map((vid) => {
+  //   //counting likes
+  //   fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/videos/${vid}.json`)
+  //     .then((res) => res.json())
+  //     .then((videoData) => {
+  //       let currentLikes = videoData.likedBy.length;
+  //       likes += currentLikes;
+  //     });
+  // });
 
   bio = user.bio; //getting user's bio
 

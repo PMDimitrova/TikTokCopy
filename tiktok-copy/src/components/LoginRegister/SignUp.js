@@ -17,6 +17,10 @@ export default function SignUp(props){
         passwordsNotMatching: false
     });
     const [nextBtnState, nextBtnEnable] = useState(true);
+    const [nextBtnStyle, nextBtnChangeStyle] = useState(styles.signUpBtn);
+    const [showingTipsDialogue, showTips] = useState('none');
+    const [showingPassWarning, showPassWarning] = useState('none');
+    const [showingPassError, showPassError] = useState('none');
 
     const handleShowLoginWithEmail = () => {
         props.closingFunc();
@@ -26,21 +30,22 @@ export default function SignUp(props){
         dispatch({type : 'SHOW_LOGIN'});
     }
 
-    const showTipsDialogue = () => {
-        document.getElementById('tipsDialogue').style.display = 'flex';
-        document.getElementById('passwordsWarning').style.display = 'none';
+    const showTipsDialogue = () => { //show tips how the password should look
+        showTips('flex');
+        showPassWarning('none');
+        showPassError('none');
     }
 
-    const checkIfNexBtnShouldBeEnabled = () => {
+    const checkIfNexBtnShouldBeEnabled = () => { //NextBtn should be enabled, if all of the fields are filled in
         if(inputValues.username &&  inputValues.password && inputValues.rePassword){
             if (nextBtnState){
                 nextBtnEnable(!nextBtnState);
             }
-                document.getElementById('nextBtn').className = styles.signUpBtnEnabled;
+                nextBtnChangeStyle(styles.signUpBtnEnabled);
         }
     }
 
-    const checkBirthday = () => {
+    const checkBirthday = () => { //user must be above 13 yo, although info for the birthday is not stored
         function getAge(month, day, year) {
             let today = new Date();
 
@@ -59,29 +64,29 @@ export default function SignUp(props){
         }
     }
 
-    const handleUsernameChange = (input) => {
+    const handleUsernameChange = (input) => { //store the input of the user and check for the NextBtn
         setInputValues({...inputValues, username : input});
         checkIfNexBtnShouldBeEnabled();
     }
 
-    const handlePasswordChange = (input) => {
+    const handlePasswordChange = (input) => { //store the input of the user and check for the NextBtn
         setInputValues({...inputValues, password : input});
         checkIfNexBtnShouldBeEnabled();
     }
-    const handleRePasswordChange = (input) => {
+    const handleRePasswordChange = (input) => { //store the input of the user and check for the NextBtn
         setInputValues({...inputValues, rePassword : input});
         checkIfNexBtnShouldBeEnabled();
     }
 
-    const showPasswordNotMatchWarning = () => {
-        document.getElementById('tipsDialogue').style.display = 'none';
-        document.getElementById('passwordsWarning').style.display = 'flex';
-        document.getElementById('passwordsErrWarning').style.display = 'none';
+    const showPasswordNotMatchWarning = () => { //show error for not password & repass not matching
+        showTips('none');
+        showPassWarning('flex');
+        showPassError('none');
     }
-    const passwordNotGood = () => {
-        document.getElementById('tipsDialogue').style.display = 'none';
-        document.getElementById('passwordsWarning').style.display = 'none';
-        document.getElementById('passwordsErrWarning').style.display = 'flex';
+    const passwordNotGood = () => { //show error for not acceptable password
+        showTips('none');
+        showPassWarning('none');
+        showPassError('flex');
     }
 
     const registerUser = () => {
@@ -102,7 +107,7 @@ export default function SignUp(props){
 
             if(rePass === pass){
                 const regularExp = /^(?=.*[0-9])(?=.*[-!@#$%^&*])[a-zA-Z0-9-!@#$%^&*]{8,20}$/;
-                if (regularExp.test(pass)){
+                if (regularExp.test(pass)){ //if pass is acceptable, continue with actual registration
                     fetch('https://tiktok-635d3-default-rtdb.firebaseio.com/users.json', {
                         method: 'POST',
                         body: JSON.stringify(userData)
@@ -148,16 +153,16 @@ export default function SignUp(props){
                         <input className={styles.singUpInput} placeholder={'Repeat password'}
                                onChange={(ev) => handleRePasswordChange(ev.target.value)}
                                onFocus={showTipsDialogue} onClick={showTipsDialogue} type={'text'}/>
-                        <div id={'tipsDialogue'} className={styles.signUpPasswordTip}>
+                        <div id={'tipsDialogue'} className={styles.signUpPasswordTip} style={{display:showingTipsDialogue}}>
                             <div style={{fontWeight:600, marginTop:4, marginBottom:0}}>Your Password must have:</div>
                             <div style={{color:'#8f9095'}}><img src={tickSvg} alt={'tick'}/>8 to 20 characters<br/>
                                 <img src={tickSvg} alt={'tick'}/>Letters, numbers, and special characters</div>
                         </div>
-                        <div id={'passwordsWarning'} className={styles.singUpPasswordsWarning}>
+                        <div id={'passwordsWarning'} className={styles.singUpPasswordsWarning} style={{display:showingPassWarning}}>
                             Password and Re-password do not match!</div>
-                        <div id={'passwordsErrWarning'} className={styles.singUpPasswordsWarning}>
+                        <div id={'passwordsErrWarning'} className={styles.singUpPasswordsWarning} style={{display:showingPassError}}>
                             Password must contain letters, special characters and numbers</div>
-                        <button id={'nextBtn'} className={styles.signUpBtn} disabled={nextBtnState} onClick={registerUser}>Next</button>
+                        <button id={'nextBtn'} className={nextBtnStyle} disabled={nextBtnState} onClick={registerUser}>Next</button>
                     </div>
                 </div>
                 <div className={styles.signUpFooter}>By continuing, you agree to TikTok's Terms of Service and confirm that you have read TikTok's Privacy Policy.</div>

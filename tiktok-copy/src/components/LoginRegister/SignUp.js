@@ -101,7 +101,7 @@ export default function SignUp(props){
             }
 
             if(rePass === pass){
-                const regularExp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+                const regularExp = /^(?=.*[0-9])(?=.*[-!@#$%^&*])[a-zA-Z0-9-!@#$%^&*]{8,20}$/;
                 if (regularExp.test(pass)){
                     fetch('https://tiktok-635d3-default-rtdb.firebaseio.com/users.json', {
                         method: 'POST',

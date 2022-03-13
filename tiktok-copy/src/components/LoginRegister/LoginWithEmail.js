@@ -7,10 +7,15 @@ import {Alert} from "@mui/material";
 export default function LoginWithEmail(props){
     const [logInBtnState, enableBtn] = useState(true);
     const [wrongCredentials, showWarningCredentials] = useState(false);
+    const [loginBtnStyle, changeLoginBtnStyle] = useState(styles.loginBtnDisabled);
+    const [userData, changeUserData] = useState({
+        username: '',
+        password: ''
+    })
 
     const dispatch = useDispatch();
 
-    const handleShowLoginWithEmail = () => {
+    const handleShowLoginWithEmail = () => { //show first window of login dialog, when closed with x-btn
         props.closingFunc();
         dispatch({type : 'SHOW_LOGIN'});
     }
@@ -19,19 +24,23 @@ export default function LoginWithEmail(props){
         dispatch({type : 'SHOW_REGISTER'});
     }
 
-    const checkIfBothAreFilled = () => {
-        if(document.getElementById('usernameInputField').value.length && document.getElementById('passwordInputField').value.length){
+    const checkIfBothAreFilled = (event) => { //check if pass & username fields are filled in
+        if (event.target.id === 'usernameInputField'){ //save user input in current state
+            changeUserData({...userData, username: event.target.value.trim()});
+        }else if(event.target.id === 'passwordInputField'){ //save user input in current state
+            changeUserData({...userData, password: event.target.value.trim()});
+        }
+        if(userData.username && userData.password){ //if both are filled - enable login button
             if (logInBtnState){
                 enableBtn(!logInBtnState);
             }
-            document.getElementById('logInButton').className = styles.logInBtnEnabled;
+            changeLoginBtnStyle(styles.logInBtnEnabled);
         }
     }
 
-    const logUser = () => {
-        console.log('clicked log user btn');
-        let username = document.getElementById('usernameInputField').value.trim();
-        let password = document.getElementById('passwordInputField').value.trim();
+    const logUser = () => { //actual login function
+        let username = userData.username;
+        let password = userData.password;
 
         fetch('https://tiktok-635d3-default-rtdb.firebaseio.com/users.json')
             .then(res => res.json())
@@ -40,8 +49,8 @@ export default function LoginWithEmail(props){
                 let userExists = false;
 
                 for (const [us, details] of Object.entries(users)) {
-                    if (us === username){
-                        if(details.password === password){
+                    if (us === username){ // if username matches with already existing user
+                        if(details.password === password){ //and pass matches - login
                             fetch(`https://tiktok-635d3-default-rtdb.firebaseio.com/users/${us}.json`)
                                 .then(res => res.json())
                                 .then(data => {
@@ -62,7 +71,7 @@ export default function LoginWithEmail(props){
                         userExists = true;
                     }
                 }
-                if (incorrectPassword || !userExists){
+                if (incorrectPassword || !userExists){ //show warning if user credentials are incorrect
                     showWarningCredentials(!wrongCredentials);
                 }
             });
@@ -81,12 +90,12 @@ export default function LoginWithEmail(props){
                         </div>
                         <form>
                             <input id={'usernameInputField'} className={styles.loginInputField}
-                                   placeholder={'Email or Username'} onChange={checkIfBothAreFilled}/>
+                                   placeholder={'Email or Username'} onChange={ event => checkIfBothAreFilled(event)}/>
                             <input id={'passwordInputField'} className={styles.loginInputField}
-                                   placeholder={'Password'} type={'password'} onChange={checkIfBothAreFilled}/>
+                                   placeholder={'Password'} type={'password'} onChange={ event => checkIfBothAreFilled(event)}/>
                         </form>
                     <div className={styles.loginForgotPass}>Forgot password?</div>
-                    <button id={'logInButton'} className={styles.loginBtnDisabled}
+                    <button id={'logInButton'} className={loginBtnStyle}
                             disabled={logInBtnState} onClick={logUser}>Log in</button>
                     </div>
                     {wrongCredentials ? <Alert variant="outlined" severity="error"
